@@ -27,9 +27,8 @@ mapear um alvo remoto com o Nmap.
 ## Tryhackme
 Neste site entrando na sala NMAP, simulamos o hack de uma máquina alvo em um ambiente virtual, baseando nos IP's gerados podemos explorar a máquina e rodar analises de segurança. Este módulo é composto por 15 tasks e a sua elaboração está documentada por meio de prints:
 
-### Task 2:
+### Task 2: Introduction
 <img width="873" height="501" alt="image" src="https://github.com/user-attachments/assets/84be64d9-c6a1-42d9-bbd4-fa854f923c18" />
-
 
 ### Task 3: Nmap Switches
 #### Código
