@@ -1,15 +1,13 @@
-# Portfolio
+# ✨Portfolio
 
 Neste repositório serão listados os exercicios práticos que forem executados durante os laboratórios do Módulo 5_Linux e Cibersegurança
 
-## Sessão 1_Linux e Cibersegurança
-### Introdução ao Linux para Segurança e Comandos de Rede
+## 🖥️**Sessão 1_Linux e Cibersegurança**
+### **Introdução ao Linux para Segurança e Comandos de Rede**
 
 ### Objetivo: 
-Mapeamento e análise da superfície de exposição de um servidor alvo na rede local.
-Nesta sessão assume o papel de auditor de sistemas: o objetivo é identificar a
-interface de rede do próprio ambiente, listar os serviços em escuta e, de seguida,
-mapear um alvo remoto com o Nmap.
+Durante esta atividade o objetivo principal consiste no **Mapeamento e análise da superfície de exposição de um servidor alvo na rede local**.
+Assumindo o papel de auditor de sistemas: o objetivo específico é identificar a interface de rede do próprio ambiente, listar os serviços em escuta e, de seguida, mapear um alvo remoto com o Nmap.
 
 ### Tarefas:
 
@@ -25,13 +23,13 @@ mapear um alvo remoto com o Nmap.
 
 
 ## Tryhackme
-Neste site entrando na sala NMAP, simulamos o hack de uma máquina alvo em um ambiente virtual, baseando nos IP's gerados podemos explorar a máquina e rodar analises de segurança. Este módulo é composto por 15 tasks e a sua elaboração está documentada por meio de prints:
+Nesta plataforma ao entrar na sala NMAP, simulamos o hack de uma máquina alvo em um ambiente virtual, baseando nos IP's gerados podemos explorar a máquina e rodar analises de segurança. Este módulo é composto por 15 tasks e a sua elaboração está documentada por meio de prints:
 
 ### Task 2: Introduction
 <img width="873" height="501" alt="image" src="https://github.com/user-attachments/assets/84be64d9-c6a1-42d9-bbd4-fa854f923c18" />
 
 ### Task 3: Nmap Switches
-#### Código
+#### Code
 <img width="642" height="567" alt="image" src="https://github.com/user-attachments/assets/6e30e98f-0865-446c-9640-3e83af089f0e" />
 <img width="696" height="615" alt="image" src="https://github.com/user-attachments/assets/917a9120-1469-49c8-be7e-a46c284108d6" />
 <img width="700" height="619" alt="image" src="https://github.com/user-attachments/assets/f60dbce5-5841-4ac3-bedc-c13957c98639" />
@@ -68,7 +66,7 @@ Neste site entrando na sala NMAP, simulamos o hack de uma máquina alvo em um am
 <img width="644" height="342" alt="image" src="https://github.com/user-attachments/assets/ff74566b-4b81-4b2c-a531-2f42f9499e0c" />
 
 ### Task 14: Pratical
-####  Códigos
+####  Codes
 <img width="658" height="298" alt="image" src="https://github.com/user-attachments/assets/ebfa7a42-5608-4dd0-bc8d-2d7b8d6696ff" />
 <img width="678" height="291" alt="image" src="https://github.com/user-attachments/assets/ef0d35a9-aab5-4e02-8297-eb147e82aab8" />
 <img width="1366" height="2775" alt="image" src="https://github.com/user-attachments/assets/23c15016-5e5e-47b4-a639-ae9b117d4bc8" />
