@@ -1,6 +1,6 @@
 # ✨Portfolio
 
-Neste repositório serão listados os exercicios práticos que forem executados durante os laboratórios do Módulo 5_Linux e Cibersegurança
+Neste repositório serão documentados as atividades práticas executadas durante os laboratórios do Módulo 5_Linux e Cibersegurança
 
 ## 🖥️**Sessão 1_Linux e Cibersegurança**
 ### **Introdução ao Linux para Segurança e Comandos de Rede**
