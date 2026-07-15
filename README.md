@@ -88,6 +88,8 @@ Codes
 2. A hora exata do comprometimento (timestamp)
 3. O utilizador afetado
 4. Breve linha temporal do ataque (tentativas falhadas → sucesso)
+Através dos registos obsevados pode-se inferir que o ip x apartir de x horarios teve varias tentativas de acesso, x nao sucedidas e as x horas teve o acesso e a máquina ficou comprometida 
+5. 
 
 
 
