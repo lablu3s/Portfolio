@@ -75,7 +75,19 @@ Nesta plataforma ao entrar na sala NMAP, simulamos o hack de uma máquina alvo e
 <img width="1366" height="1751" alt="image" src="https://github.com/user-attachments/assets/669c1972-b901-46f3-9b97-adf3f20b557b" />
 
 
+## 🖥️**Sessão 2_Linux e Cibersegurança**
+### **Auditoria de Sistemas Linux e Análise Avançada de Logs**
 
+### Objetivo: 
+Durante esta atividade o objetivo principal consiste em atuar como analista forense para determinar a origem e o sucesso de um ataque a um servidor da infraestrutura, com base na análise de logs de autenticação. Utilizando o ambiente virtual TryHackMe, com os laboratórios  Intro to Logs (para compreender a mecânica dos registos do sistema) e o Linux Server Forensics (navegar até à diretoria de logs do servidor comprometido).
+
+### Tarefas:
+Codes
+
+1. O IP do atacante identificado
+2. A hora exata do comprometimento (timestamp)
+3. O utilizador afetado
+4. Breve linha temporal do ataque (tentativas falhadas → sucesso)
 
 
 
