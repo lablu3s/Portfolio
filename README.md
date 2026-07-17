@@ -100,5 +100,6 @@ Através dos registos obsevados pode-se inferir que o ip x apartir de x horarios
 5. 
 
 
-
+## 🖥️**Sessão 3_Linux e Cibersegurança**
+### **Hardening de Redes Linux e Configuração de Firewalls**
 
