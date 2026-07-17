@@ -103,3 +103,8 @@ Através dos registos obsevados pode-se inferir que o ip x apartir de x horarios
 ## 🖥️**Sessão 3_Linux e Cibersegurança**
 ### **Hardening de Redes Linux e Configuração de Firewalls**
 
+<img width="597" height="209" alt="image" src="https://github.com/user-attachments/assets/c1398d63-9808-4fc8-805e-aa59723ea13b" />
+<img width="591" height="210" alt="image" src="https://github.com/user-attachments/assets/db68c432-96c9-4cc2-9c67-437d779ab2a6" />
+
+
+
