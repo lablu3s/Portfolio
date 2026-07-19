@@ -76,7 +76,3 @@ OBS: Como a máquina simulada era nova, ao rodar o comando, inicialmente só apr
 
 <img width="608" height="204" alt="image" src="https://github.com/user-attachments/assets/804108b6-2d6d-4fa8-bfbd-0cc3ffdc46dd" />
 
-## Tryhackme
-Nesta plataforma ao entrar na sala NMAP, simulamos o hack de uma máquina alvo em um ambiente virtual, baseando nos IP's gerados podemos explorar a máquina e rodar analises de segurança. Este módulo é composto por 15 tasks e a sua elaboração está documentada por meio de prints:
-
-### Task 2: Introduction
