@@ -3,7 +3,7 @@
 
 ### Objetivo: 
 Durante esta atividade o objetivo principal consiste no **Mapeamento e análise da superfície de exposição de um servidor alvo na rede local**.
-Assumindo o papel de auditor de sistemas: o objetivo específico é identificar a interface de rede do próprio ambiente, listar os serviços em escuta e, de seguida, mapear um alvo remoto com o Nmap. Utilizando o ambiente virtual KillerCoda Ubuntu Playground, para familiarização com o CLI e o TryHackMe, para aprender mais sobre o Linux e Cibersegurança no **Laboratório Further Nmap**.
+Assumindo o papel de auditor de sistemas: o objetivo específico é identificar a interface de rede do próprio ambiente, listar os serviços em escuta e, de seguida, mapear um alvo remoto com o Nmap. Utilizando o ambiente virtual KillerCoda Ubuntu Playground, para familiarização com o CLI https://killercoda.com/playgrounds/scenario/ubuntu e o TryHackMe, para aprender mais sobre o Linux e Cibersegurança no **Laboratório Further Nmap** https://tryhackme.com/room/furthernmap.
 
 ### Tarefas:
 
