@@ -25,11 +25,11 @@ Mostra quais portas de rede estão abertas e "escutando" (esperando conexões) n
 
 Code `ip a`
 
-<img width="993" height="581" alt="image" src="https://github.com/user-attachments/assets/7e960849-6e0d-4072-bd98-534c3f2db6c3" />
+<img width="946" height="563" alt="image" src="https://github.com/user-attachments/assets/62f1e2d5-149a-4d90-9a26-f2eb069b04f7" />
 
 Code `ss - tuln`
 
-<img width="655" height="515" alt="image" src="https://github.com/user-attachments/assets/0e011593-92b0-4222-80ad-3b2e6651149d" />
+<img width="659" height="540" alt="image" src="https://github.com/user-attachments/assets/c1fe7597-03e7-4efc-9851-af45d4a8ab1b" />
 
 
 Code `nmap -sV -sC <alvo>`
@@ -39,6 +39,7 @@ Code `nmap -sV -sC <alvo>`
 
 -sC: Executa os scripts padrão do Nmap (NSE - Nmap Scripting Engine). Esses scripts automatizam testes de segurança comuns, como verificar vulnerabilidades conhecidas ou coletar informações extras de configuração.
 
+<img width="779" height="460" alt="image" src="https://github.com/user-attachments/assets/116cfe37-d165-4a65-a440-4f061493fffb" />
 
 
 
