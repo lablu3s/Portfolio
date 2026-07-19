@@ -9,13 +9,15 @@ Assumindo o papel de auditor de sistemas: o objetivo específico é identificar 
 
 1. Ambiente Virtual Ubuntu
 
-Code `ip a`
+Comando `ip a`
+
 Mostra todas as interfaces de rede (placas de rede físicas e virtuais) e os endereços IP associados a cada uma delas.
 
 <img width="741" height="318" alt="image" src="https://github.com/user-attachments/assets/559b7bc4-3e4e-4cee-aaf6-2cedf9bda3d4" />
 
 
-Code `ss - tuln`
+Comando `ss - tuln`
+
 Mostra quais portas de rede estão abertas e "escutando" (esperando conexões) no seu próprio sistema.
 
 <img width="1203" height="320" alt="image" src="https://github.com/user-attachments/assets/7ed0fb15-e079-4cd1-ad92-e11b710c1b5c" />
@@ -23,16 +25,16 @@ Mostra quais portas de rede estão abertas e "escutando" (esperando conexões) n
 
 3. Ambiente Virtual Tryhackme
 
-Code `ip a`
+Comando `ip a`
 
 <img width="946" height="563" alt="image" src="https://github.com/user-attachments/assets/62f1e2d5-149a-4d90-9a26-f2eb069b04f7" />
 
-Code `ss - tuln`
+Comando `ss - tuln`
 
 <img width="659" height="540" alt="image" src="https://github.com/user-attachments/assets/c1fe7597-03e7-4efc-9851-af45d4a8ab1b" />
 
 
-Code `nmap -sV -sC <alvo>`
+Comando `nmap -sV -sC <alvo>`
 É um comando de escaneamento de segurança usado para descobrir informações detalhadas sobre um dispositivo alvo na rede.
 
 -sV: Service Version. Tenta identificar exatamente qual serviço e qual versão do software está rodando em cada porta aberta do alvo.
@@ -90,7 +92,9 @@ Este comando serve para exibir a tela de ajuda (help) do Nmap diretamente no ter
 <img width="644" height="342" alt="image" src="https://github.com/user-attachments/assets/ff74566b-4b81-4b2c-a531-2f42f9499e0c" />
 
 ### Task 14: Pratical
-####  Code `ping -c 4 <Ip_Alvo>`
+
+####  Comando `ping -c 4 <Ip_Alvo>`
+
 Este comando serve para testar a conectividade entre a sua máquina e o endereço IP alvo, enviando pacotes de diagnóstico para ver se ele está ativo e respondendo na rede.
 
 ping: É o nome da ferramenta. Ela envia pacotes do tipo ICMP Echo Request. Se o alvo receber e estiver configurado para responder, ele devolve um pacote ICMP Echo Reply.
@@ -99,17 +103,20 @@ ping: É o nome da ferramenta. Ela envia pacotes do tipo ICMP Echo Request. Se o
 
 <img width="621" height="202" alt="image" src="https://github.com/user-attachments/assets/b87e94af-2d78-406e-ad7b-8e0b731cd12c" />
 
-####  Code `nmap -sX -p1-999 <Ip_Alvo>`
+####  Comando `nmap -sX -p1-999 <Ip_Alvo>`
+
 Ele é usado para tentar passar por firewalls simples ou sistemas de detecção que filtram pacotes TCP normais (como o SYN).
 
 <img width="908" height="252" alt="image" src="https://github.com/user-attachments/assets/68282261-1d6f-489f-bc9c-ace9860839b0" />
 
-####  Code `nmap -sS -p1-5000 <Ip_Alvo>`
+####  Comando `nmap -sS -p1-5000 <Ip_Alvo>`
+
 Esse comando realiza um SYN Scan (também conhecido como escaneamento semi-aberto ou furtivo). O Nmap envia um pacote com a flag SYN (pedido de sincronização), simulando o início de uma conexão real. Se a porta estiver aberta, o alvo responde com um pacote SYN/ACK.
 
 <img width="696" height="329" alt="image" src="https://github.com/user-attachments/assets/6a37ce44-5d61-43a9-ae0f-81a7c64aa3ef" />
 
-####  Code `nmap --script=ftp-anon -p21 <Ip_Alvo>`
+####  Comando `nmap --script=ftp-anon -p21 <Ip_Alvo>`
+
 Esse comando serve para verificar especificamente se um servidor permite o acesso anônimo ao serviço de FTP (porta 21). O FTP (File Transfer Protocol) é usado para transferência de arquivos.
 
 <img width="727" height="301" alt="image" src="https://github.com/user-attachments/assets/e4eac431-3893-4213-b9af-16c53b641cf0" />
