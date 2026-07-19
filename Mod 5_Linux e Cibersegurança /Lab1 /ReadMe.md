@@ -90,11 +90,32 @@ Este comando serve para exibir a tela de ajuda (help) do Nmap diretamente no ter
 <img width="644" height="342" alt="image" src="https://github.com/user-attachments/assets/ff74566b-4b81-4b2c-a531-2f42f9499e0c" />
 
 ### Task 14: Pratical
-####  Codes
-<img width="658" height="298" alt="image" src="https://github.com/user-attachments/assets/ebfa7a42-5608-4dd0-bc8d-2d7b8d6696ff" />
-<img width="678" height="291" alt="image" src="https://github.com/user-attachments/assets/ef0d35a9-aab5-4e02-8297-eb147e82aab8" />
+####  Code `ping -c 4 <Ip_Alvo>`
+Este comando serve para testar a conectividade entre a sua máquina e o endereço IP alvo, enviando pacotes de diagnóstico para ver se ele está ativo e respondendo na rede.
+
+ping: É o nome da ferramenta. Ela envia pacotes do tipo ICMP Echo Request. Se o alvo receber e estiver configurado para responder, ele devolve um pacote ICMP Echo Reply.
+
+-c 4 Essa flag limita o teste a exatamente 4 pacotes e encerra o comando sozinho.
+
+<img width="621" height="202" alt="image" src="https://github.com/user-attachments/assets/b87e94af-2d78-406e-ad7b-8e0b731cd12c" />
+
+####  Code `nmap -sX -p1-999 <Ip_Alvo>`
+Ele é usado para tentar passar por firewalls simples ou sistemas de detecção que filtram pacotes TCP normais (como o SYN).
+
+<img width="908" height="252" alt="image" src="https://github.com/user-attachments/assets/68282261-1d6f-489f-bc9c-ace9860839b0" />
+
+####  Code `nmap -sS -p1-5000 <Ip_Alvo>`
+Esse comando realiza um SYN Scan (também conhecido como escaneamento semi-aberto ou furtivo). O Nmap envia um pacote com a flag SYN (pedido de sincronização), simulando o início de uma conexão real. Se a porta estiver aberta, o alvo responde com um pacote SYN/ACK.
+<img width="696" height="329" alt="image" src="https://github.com/user-attachments/assets/6a37ce44-5d61-43a9-ae0f-81a7c64aa3ef" />
+
+####  Code `nmap --script=ftp-anon -p21 <Ip_Alvo>`
+Esse comando serve para verificar especificamente se um servidor permite o acesso anônimo ao serviço de FTP (porta 21). O FTP (File Transfer Protocol) é usado para transferência de arquivos
+
+<img width="727" height="301" alt="image" src="https://github.com/user-attachments/assets/e4eac431-3893-4213-b9af-16c53b641cf0" />
+
 <img width="1366" height="2775" alt="image" src="https://github.com/user-attachments/assets/23c15016-5e5e-47b4-a639-ae9b117d4bc8" />
 
 ### Task 15: Conclusion
+
 <img width="1366" height="1751" alt="image" src="https://github.com/user-attachments/assets/669c1972-b901-46f3-9b97-adf3f20b557b" />
 
