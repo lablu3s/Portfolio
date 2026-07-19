@@ -2,7 +2,7 @@
 ### **Auditoria de Sistemas Linux e Análise Avançada de Logs**
 
 ### Objetivo: 
-Durante esta atividade o objetivo principal consiste em atuar como analista forense para determinar a origem e o sucesso de um ataque a um servidor da infraestrutura, com base na análise de logs de autenticação. Utilizando o ambiente virtual TryHackMe, com os laboratórios  Intro to Logs (para compreender a mecânica dos registos do sistema) e o Linux Server Forensics (navegar até à diretoria de logs do servidor comprometido).
+Durante esta atividade o objetivo principal consiste em atuar como analista forense para determinar a origem e o sucesso de um ataque a um servidor da infraestrutura, com base na análise de logs de autenticação. Utilizando o ambiente virtual TryHackMe, com os laboratórios  Intro to Logs (para compreender a mecânica dos registos do sistema) https://tryhackme.com/room/introtologs e o Linux Server Forensics (navegar até à diretoria de logs do servidor comprometido) https://tryhackme.com/room/linuxserverforensics.
 
 
 ### Comando `ssh <User>@<IP_Alvo>`
