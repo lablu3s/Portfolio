@@ -7,7 +7,7 @@ Durante esta atividade o objetivo principal consiste em atuar como analista fore
 
 ### Comando `ssh <User>@<IP_Alvo>`
 
-Este comando serve para aceder a uma máquina remotamente, utilizando as suas credênciais, o user, o IP e o password.
+Esse comando serve para iniciar uma conexão remota criptografada com outro computador ou servidor na rede utilizando o protocolo SSH (Secure Shell). Utilizam-se as credênciais do alvo, o user, o IP e o password.
 
 <img width="553" height="137" alt="image" src="https://github.com/user-attachments/assets/bfec0b30-342f-412e-a3c5-3a2ce8fe6115" />
 <img width="621" height="374" alt="image" src="https://github.com/user-attachments/assets/b67fa5c0-8bca-464f-82b9-585baa6d572f" />
