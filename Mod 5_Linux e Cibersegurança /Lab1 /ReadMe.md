@@ -110,7 +110,7 @@ Esse comando realiza um SYN Scan (também conhecido como escaneamento semi-abert
 <img width="696" height="329" alt="image" src="https://github.com/user-attachments/assets/6a37ce44-5d61-43a9-ae0f-81a7c64aa3ef" />
 
 ####  Code `nmap --script=ftp-anon -p21 <Ip_Alvo>`
-Esse comando serve para verificar especificamente se um servidor permite o acesso anônimo ao serviço de FTP (porta 21). O FTP (File Transfer Protocol) é usado para transferência de arquivos
+Esse comando serve para verificar especificamente se um servidor permite o acesso anônimo ao serviço de FTP (porta 21). O FTP (File Transfer Protocol) é usado para transferência de arquivos.
 
 <img width="727" height="301" alt="image" src="https://github.com/user-attachments/assets/e4eac431-3893-4213-b9af-16c53b641cf0" />
 
