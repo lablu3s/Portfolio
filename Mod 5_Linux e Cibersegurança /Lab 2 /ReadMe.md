@@ -5,7 +5,7 @@
 Durante esta atividade o objetivo principal consiste em atuar como analista forense para determinar a origem e o sucesso de um ataque a um servidor da infraestrutura, com base na análise de logs de autenticação. Utilizando o ambiente virtual TryHackMe, com os laboratórios  Intro to Logs (para compreender a mecânica dos registos do sistema) e o Linux Server Forensics (navegar até à diretoria de logs do servidor comprometido).
 
 
-### Code `ssh <User>@<IP_Alvo>`
+### Comando `ssh <User>@<IP_Alvo>`
 
 Este comando serve para aceder a uma máquina remotamente, utilizando as suas credênciais, o user, o IP e o password.
 
@@ -13,31 +13,31 @@ Este comando serve para aceder a uma máquina remotamente, utilizando as suas cr
 <img width="621" height="374" alt="image" src="https://github.com/user-attachments/assets/b67fa5c0-8bca-464f-82b9-585baa6d572f" />
 <img width="685" height="418" alt="image" src="https://github.com/user-attachments/assets/a3d24099-e009-44bf-83b0-7d2a8f04f0e7" />
 
-### Code `cd /var/log/` e Code `ls -la`
+### Comando `cd /var/log/` e Code `ls -la`
 
 O primeiro comando serve para mudar o seu diretório atual de trabalho para a pasta /var/log/ no Linux. O segundo comando serve para listar detalhadamente todos os arquivos e pastas que estão dentro do diretório onde você se encontra no momento.
 
 <img width="704" height="520" alt="image" src="https://github.com/user-attachments/assets/9c739cd8-2a2d-48b9-bd5a-39180e62cec9" />
 
-### Code `grep "Failed password" auth.log`
+### Comando `grep "Failed password" auth.log`
 
 Esse comando serve para filtrar o arquivo de log e mostrar todas as tentativas de login que falharam por senha incorreta no sistema.
 
 <img width="978" height="184" alt="image" src="https://github.com/user-attachments/assets/a0c9f7a0-22fd-4a47-8219-24658203bfa4" />
 
-### Code `grep "Failed password" auth.log | awk '{print $11}' | sort | uniq -c | sort -nr`
+### Comando `grep "Failed password" auth.log | awk '{print $11}' | sort | uniq -c | sort -nr`
 
 Esse comando serve para criar um ranking dos endereços IP que mais erraram senhas, mostrando a quantidade exata de tentativas fracassadas de cada um, ordenadas do maior para o menor.
 
 <img width="980" height="114" alt="image" src="https://github.com/user-attachments/assets/955c541a-4608-4616-800a-338d88f38d9b" />
 
-### Code `grep -E "Accepted password|Accepted publickey" auth.log`
+### Comando `grep -E "Accepted password|Accepted publickey" auth.log`
 
 Esse comando serve para filtrar o arquivo de log e mostrar todas as tentativas de login que foram bem-sucedidas (sucessos de autenticação) no sistema.
 
 <img width="889" height="106" alt="image" src="https://github.com/user-attachments/assets/b2afb873-6f53-4802-8d1e-6134b7cfafc3" />
 
-### Code `grep -E "Failed password|Accepted" auth.log`
+### Comando `grep -E "Failed password|Accepted" auth.log`
 
 Esse comando serve para consolidar a linha do tempo completa de acessos por SSH, mostrando na tela tanto as tentativas que falharam quanto os logins que deram certo.
 
