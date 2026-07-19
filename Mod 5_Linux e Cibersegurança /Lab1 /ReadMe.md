@@ -53,7 +53,7 @@ Nesta plataforma ao entrar na sala NMAP, simulamos o hack de uma máquina alvo e
 
 ### Task 3: Nmap Switches
 
-#### Code `nmap -h`
+#### Comando `nmap -h`
 Este comando serve para exibir a tela de ajuda (help) do Nmap diretamente no terminal. Utilizando o output deste comando na linha de comando, vai-se resolvendo as tasks do laboratório.
 
 <img width="642" height="567" alt="image" src="https://github.com/user-attachments/assets/6e30e98f-0865-446c-9640-3e83af089f0e" />
