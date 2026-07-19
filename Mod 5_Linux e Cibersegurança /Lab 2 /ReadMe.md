@@ -13,7 +13,7 @@ Esse comando serve para iniciar uma conexão remota criptografada com outro comp
 <img width="621" height="374" alt="image" src="https://github.com/user-attachments/assets/b67fa5c0-8bca-464f-82b9-585baa6d572f" />
 <img width="685" height="418" alt="image" src="https://github.com/user-attachments/assets/a3d24099-e009-44bf-83b0-7d2a8f04f0e7" />
 
-### Comando `cd /var/log/` e Code `ls -la`
+### Comando `cd /var/log/` e Comando `ls -la`
 
 O primeiro comando serve para mudar o seu diretório atual de trabalho para a pasta /var/log/ no Linux. O segundo comando serve para listar detalhadamente todos os arquivos e pastas que estão dentro do diretório onde você se encontra no momento.
 
