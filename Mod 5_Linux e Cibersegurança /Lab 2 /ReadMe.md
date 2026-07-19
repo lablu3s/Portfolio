@@ -50,6 +50,8 @@ Esse comando serve para consolidar a linha do tempo completa de acessos por SSH,
 
 O IP do atacante é o mesmo IP que nós estamos utilizado para acessar a máquina do Fred, sendo o IP 10.129.149.182.
 
+<img width="1067" height="403" alt="image" src="https://github.com/user-attachments/assets/9ca04a28-bdd7-40db-ae4e-02309a25dc64" />
+
 <img width="889" height="106" alt="image" src="https://github.com/user-attachments/assets/b2afb873-6f53-4802-8d1e-6134b7cfafc3" />
 
 2. A hora exata do comprometimento (timestamp)
