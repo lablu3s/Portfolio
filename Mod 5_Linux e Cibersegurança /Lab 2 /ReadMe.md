@@ -48,7 +48,7 @@ Esse comando serve para consolidar a linha do tempo completa de acessos por SSH,
 
 1. O IP do atacante identificado
 
-O IP do atacante é o mesmo IP que nós estamos utilizado para acessar a máquina do Fred, sendo o IP 10.129.149.182.
+O IP do atacante é o mesmo IP que nós estamos utilizado para acessar à máquina do Fred, sendo o IP 10.129.149.182.
 
 <img width="1067" height="403" alt="image" src="https://github.com/user-attachments/assets/9ca04a28-bdd7-40db-ae4e-02309a25dc64" />
 
@@ -56,7 +56,7 @@ O IP do atacante é o mesmo IP que nós estamos utilizado para acessar a máquin
 
 2. A hora exata do comprometimento (timestamp)
 
-Tendo em conta o primeiro acesso a máquina do Fred, Jul 17 20:36:29.
+Tendo em conta o primeiro acesso à máquina do Fred, Jul 17 20:36:29.
 
 <img width="889" height="106" alt="image" src="https://github.com/user-attachments/assets/b2afb873-6f53-4802-8d1e-6134b7cfafc3" />
 
@@ -70,11 +70,11 @@ O utilizador afetado foi a máquina simulada do Fred com o IP 10.129.159.43.
 
 4. Breve linha temporal do ataque (tentativas falhadas → sucesso)
 
-Através do comando `grep -E "Failed password|Accepted" auth.log` e da análise dos registros observados, pode-se inferir que o IP atacante foi o 10.129.149.182. Nos horários Jul 17 21:14:03 e Jul 17 21:14:24, teve duas tentativas de acesso não sucedidas e a Jul 21:16:39 teve sucesso no acesso e a máquina ficou comprometida.
+Através do comando `grep -E "Failed password|Accepted" auth.log` e da análise dos registros observados, pode-se inferir que o IP atacante foi o 10.129.149.182. Nos horários Jul 17 21:14:03 e Jul 17 21:14:24, tiveram duas tentativas de acesso não sucedidas e a Jul 21:16:39 teve sucesso no acesso e a máquina ficou comprometida.
 
 <img width="978" height="174" alt="image" src="https://github.com/user-attachments/assets/830c8738-c02d-4a5b-a473-2060c751c689" />
 
-OBS: Como a máquina simulada era nova, ao rodar o comando, inicialmente só apresentava o acesso que nós fizemos. Contudo para testar melhor esta funcionalidade foram feitas tentativas falhadas de acesso, como pode ser observado no print.
+OBS: Como a máquina simulada era nova, ao rodar o comando, inicialmente só apresentava o acesso que nós fizemos. Contudo para testar melhor esta funcionalidade foram feitas tentativas falhadas de acesso, como pode ser observado no print abaixo.
 
 <img width="608" height="204" alt="image" src="https://github.com/user-attachments/assets/804108b6-2d6d-4fa8-bfbd-0cc3ffdc46dd" />
 
