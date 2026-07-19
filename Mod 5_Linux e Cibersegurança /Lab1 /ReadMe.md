@@ -7,34 +7,35 @@ Assumindo o papel de auditor de sistemas: o objetivo específico é identificar 
 
 ### Tarefas:
 
-1. Ambiente Virtual Ubuntu
+#### 1. Ambiente Virtual Ubuntu
 
-Comando `ip a`
+#### Comando `ip a`
 
 Mostra todas as interfaces de rede (placas de rede físicas e virtuais) e os endereços IP associados a cada uma delas.
 
 <img width="741" height="318" alt="image" src="https://github.com/user-attachments/assets/559b7bc4-3e4e-4cee-aaf6-2cedf9bda3d4" />
 
 
-Comando `ss - tuln`
+#### Comando `ss - tuln`
 
 Mostra quais portas de rede estão abertas e "escutando" (esperando conexões) no seu próprio sistema.
 
 <img width="1203" height="320" alt="image" src="https://github.com/user-attachments/assets/7ed0fb15-e079-4cd1-ad92-e11b710c1b5c" />
 
 
-3. Ambiente Virtual Tryhackme
+#### 3. Ambiente Virtual Tryhackme
 
-Comando `ip a`
+#### Comando `ip a`
 
 <img width="946" height="563" alt="image" src="https://github.com/user-attachments/assets/62f1e2d5-149a-4d90-9a26-f2eb069b04f7" />
 
-Comando `ss - tuln`
+#### Comando `ss - tuln`
 
 <img width="659" height="540" alt="image" src="https://github.com/user-attachments/assets/c1fe7597-03e7-4efc-9851-af45d4a8ab1b" />
 
 
-Comando `nmap -sV -sC <alvo>`
+#### Comando `nmap -sV -sC <alvo>`
+
 É um comando de escaneamento de segurança usado para descobrir informações detalhadas sobre um dispositivo alvo na rede.
 
 -sV: Service Version. Tenta identificar exatamente qual serviço e qual versão do software está rodando em cada porta aberta do alvo.
