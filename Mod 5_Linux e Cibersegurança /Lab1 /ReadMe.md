@@ -106,6 +106,7 @@ Ele é usado para tentar passar por firewalls simples ou sistemas de detecção 
 
 ####  Code `nmap -sS -p1-5000 <Ip_Alvo>`
 Esse comando realiza um SYN Scan (também conhecido como escaneamento semi-aberto ou furtivo). O Nmap envia um pacote com a flag SYN (pedido de sincronização), simulando o início de uma conexão real. Se a porta estiver aberta, o alvo responde com um pacote SYN/ACK.
+
 <img width="696" height="329" alt="image" src="https://github.com/user-attachments/assets/6a37ce44-5d61-43a9-ae0f-81a7c64aa3ef" />
 
 ####  Code `nmap --script=ftp-anon -p21 <Ip_Alvo>`
