@@ -1,5 +1,24 @@
+## 🖥️**Sessão 4_Linux e Cibersegurança**
+### **Gestão Segura de Acessos Remotos SSH em Linux**
+
+### Objetivo: 
+Durante esta atividade o objetivo principal consiste na **Proteger o canal de gestão remota do servidor Ubuntu**, eliminando a autenticação tradicional por password e migrando para autenticação criptográfica. Utilizando o Ambiente Virtual TryHackMe — Linux Strength Training (gratuito): https://tryhackme.com/room/linuxstrengthtraining.
+
+### Tarefas:
+
+#### 1. Criar um novo utilizador de teste no sistema
+#### Comando `sudo adduser <user id>`
 
 <img width="865" height="515" alt="image" src="https://github.com/user-attachments/assets/0b0a380b-6a25-4377-89ec-e29e381cff91" />
+
+#### 2. Configurar o ambiente para aceitar chaves
+#### Comando ``
+
+<img width="758" height="160" alt="image" src="https://github.com/user-attachments/assets/a4dc9437-a224-4109-969b-dc8020f3bb72" />
+
+#### 3. Gerar um par de chaves Ed25519 robustas
+#### Comando `ssh-keygen -t ed25519`
+
 <img width="778" height="533" alt="image" src="https://github.com/user-attachments/assets/f1036184-8cfc-44a2-8eb2-442d285c2cee" />
 <img width="898" height="444" alt="image" src="https://github.com/user-attachments/assets/a9f7bfc8-0474-42bc-b777-e17b906e9d4e" />
 <img width="884" height="575" alt="image" src="https://github.com/user-attachments/assets/9cf49b63-a3da-4962-977c-02a3e38df875" />
@@ -23,4 +42,4 @@
 <img width="989" height="541" alt="image" src="https://github.com/user-attachments/assets/2334b970-3c77-48f9-835d-b6e5502f70a9" />
 <img width="882" height="552" alt="image" src="https://github.com/user-attachments/assets/af54f3d3-4cdf-4542-bb9e-c702198fd62d" />
 <img width="717" height="199" alt="image" src="https://github.com/user-attachments/assets/d29545fb-3f77-48cb-a2f7-1acb8a9ddb14" />
-<img width="758" height="160" alt="image" src="https://github.com/user-attachments/assets/a4dc9437-a224-4109-969b-dc8020f3bb72" />
+
