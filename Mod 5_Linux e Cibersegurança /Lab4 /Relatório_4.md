@@ -6,24 +6,79 @@ Durante esta atividade o objetivo principal consiste na **Proteger o canal de ge
 
 ### Tarefas:
 
-#### 1. Criar um novo utilizador de teste no sistema
+### 1. Criar um novo utilizador de teste no sistema
+
 #### Comando `sudo adduser <user id>`
+
+Cria um novo usuário no sistema chamado blue (com direito a pasta home, criação de senha, etc.).
 
 <img width="865" height="515" alt="image" src="https://github.com/user-attachments/assets/0b0a380b-6a25-4377-89ec-e29e381cff91" />
 
-#### 2. Configurar o ambiente para aceitar chaves
-#### Comando ``
+### 2. Configurar o ambiente para aceitar chaves
+
+Estes comandos preparam a pasta SSH do usuário blue para que ele possa se conectar sem senha, usando chaves de criptografia:
+
+#### Comando `sudo mkdir -p /home/<user id>/.ssh`
+
+Cria o diretório oculto .ssh na pasta do usuário blue. A opção -p garante que o diretório só é criado se ainda não existir (sem gerar erro).
+
+#### Comando `sudo touch /home/<user id>/.ssh/authorized_keys`
+
+Cria o arquivo em branco authorized_keys, onde ficarão salvas as chaves públicas autorizadas a acessar esse usuário.
+
+#### Comando `sudo chown -R <user id>:<user id> /home/<user id>/.ssh` 
+
+Altera o dono (owner) e o grupo da pasta .ssh e de tudo dentro dela (devido ao -R, recursivo) para esse usuário.
+
+#### Comando `sudo chmod 700 /home/<user id>/.ssh`
+
+Define as permissões do diretório .ssh para 700 (leitura, escrita e execução apenas para o dono blue; nenhum outro usuário pode acessar).
+
+#### Comando `sudo chmod 600 /home/<user id>/.ssh/authorized_keys`
+
+Define as permissões do arquivo authorized_keys para 600 (leitura e escrita apenas para o dono <user id>).
 
 <img width="758" height="160" alt="image" src="https://github.com/user-attachments/assets/a4dc9437-a224-4109-969b-dc8020f3bb72" />
 
-#### 3. Gerar um par de chaves Ed25519 robustas
+### 3. Gerar um par de chaves Ed25519 robustas
+
 #### Comando `ssh-keygen -t ed25519`
 
+Gera um novo par de chaves SSH (uma chave pública e uma privada) usando o algoritmo Ed25519, que é extremamente seguro, leve e moderno.
+(A chave pública gerada por esse comando normalmente é colada dentro do arquivo authorized_keys configurado nos passos anteriores).
+
 <img width="778" height="533" alt="image" src="https://github.com/user-attachments/assets/f1036184-8cfc-44a2-8eb2-442d285c2cee" />
+
+### 4. Transferir a chave pública para o servidor alvo
+
+#### Comando `ssh-copy-id <user id>@<IP_DO_SERVIDOR>`
+
+Envia automaticamente a sua chave pública (gerada anteriormente) para o servidor remoto no IP 10.129.155.241, sob o usuário blue. O comando se encarrega de colar o conteúdo no arquivo authorized_keys de lá, permitindo que você se conecte no servidor sem precisar digitar senha.
+
 <img width="898" height="444" alt="image" src="https://github.com/user-attachments/assets/a9f7bfc8-0474-42bc-b777-e17b906e9d4e" />
-<img width="884" height="575" alt="image" src="https://github.com/user-attachments/assets/9cf49b63-a3da-4962-977c-02a3e38df875" />
+
+### 5. Editar o ficheiro de configuração do daemon SSH com privilégios de superutilizador
+
+#### Comando `sudo nano /etc/ssh/sshd_config`
+
+Abre o editor de texto nano com privilégios de administrador (sudo) para alterar o arquivo principal de configurações do servidor SSH (sshd_config).
+
 <img width="625" height="137" alt="image" src="https://github.com/user-attachments/assets/1da5e53f-ceef-4d2a-ab15-c4d5f1c4b11f" />
-<img width="857" height="567" alt="image" src="https://github.com/user-attachments/assets/eb20d197-03ff-4978-8c40-1c4f7c30d320" />
+
+<img width="884" height="575" alt="image" src="https://github.com/user-attachments/assets/9cf49b63-a3da-4962-977c-02a3e38df875" />
+
+Essas são as linhas adicionadas ou alteradas dentro do arquivo /etc/ssh/sshd_config para aumentar a segurança do servidor:
+
+PermitRootLogin no: Proíbe o usuário administrador principal (root) de fazer login diretamente via SSH. Isso obriga qualquer administrador a logar primeiro com uma conta comum (como blue) e só então usar sudo, aumentando o rastreamento de ações.
+
+PasswordAuthentication no: Desativa o login via senha convencional. A partir deste momento, apenas conexões usando chaves SSH autorizadas serão permitidas, bloqueando ataques do tipo força bruta (brute force).
+
+Port 2222: Altera a porta padrão do serviço SSH de 22 para 2222. Isso reduz significativamente varreduras automatizadas e ataques de bots pela internet, que costumam focar apenas na porta padrão.
+
+<img width="661" height="277" alt="image" src="https://github.com/user-attachments/assets/e2d249f1-e3d3-4862-a13e-d648b2b6e657" />
+<img width="651" height="428" alt="image" src="https://github.com/user-attachments/assets/44ae3caa-0bb6-43d0-841f-0a5c84f5611f" />
+<img width="660" height="410" alt="image" src="https://github.com/user-attachments/assets/c6178936-ab14-4aa8-8fe5-50adcb116ae4" />
+
 <img width="577" height="162" alt="image" src="https://github.com/user-attachments/assets/10f6c863-df7f-413b-9c8a-52b644cda2bb" />
 <img width="610" height="194" alt="image" src="https://github.com/user-attachments/assets/bfaac929-8496-4561-9925-222e9756a711" />
 <img width="639" height="190" alt="image" src="https://github.com/user-attachments/assets/e01e9b46-eebd-4a88-8262-7240350c6d74" />
@@ -34,9 +89,7 @@ Durante esta atividade o objetivo principal consiste na **Proteger o canal de ge
 
 <img width="981" height="378" alt="image" src="https://github.com/user-attachments/assets/d21ead00-2aba-4289-a8ee-822a338add07" />
 <img width="868" height="557" alt="image" src="https://github.com/user-attachments/assets/33485110-596d-47bc-a50b-13a9d8a6eeaf" />
-<img width="661" height="277" alt="image" src="https://github.com/user-attachments/assets/e2d249f1-e3d3-4862-a13e-d648b2b6e657" />
-<img width="651" height="428" alt="image" src="https://github.com/user-attachments/assets/44ae3caa-0bb6-43d0-841f-0a5c84f5611f" />
-<img width="660" height="410" alt="image" src="https://github.com/user-attachments/assets/c6178936-ab14-4aa8-8fe5-50adcb116ae4" />
+
 <img width="760" height="564" alt="image" src="https://github.com/user-attachments/assets/88a45aea-1b55-4d1b-b770-c42e96e6867a" />
 <img width="845" height="551" alt="image" src="https://github.com/user-attachments/assets/f78677ae-e173-44f9-ae5d-efa12360ac73" />
 <img width="989" height="541" alt="image" src="https://github.com/user-attachments/assets/2334b970-3c77-48f9-835d-b6e5502f70a9" />
