@@ -57,6 +57,12 @@ Envia automaticamente a sua chave pública (gerada anteriormente) para o servido
 
 <img width="898" height="444" alt="image" src="https://github.com/user-attachments/assets/a9f7bfc8-0474-42bc-b777-e17b906e9d4e" />
 
+#### Comando `ssh-copy-id -i <caminho_da_chave> <user_id>@<IP_DO_SERVIDOR>`
+
+Este comando serve para enviar explicitamente uma chave pública específica para o servidor remoto. Trata-se de uma versão mais detalhada/específica do ssh-copy-id.
+
+<img width="981" height="378" alt="image" src="https://github.com/user-attachments/assets/d21ead00-2aba-4289-a8ee-822a338add07" />
+
 ### 5. Editar o ficheiro de configuração do daemon SSH com privilégios de superutilizador
 
 #### Comando `sudo nano /etc/ssh/sshd_config`
@@ -107,19 +113,7 @@ Exibe o status atual do serviço SSH. Serve para confirmar se ele está ativo e 
 <img width="845" height="551" alt="image" src="https://github.com/user-attachments/assets/f78677ae-e173-44f9-ae5d-efa12360ac73" />
 <img width="989" height="541" alt="image" src="https://github.com/user-attachments/assets/2334b970-3c77-48f9-835d-b6e5502f70a9" />
 
-<img width="577" height="162" alt="image" src="https://github.com/user-attachments/assets/10f6c863-df7f-413b-9c8a-52b644cda2bb" />
-<img width="610" height="194" alt="image" src="https://github.com/user-attachments/assets/bfaac929-8496-4561-9925-222e9756a711" />
-<img width="639" height="190" alt="image" src="https://github.com/user-attachments/assets/e01e9b46-eebd-4a88-8262-7240350c6d74" />
-<img width="894" height="535" alt="image" src="https://github.com/user-attachments/assets/471bdc32-f132-47c9-a947-3c669597fad8" />
-
-<img width="892" height="385" alt="image" src="https://github.com/user-attachments/assets/1ead5741-f5c2-446c-85f4-0aba40f803d0" />
-<img width="889" height="253" alt="image" src="https://github.com/user-attachments/assets/36b894c7-f2a0-4b68-bf29-a3bb18de06c8" />
-<img width="852" height="278" alt="image" src="https://github.com/user-attachments/assets/da8a4ac3-e7bc-4bf2-b621-702dafc04dfb" />
-
-<img width="981" height="378" alt="image" src="https://github.com/user-attachments/assets/d21ead00-2aba-4289-a8ee-822a338add07" />
-<img width="868" height="557" alt="image" src="https://github.com/user-attachments/assets/33485110-596d-47bc-a50b-13a9d8a6eeaf" />
-
-### 6. Num novo terminal, testar o acesso via chave privada e nova porta
+### 7. Num novo terminal, testar o acesso via chave privada e nova porta
 
 Este comando serve para se conectar remotamente ao servidor aplicando todas as regras de segurança recém-criadas:
 
