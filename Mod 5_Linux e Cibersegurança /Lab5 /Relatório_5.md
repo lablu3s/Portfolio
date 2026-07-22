@@ -207,4 +207,6 @@ Suggestions (50):
 
 <img width="609" height="85" alt="image" src="https://github.com/user-attachments/assets/d3dd7c0c-7e1e-4f34-8376-846182a1886c" />
 
+### 2.  Medidas corretivas propostas
 
+-Analisar as sugestoes de melhoria, pq da sugestao, o que ela faz e quais os riscos a sua ausencia acarreta. Depois mostrar como resolver esta medida e explicar qual a sua relevancia para o sistema.
