@@ -1,14 +1,16 @@
 ## 🖥️**Sessão 5_Linux e Cibersegurança**
-### **Gestão Segura de Acessos Remotos SSH em Linux**
+### **Análise de Vulnerabilidades em Linux e Ferramentas de Auditoria**
 
 ### Objetivo: 
-Durante esta atividade o objetivo principal consiste na **Proteger o canal de gestão remota do servidor Ubuntu**, eliminando a autenticação tradicional por password e migrando para autenticação criptográfica. Utilizando o Ambiente Virtual TryHackMe — Linux Strength Training (gratuito): https://tryhackme.com/room/linuxstrengthtraining.
+Durante esta atividade o objetivo principal consiste na **Execução de um exame de auditoria técnica automatizada** para identificar desvios de
+conformidade em relação aos standards de segurança recomendados (CIS Benchmarks). Utilizando o Ambiente Virtual KillerCoda Ubuntu Playground: https://killercoda.com/playgrounds/scenario/ubuntu ou o Ambiente Virtual TryHackMe — Linux Process Analysis (gratuito): https://tryhackme.com/room/linuxprocessanalysis. Para este laboratório foi utilizado o KillerCoda Ubuntu Playground.
 
 ### Tarefas:
 
-### 1. Criar um novo utilizador de teste no sistema
+### 1. Atualizar a árvore de pacotes e instalar o Lynis
 
-#### Comando `sudo adduser <user_id>`
+#### Comando `sudo apt update && sudo apt install lynis -y`
+
 
 <img width="797" height="625" alt="image" src="https://github.com/user-attachments/assets/ec3425ab-c0e5-4ba9-a549-de33bc3d2e52" />
 <img width="897" height="571" alt="image" src="https://github.com/user-attachments/assets/f70ad91a-bc91-4f0d-8509-cb5a20e0ab52" />
