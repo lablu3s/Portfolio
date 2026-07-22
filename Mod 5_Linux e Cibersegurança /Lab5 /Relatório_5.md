@@ -209,4 +209,4 @@ Suggestions (50):
 
 ### 2.  Medidas corretivas propostas
 
--Analisar as sugestoes de melhoria, pq da sugestao, o que ela faz e quais os riscos a sua ausencia acarreta. Depois mostrar como resolver esta medida e explicar qual a sua relevancia para o sistema.
+-Analisar as sugestoes de melhoria, pq da sugestao, o que ela faz e quais os riscos a sua ausencia acarreta. Depois mostrar como resolver esta medida e explicar qual a sua relevancia para o sistema. Existem alternativas? Se Sim elaborar sobre.
