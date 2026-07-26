@@ -57,6 +57,7 @@ Corrigir a configuração do SSH de acordo com as boas práticas (desativar logi
 
 <img width="497" height="56" alt="image" src="https://github.com/user-attachments/assets/ca5ca62e-152c-4ffa-ba69-200cd4f8442c" />
 
+
 ```
  GNU nano 4.8                          /etc/ssh/sshd_config                           Modified  
 #       $OpenBSD: sshd_config,v 1.103 2018/04/09 20:41:22 tj Exp $
@@ -190,8 +191,10 @@ Subsystem       sftp    /usr/lib/openssh/sftp-server
 #       ForceCommand cvs server
 
 ```
-<img width="772" height="404" alt="image" src="https://github.com/user-attachments/assets/fadea09c-be38-4c19-ad73-dc4118769edf" />
 <img width="878" height="443" alt="image" src="https://github.com/user-attachments/assets/5b94bdb1-1f2f-430e-a9a0-30b43e9daa6a" />
+
+<img width="669" height="71" alt="image" src="https://github.com/user-attachments/assets/991dae66-630f-4a1f-bba3-496d640c18a1" />
+<img width="772" height="404" alt="image" src="https://github.com/user-attachments/assets/fadea09c-be38-4c19-ad73-dc4118769edf" />
 <img width="883" height="117" alt="image" src="https://github.com/user-attachments/assets/8d25ea0a-00a5-4956-8a45-aca1168e1055" />
 
 Aplicar patches de segurança relevantes identificados durante a triagem.
