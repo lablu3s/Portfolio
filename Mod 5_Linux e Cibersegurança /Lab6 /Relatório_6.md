@@ -208,14 +208,10 @@ Aplicar patches de segurança relevantes identificados durante a triagem.
 
 Correr a ferramenta Lynis para atestar a melhoria da postura de segurança global do host.
 
-
-### Conclusão
-
-
-
 #### Comando `sudo lynis audit system`
 
 
+### Conclusão
 
 
 
