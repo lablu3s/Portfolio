@@ -234,17 +234,62 @@ Exibe apenas os alertas de vulnerabilidade ou problemas de configuração graves
 Baseando nas sugestões propostas pelo relatório do **Lynis**, para aumentar o hardening do sistema foram escolhidas duas (2) melhorias, uma na área de **Authentication** e outra na área de **Filesystem**.
 
 #### Authentication:
-✔️
-✔️
+✔️ Definir Data de Expiração para Contas de Usuário (AUTH-9282)
+
+<img width="647" height="46" alt="image" src="https://github.com/user-attachments/assets/1aade458-ef77-4164-a45e-04dbb8876cf1" />
+
+1. **Análise e Impacto**
+
+**Por que da sugestão e o que ela faz:** O Lynis detectou contas locais com senha que não possuem uma data de expiração programada (expire date). O controle define um limite de validade de tempo de vida para contas de acesso.
+
+**Riscos da ausência:** Contas antigas de usuários, prestadores de serviço ou contas de teste temporárias podem ser esquecidas no sistema. Se um atacante obtiver as credenciais de uma conta inativa que nunca expira, ele manterá o acesso indefinidamente.
+
+2. **Como Resolver**
+
+Para definir uma data de expiração para um usuário existente (ex: expirar em 31/12/2026):
+
+```
+sudo chage -E 2026-12-31 nome_do_usuario
+```
+
+Para verificar a situação atual de expiração da conta:
+
+```
+sudo chage -l nome_do_usuario
+```
+
+3. **Relevância para o sistema**
+
+Gestão do ciclo de vida de identidades e prevenção contra uso não autorizado de contas dormentes/órfãs (stale accounts).
+
 #### Filesystem:
 ✔️ Restringir Permissões de Arquivos Sensíveis (FILE-7524)
 
 <img width="469" height="80" alt="image" src="https://github.com/user-attachments/assets/698d0cd2-4af6-4159-8888-2ea0ad9924f1" />
 
--Analisar as sugestoes de melhoria, pq da sugestao, o que ela faz e quais os riscos a sua ausencia acarreta. Depois mostrar como resolver esta medida e explicar qual a sua relevancia para o sistema. Existem alternativas? Se Sim elaborar sobre.
+1. **Análise e Impacto**
 
-<img width="590" height="55" alt="image" src="https://github.com/user-attachments/assets/3300ae0d-5d2b-413a-865f-1eb13fb10bf5" />
-<img width="647" height="46" alt="image" src="https://github.com/user-attachments/assets/1aade458-ef77-4164-a45e-04dbb8876cf1" />
+**Por que da sugestão e o que ela faz:** O Lynis identifica arquivos cruciais do sistema (como componentes em /etc/, binários do sistema ou scripts de inicialização) que possuem permissões de escrita ou leitura excessivamente permissivas para outros usuários (world-writable ou group-writable).
 
+**Riscos da ausência:** Modificação indevida de configurações essenciais, alteração de binaries executados pelo root (podendo levar à Escalação de Privilégios) ou leitura não autorizada de segredos do sistema.
 
-<img width="731" height="49" alt="image" src="https://github.com/user-attachments/assets/e130d21a-e983-4034-ad51-d8ae27a735b5" />
+2. **Como Resolver**
+
+Primeiro, verifique exatamente quais arquivos geraram o aviso consultando o log:
+
+```
+grep "FILE-7524" /var/log/lynis.log
+```
+
+Remova as permissões excessivas utilizando o comando chmod nos arquivos apontados no relatório:
+
+```
+sudo chmod o-w /caminho/do/arquivo
+# Ou ajustar para permissões estritas de root, ex: 600 ou 644
+sudo chmod 640 /caminho/do/arquivo
+```
+
+3. **Relevância para o sistema**
+
+Garante a integridade e confidencialidade dos arquivos fundamentais para o funcionamento e a segurança do sistema operacional.
+
