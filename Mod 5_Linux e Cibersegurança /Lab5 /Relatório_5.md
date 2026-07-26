@@ -234,14 +234,17 @@ Exibe apenas os alertas de vulnerabilidade ou problemas de configuração graves
 Baseando nas sugestões propostas pelo relatório do **Lynis**, para aumentar o hardening do sistema foram escolhidas duas (2) melhorias, uma na área de **Authentication** e outra na área de **Filesystem**.
 
 #### Authentication:
-
+✔️
+✔️
 #### Filesystem:
+✔️ Restringir Permissões de Arquivos Sensíveis (FILE-7524)
 
+<img width="469" height="80" alt="image" src="https://github.com/user-attachments/assets/698d0cd2-4af6-4159-8888-2ea0ad9924f1" />
 
 -Analisar as sugestoes de melhoria, pq da sugestao, o que ela faz e quais os riscos a sua ausencia acarreta. Depois mostrar como resolver esta medida e explicar qual a sua relevancia para o sistema. Existem alternativas? Se Sim elaborar sobre.
 
 <img width="590" height="55" alt="image" src="https://github.com/user-attachments/assets/3300ae0d-5d2b-413a-865f-1eb13fb10bf5" />
 <img width="647" height="46" alt="image" src="https://github.com/user-attachments/assets/1aade458-ef77-4164-a45e-04dbb8876cf1" />
 
-<img width="469" height="80" alt="image" src="https://github.com/user-attachments/assets/698d0cd2-4af6-4159-8888-2ea0ad9924f1" />
+
 <img width="731" height="49" alt="image" src="https://github.com/user-attachments/assets/e130d21a-e983-4034-ad51-d8ae27a735b5" />
