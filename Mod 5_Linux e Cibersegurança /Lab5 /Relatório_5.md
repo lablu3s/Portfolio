@@ -11,13 +11,27 @@ conformidade em relação aos standards de segurança recomendados (CIS Benchmar
 
 #### Comando `sudo apt update && sudo apt install lynis -y`
 
+Estes comandos servem para atualiza a lista local de pacotes disponíveis nos repositórios para garantir a versão mais recente e faz o download e a instalação do utilitário Lynis.
 
 <img width="797" height="625" alt="image" src="https://github.com/user-attachments/assets/ec3425ab-c0e5-4ba9-a549-de33bc3d2e52" />
+
+### 2. Iniciar a auditoria completa do sistema operativo
+
+#### Comando `sudo lynis audit system`
+
+Este comando inicia uma verificação detalhada do sistema operacional. Ao final da verificação, o Lynis gera um relatório completo exibindo um índice de segurança (Hardening Index), alertas de possíveis falhas (Warnings/Suggestions) e os arquivos de log gravados para análise posterior.
+
 <img width="897" height="571" alt="image" src="https://github.com/user-attachments/assets/f70ad91a-bc91-4f0d-8509-cb5a20e0ab52" />
+
+#### **Hardening:**
+
 <img width="610" height="391" alt="image" src="https://github.com/user-attachments/assets/ea0821c2-aa03-480b-a19e-55907f706ffe" />
+
+#### **Warnings:**
+
 <img width="621" height="169" alt="image" src="https://github.com/user-attachments/assets/d52179f5-a99c-4c96-bc46-d23de727abb5" />
  
-
+#### **Sugestões:**
 ```
 Suggestions (50):
   ----------------------------
@@ -185,11 +199,6 @@ Suggestions (50):
     - Solution : Install a tool like rkhunter, chkrootkit, OSSEC
       https://cisofy.com/lynis/controls/HRDN-7230/
 ```
-<img width="590" height="55" alt="image" src="https://github.com/user-attachments/assets/3300ae0d-5d2b-413a-865f-1eb13fb10bf5" />
-<img width="647" height="46" alt="image" src="https://github.com/user-attachments/assets/1aade458-ef77-4164-a45e-04dbb8876cf1" />
-
-<img width="469" height="80" alt="image" src="https://github.com/user-attachments/assets/698d0cd2-4af6-4159-8888-2ea0ad9924f1" />
-<img width="731" height="49" alt="image" src="https://github.com/user-attachments/assets/e130d21a-e983-4034-ad51-d8ae27a735b5" />
 
 <img width="518" height="51" alt="image" src="https://github.com/user-attachments/assets/6e26b244-f9ac-4ee1-9e31-5d11ee65ef74" />
 
@@ -210,3 +219,9 @@ Suggestions (50):
 ### 2.  Medidas corretivas propostas
 
 -Analisar as sugestoes de melhoria, pq da sugestao, o que ela faz e quais os riscos a sua ausencia acarreta. Depois mostrar como resolver esta medida e explicar qual a sua relevancia para o sistema. Existem alternativas? Se Sim elaborar sobre.
+
+<img width="590" height="55" alt="image" src="https://github.com/user-attachments/assets/3300ae0d-5d2b-413a-865f-1eb13fb10bf5" />
+<img width="647" height="46" alt="image" src="https://github.com/user-attachments/assets/1aade458-ef77-4164-a45e-04dbb8876cf1" />
+
+<img width="469" height="80" alt="image" src="https://github.com/user-attachments/assets/698d0cd2-4af6-4159-8888-2ea0ad9924f1" />
+<img width="731" height="49" alt="image" src="https://github.com/user-attachments/assets/e130d21a-e983-4034-ad51-d8ae27a735b5" />
