@@ -200,6 +200,7 @@ Subsystem       sftp    /usr/lib/openssh/sftp-server
 <img width="669" height="71" alt="image" src="https://github.com/user-attachments/assets/991dae66-630f-4a1f-bba3-496d640c18a1" />
 <img width="772" height="404" alt="image" src="https://github.com/user-attachments/assets/fadea09c-be38-4c19-ad73-dc4118769edf" />
 <img width="883" height="117" alt="image" src="https://github.com/user-attachments/assets/8d25ea0a-00a5-4956-8a45-aca1168e1055" />
+<img width="602" height="144" alt="image" src="https://github.com/user-attachments/assets/7fa8e86a-d027-4a5e-9fc7-871d004f2f44" />
 
 Aplicar patches de segurança relevantes identificados durante a triagem.
 
