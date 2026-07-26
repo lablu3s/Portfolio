@@ -200,23 +200,43 @@ Suggestions (50):
       https://cisofy.com/lynis/controls/HRDN-7230/
 ```
 
-<img width="518" height="51" alt="image" src="https://github.com/user-attachments/assets/6e26b244-f9ac-4ee1-9e31-5d11ee65ef74" />
+#### Comando `ls -la /var/log/lynis*`
+
+Esse comando serve para listar detalhadamente todos os arquivos de relatório e log do Lynis salvos no diretório /var/log/.
+
+<img width="609" height="85" alt="image" src="https://github.com/user-attachments/assets/d3dd7c0c-7e1e-4f34-8376-846182a1886c" />
+
+#### Comando `less /var/log/lynis-report.dat`
+
+Esse comando serve para visualizar o relatório detalhado gerado pelo Lynis em formato de texto, de forma paginada e navegável.
 
 <img width="424" height="55" alt="image" src="https://github.com/user-attachments/assets/7fd01ff9-2582-4c02-965e-9e353a93c322" />
-
-<img width="518" height="51" alt="image" src="https://github.com/user-attachments/assets/e419955e-3f64-4f72-b7a1-7a80972347e5" />
 
 <img width="1207" height="591" alt="image" src="https://github.com/user-attachments/assets/ddd2037b-40ac-4724-94f1-190842cdc0f6" />
 
 <img width="1207" height="591" alt="image" src="https://github.com/user-attachments/assets/26ba9b66-555e-4a9b-ae7b-45d56e397d77" />
 
+#### Comando `grep ^"suggestion" /var/log/lynis-report.dat`
+
+Exibe todas as sugestões de melhoria registradas pelo Lynis (ex.: dicas para fortalecer políticas de senha, otimizar o SSH ou aplicar boas práticas gerais).
+
 <img width="1217" height="582" alt="image" src="https://github.com/user-attachments/assets/2b4573d3-7c4a-4f15-9bac-a62d0b8c84a1" />
+
+#### Comando `grep ^"warning" /var/log/lynis-report.dat`
+
+Exibe apenas os alertas de vulnerabilidade ou problemas de configuração graves que requerem correção prioritária (ex.: firewall desativado, serviços desatualizados ou vulneráveis).
 
 <img width="710" height="89" alt="image" src="https://github.com/user-attachments/assets/cc500b20-0dbd-466c-955e-a498e1927752" />
 
-<img width="609" height="85" alt="image" src="https://github.com/user-attachments/assets/d3dd7c0c-7e1e-4f34-8376-846182a1886c" />
 
-### 2.  Medidas corretivas propostas
+### 3.  Medidas corretivas propostas
+
+Baseando nas sugestões propostas pelo relatório do **Lynis**, para aumentar o hardening do sistema foram escolhidas duas (2) melhorias, uma na área de **Authentication** e outra na área de **Filesystem**.
+
+#### Authentication:
+
+#### Filesystem:
+
 
 -Analisar as sugestoes de melhoria, pq da sugestao, o que ela faz e quais os riscos a sua ausencia acarreta. Depois mostrar como resolver esta medida e explicar qual a sua relevancia para o sistema. Existem alternativas? Se Sim elaborar sobre.
 
