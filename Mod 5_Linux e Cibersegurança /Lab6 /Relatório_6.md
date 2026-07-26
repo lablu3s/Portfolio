@@ -17,13 +17,17 @@ Identificar quais os portas e serviços ativos que estão expostos desnecessaria
 <img width="819" height="339" alt="image" src="https://github.com/user-attachments/assets/ada678f6-af8b-4074-864c-43c84e44a54a" />
 <img width="738" height="344" alt="image" src="https://github.com/user-attachments/assets/2c6eb774-414e-412c-b167-5c014136a2b8" />
 
+<img width="982" height="371" alt="image" src="https://github.com/user-attachments/assets/66ad6016-3efd-4b31-92e1-a1e24d22c5a8" />
+
 #### 2. Auditoria de Contas
 
 Procurar por utilizadores com permissões excessivas, contas sem palavra-passe associada ou chaves públicas suspeitas em authorized_keys.
 
 #### Comando `sudo cat /etc/shadow | awk -F: '($2==""){print $1}'` e `cat ~/.ssh/authorized_keys`
 <img width="662" height="75" alt="image" src="https://github.com/user-attachments/assets/4515f70b-7a44-46f2-8b90-7c90bb4fcf1b" />
+<img width="864" height="424" alt="image" src="https://github.com/user-attachments/assets/400aadf1-6b9e-4f83-aeb6-bfb5be4ee574" />
 
+<img width="993" height="506" alt="image" src="https://github.com/user-attachments/assets/dd4b94b3-ddc9-403e-91ca-5a23c0ee97af" />
 
 ### Fase 2 — Contenção
 
