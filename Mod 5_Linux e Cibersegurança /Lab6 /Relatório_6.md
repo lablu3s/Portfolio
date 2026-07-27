@@ -451,6 +451,8 @@ Comando para verificar se existem contas ativas sem palavra-passe configurada no
 
 Comando para inspecionar chaves SSH autorizadas para o utilizador atual. Exibe quais chaves públicas têm autorização para efetuar login SSH sem senha. Se encontrar chaves desconhecidas ou não autorizadas, elas devem ser removidas imediatamente.
 
+O `cat ~/.ssh/authorized_keys` exibiu 4 chaves públicas registradas (amiOpenVPN, cmnatic, saqib.shabbir, eu-west-3-vuln-vms).
+
 <img width="989" height="358" alt="image" src="https://github.com/user-attachments/assets/cf74410c-2315-4a0e-9c3f-0ef936c060e4" />
 
 ### Fase 2 — Contenção
@@ -655,27 +657,59 @@ Aqui fazemos o ajuste correto das permissões estritas de ficheiros de chave SSH
 
 #### Comando `ssh-keygen -t ed25519`
 
+Gera um novo par de chaves SSH (uma chave pública e uma privada) usando o algoritmo Ed25519, que é extremamente seguro, leve e moderno.
+
 <img width="900" height="405" alt="image" src="https://github.com/user-attachments/assets/cb6b0281-22f0-4189-be96-aa45c97e75c7" />
 
 #### Comandos `cat ~/.ssh/id_ed25519.pub >> ~/.ssh/authorized_keys` `cat ~/.ssh/authorized_keys`
+
+Como já temos acesso à máquina local, nós colamos manualmente a chave pública que foi gerada dentro do arquivo authorized_keys. Ao mostrarmos o conteúdo do arquivo authorized_keys, podemos verificar a presença da nossa chave pública.
 
 <img width="987" height="365" alt="image" src="https://github.com/user-attachments/assets/b3bb83ac-fde3-4147-96d4-a80ae21ffbf4" />
 
 #### 2. Aplicar patches de segurança relevantes identificados durante a triagem
 
+Durante a triagem foram identificadas alguns pontos que requerem atenção, através do comando `cat ~/.ssh/authorized_keys` identificamos 4 chaves autorizadas num único perfil de utilizador, este que é um forte indicador de persistência ou acessos não auditados:
+
+... amiOpenVPN
+
+... cmnatic
+
+... saqib.shabbir
+
+... eu-west-3-vuln-vms
+
+Aqui o passo defensivo recomendado é remover as chaves desconhecidas/suspeitas do ficheiro authorized_keys (mantendo apenas as estritamente necessárias para a gestão do servidor). Lembrando que foi a adicionada ao authorized_keys a nossa própria chave local (id_ed25519.pub).
+
+**Análise de Segurança:**
+
+**Chaves de Terceiros/Ataque (cmnatic, saqib.shabbir):** Representam acessos de utilizadores/contas ou potenciais vetores de persistência deixados no sistema. Devem ser removidas.
+
+**Chave da Infraestrutura (eu-west-3-vuln-vms / amiOpenVPN):** Frequentemente são chaves padrão de imagens da nuvem (AWS/TryHackMe) usadas para provisionar a VM.
+
+#### Comando `nano ~/.ssh/authorized_keys`
+
+Este é um comando recomendado que nos permite fazer a edição manual do ficheiro de chaves autorizadas num editor de texto. Apagando a linha inteira correspondente a cada chave não autorizada, e depois guardando o ficheiro.
+
 <img width="789" height="73" alt="image" src="https://github.com/user-attachments/assets/5f05eed5-008e-4956-90c2-a6e867e7eb7b" />
 <img width="997" height="185" alt="image" src="https://github.com/user-attachments/assets/1baa32b1-4bd5-4b03-8c8d-70c39bd19bc1" />
+
+Após efetuar a limpeza, rodamos o comando `cat ~/.ssh/authorized_keys` para verificar se as alterações foram executadas com sucesso e o conteúdo final do ficheiro.
+
 <img width="987" height="229" alt="image" src="https://github.com/user-attachments/assets/837525c3-8b75-49d8-8cec-7a4015b0afe5" />
 
 ### Validação
 
-Correr a ferramenta Lynis para atestar a melhoria da postura de segurança global do host.
+Para validar o estado de segurança do host e confirmar as melhorias aplicadas nas fases anteriores, corre-se uma auditoria de segurança automatizada com o Lynis.
 
 #### Comando `sudo lynis audit system`
+
+O Lynis executa centenas de testes individuais no sistema e gera um indicador numérico de enrijecimento (Hardening index). Um aumento no valor do índice em comparação com a verificação inicial confirma que as medidas defensivas tomadas tiveram impacto positivo na postura geral do host.
+
 <img width="997" height="471" alt="image" src="https://github.com/user-attachments/assets/831fc37f-faa9-4c85-87e7-e11e614dc167" />
 <img width="638" height="93" alt="image" src="https://github.com/user-attachments/assets/1f2ce216-603b-4da7-8350-0ca97e44de6b" />
 
-
+**OBS:** 
 
 ### Conclusão
 
