@@ -591,7 +591,16 @@ Subsystem       sftp    /usr/lib/openssh/sftp-server
 
 <img width="789" height="73" alt="image" src="https://github.com/user-attachments/assets/5f05eed5-008e-4956-90c2-a6e867e7eb7b" />
 <img width="997" height="185" alt="image" src="https://github.com/user-attachments/assets/1baa32b1-4bd5-4b03-8c8d-70c39bd19bc1" />
+<img width="987" height="229" alt="image" src="https://github.com/user-attachments/assets/837525c3-8b75-49d8-8cec-7a4015b0afe5" />
 
+### Validação
+
+Correr a ferramenta Lynis para atestar a melhoria da postura de segurança global do host.
+
+#### Comando `sudo lynis audit system`
+
+
+### Conclusão
 
 
 
