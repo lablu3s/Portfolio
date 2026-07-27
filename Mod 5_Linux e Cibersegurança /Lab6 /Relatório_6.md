@@ -706,12 +706,21 @@ Para validar o estado de segurança do host e confirmar as melhorias aplicadas n
 
 O Lynis executa centenas de testes individuais no sistema e gera um indicador numérico de enrijecimento (Hardening index). Um aumento no valor do índice em comparação com a verificação inicial confirma que as medidas defensivas tomadas tiveram impacto positivo na postura geral do host.
 
+<img width="765" height="70" alt="image" src="https://github.com/user-attachments/assets/d4c1c0a5-ecc6-48e9-b14e-8ddd8c0688cf" />
 <img width="997" height="471" alt="image" src="https://github.com/user-attachments/assets/831fc37f-faa9-4c85-87e7-e11e614dc167" />
 <img width="638" height="93" alt="image" src="https://github.com/user-attachments/assets/1f2ce216-603b-4da7-8350-0ca97e44de6b" />
 
-**OBS:** 
+**OBS:** A VM do TryHackMe está deliberadamente isolada da internet pública (Network is unreachable). Como as ligações de saída para os servidores do Ubuntu e PPAs estão bloqueadas, o gestor de pacotes apt não consegue transferir novos pacotes ou atualizações. Visto que, o executável do lynis não está pré-instalado nesta instância da máquina virtual não conseguimos obter um output para o comando.
 
-### Conclusão
+### Conclusão do Desafio Integrador — Mini-CTF Defensivo Linux
+
+A execução deste desafio prático permitiu simular o ciclo completo de resposta a incidentes e enrijecimento (hardening) de um servidor Linux, cobrindo desde a triagem inicial de ameaças até à contenção e remediação da superfície de ataque.
+
+✔️ Durante a fase de triagem, a utilização de ferramentas nativas como o sudo `ss -tulpn` provou ser essencial para mapear portas abertas e correlacioná-las diretamente aos respetivos PIDs e processos, identificando vetores suspeitos e contornando com sucesso a ausência de utilitários como o `nmap`. Adicionalmente, a inspeção do ficheiro **authorized_keys** e do **/etc/shadow** evidenciou a importância de auditar ativamente a presença de utilizadores sem palavra-passe e de chaves SSH não autorizadas que pudessem representar mecanismos de persistência.
+
+✔️ A etapa de contenção e remediação, aplicou-se com sucesso o princípio do menor privilégio através do UFW, bloqueando todo o tráfego de entrada com exceção da porta 22 para SSH. A postura defensiva foi consolidada através da aplicação de permissões estritas no diretório de chaves (chmod 700/600), da geração de chaves criptográficas modernas com o algoritmo Ed25519 e da desativação de logins por palavra-passe e do acesso direto como root no serviço SSH.
+
+✔️ Por fim, cabe notar que em ambientes de simulação sem acesso externo à internet, gestores de pacotes e ferramentas de auditoria automatizadas como o lynis podem falhar devido ao bloqueio de rede. Nessas condições, a validação manual direta das diretivas e processos do sistema — via sshd -T, ufw status e inspeção de conexões — estabelece-se como a abordagem defensiva mais fiável e eficaz para atestar a verdadeira postura de segurança do host.
 
 
 
