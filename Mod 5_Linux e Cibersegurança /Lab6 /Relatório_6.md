@@ -402,26 +402,49 @@ Tendo em conta o seguinte cenário: O servidor Ubuntu da empresa fictícia "Linu
 
 ### Fase 1 — Identificação e Triagem
 
+Nesta etapa, o objetivo é mapear a superfície de ataque inicial, identificando quais serviços e portas estão abertos e expostos, e auditando as contas do sistema.
+
 #### 1. Análise de Rede e Portas 
 
-Identificar quais os portas e serviços ativos que estão expostos desnecessariamente.
+Começamos esta análise ao identificar quais as portas e serviços ativos que estão expostos desnecessariamente.
 
-#### Comando `ip a` ; `ss -tuln` e `nmap -sV localhost`
+#### Comando `ip a`
+
+Com este comando é feita uma **Identificação dos endereços IP** do host (10.129.189.205 na interface eth0).
 
 <img width="908" height="310" alt="image" src="https://github.com/user-attachments/assets/c7a0784a-3321-4df9-bb2a-8298ddae196f" />
-<img width="978" height="338" alt="image" src="https://github.com/user-attachments/assets/daa04ea8-8bd0-402b-89f7-c2c4f1030477" />
-<img width="997" height="536" alt="image" src="https://github.com/user-attachments/assets/1765edf2-a4d3-4fa4-a197-5fd727372e7f" />
-<img width="952" height="57" alt="image" src="https://github.com/user-attachments/assets/1b27de05-40b1-4af8-9464-9f6cdb9255be" />
-<img width="995" height="524" alt="image" src="https://github.com/user-attachments/assets/d02bdb72-2225-4ce9-bbf5-7c3280eb9ddc" />
 
+#### Comando `ss -tuln`
+
+Este comando faz uma **Listagem de portas TCP/UDP** em modo escuta.
+
+<img width="978" height="338" alt="image" src="https://github.com/user-attachments/assets/daa04ea8-8bd0-402b-89f7-c2c4f1030477" />
+ 
+#### Comando `nmap -sV localhost`
+
+O nmap -sV realiza varredura de versão, revelando os softwares exatos em execução para determinar se há serviços obsoletos ou desnecessários.
+
+<img width="997" height="536" alt="image" src="https://github.com/user-attachments/assets/1765edf2-a4d3-4fa4-a197-5fd727372e7f" />
+<img width="756" height="168" alt="image" src="https://github.com/user-attachments/assets/167119b7-bb90-4e7f-a591-12057a16e688" />
+
+**OBS:** O nmap não veio instalado na VM e as tentativas de instalação falharam (provavelmente por falta de atualização do repositório ou isolamento da rede no ambiente do TryHackMe).
+
+#### Comando `sudo ss -tulpn`
+
+Se a máquina não tiver acesso externo à internet, pode-se contornar a ausência do nmap utilizando a flag -p do próprio ss (sudo ss -tulpn) para descobrir o nome e o PID do processo associado a cada porta diretamente no kernel.
+
+<img width="995" height="524" alt="image" src="https://github.com/user-attachments/assets/d02bdb72-2225-4ce9-bbf5-7c3280eb9ddc" />
 
 #### 2. Auditoria de Contas
 
-Procurar por utilizadores com permissões excessivas, contas sem palavra-passe associada ou chaves públicas suspeitas em authorized_keys.
+Ao realizar esta auditoria o foco é procurar por utilizadores com permissões excessivas, contas sem palavra-passe associada ou chaves públicas suspeitas em authorized_keys.
 
-#### Comando `sudo cat /etc/shadow | awk -F: '($2==""){print $1}'` e `cat ~/.ssh/authorized_keys`
+#### Comando `sudo cat /etc/shadow | awk -F: '($2==""){print $1}'`
 
 <img width="740" height="62" alt="image" src="https://github.com/user-attachments/assets/8da863b0-f9a9-40da-b714-31d0a3122c84" />
+
+#### Comando `cat ~/.ssh/authorized_keys`
+
 <img width="989" height="358" alt="image" src="https://github.com/user-attachments/assets/cf74410c-2315-4a0e-9c3f-0ef936c060e4" />
 
 ### Fase 2 — Contenção
@@ -598,6 +621,9 @@ Subsystem       sftp    /usr/lib/openssh/sftp-server
 Correr a ferramenta Lynis para atestar a melhoria da postura de segurança global do host.
 
 #### Comando `sudo lynis audit system`
+<img width="997" height="471" alt="image" src="https://github.com/user-attachments/assets/831fc37f-faa9-4c85-87e7-e11e614dc167" />
+<img width="638" height="93" alt="image" src="https://github.com/user-attachments/assets/1f2ce216-603b-4da7-8350-0ca97e44de6b" />
+
 
 
 ### Conclusão
