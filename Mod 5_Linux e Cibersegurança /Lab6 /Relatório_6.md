@@ -441,13 +441,21 @@ Ao realizar esta auditoria o foco é procurar por utilizadores com permissões e
 
 #### Comando `sudo cat /etc/shadow | awk -F: '($2==""){print $1}'`
 
+Comando para verificar se existem contas ativas sem palavra-passe configurada no /etc/shadow.
+
 <img width="740" height="62" alt="image" src="https://github.com/user-attachments/assets/8da863b0-f9a9-40da-b714-31d0a3122c84" />
 
+**OBS:** O retorno foi vazio, o que significa que não existem utilizadores no sistema com palavra-passe em branco.
+
 #### Comando `cat ~/.ssh/authorized_keys`
+
+Comando para inspecionar chaves SSH autorizadas para o utilizador atual. Exibe quais chaves públicas têm autorização para efetuar login SSH sem senha. Se encontrar chaves desconhecidas ou não autorizadas, elas devem ser removidas imediatamente.
 
 <img width="989" height="358" alt="image" src="https://github.com/user-attachments/assets/cf74410c-2315-4a0e-9c3f-0ef936c060e4" />
 
 ### Fase 2 — Contenção
+
+O objetivo aqui é restringir o tráfego de rede, aplicando a regra do menor privilégio através da firewall ufw (Uncomplicated Firewall).
 
 #### 1. Ativar a firewall UFW
 
@@ -455,8 +463,20 @@ Bloqueando todas as portas que não sejam estritamente necessárias para o negó
 
 #### Comando `sudo ufw default deny incoming` ; `sudo ufw allow 22/tcp` e `sudo ufw enable`
 
+Estes comandos tem as seguintes funcionalidades:
+O `sudo ufw default deny incoming` Bloqueia por padrão todo o tráfego de entrada.
+O `sudo ufw allow 22/tcp` Permite explicitamente o tráfego de entrada na porta 22 para não perder a conexão remota SSH.
+O `sudo ufw enable` Ativa a firewall e garante que ela seja iniciada com o sistema.
+
 <img width="787" height="211" alt="image" src="https://github.com/user-attachments/assets/6a5ea8dd-eb3a-45c1-bf32-ed687fd691f7" />
+
+#### Comando `sudo ufw status verbose`
+
+Este comando apresenta a lista das regras ativas no sistema.
+
 <img width="829" height="227" alt="image" src="https://github.com/user-attachments/assets/ab3e64ed-11cc-4395-b3ff-291572196c52" />
+
+Bash:
 
 ```
 ubuntu@tryhackme:~$ sudo ufw status verbose
@@ -475,9 +495,16 @@ ubuntu@tryhackme:~$
 
 ### Fase 3 — Enrijecimento / Remediação
 
+Consiste em endurecer a segurança do sistema (hardening), desativando recursos inseguros e aplicando correções.
+
 #### 1. Corrigir a configuração do SSH de acordo com as boas práticas (desativar login root, bloquear passwords, migrar para chaves criptográficas)
 
+#### Comando `sudo nano /etc/ssh/sshd_config`
+
+
 <img width="497" height="56" alt="image" src="https://github.com/user-attachments/assets/ca5ca62e-152c-4ffa-ba69-200cd4f8442c" />
+
+Bash: 
 
 ```
 #       $OpenBSD: sshd_config,v 1.103 2018/04/09 20:41:22 tj Exp $
