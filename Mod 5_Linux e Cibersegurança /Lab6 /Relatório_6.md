@@ -645,7 +645,7 @@ Subsystem       sftp    /usr/lib/openssh/sftp-server
 
 #### Comandos `sudo sshd -t` `sudo systemctl restart sshd` `sudo systemctl status sshd`
 
-Aqui o objetivo destes comandos é testar a sintaxe do /etc/ssh/sshd_config antes de reiniciar o serviço, depois é executar o reinicio do serviço para guardar as modificações realizadas e por fim verificar o estado deste serviço.
+Aqui o objetivo destes comandos é testar a sintaxe do /etc/ssh/sshd_config antes de reiniciar o serviço, depois é reiniciar o serviço para guardar as modificações realizadas e por fim verificar o estado deste serviço.
 
 <img width="998" height="474" alt="image" src="https://github.com/user-attachments/assets/e179aded-c32a-4b57-8253-d0d20bdd8edf" />
 
