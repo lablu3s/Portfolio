@@ -214,4 +214,184 @@ Correr a ferramenta Lynis para atestar a melhoria da postura de segurança globa
 ### Conclusão
 
 
+<img width="807" height="430" alt="image" src="https://github.com/user-attachments/assets/304173a6-207a-4df4-bdb7-5660163cf9be" />
+<img width="966" height="471" alt="image" src="https://github.com/user-attachments/assets/f68dc7bb-6d26-4f91-8cb8-687c051ab8be" />
+<img width="959" height="396" alt="image" src="https://github.com/user-attachments/assets/9c85c40a-372e-4a3d-9e89-b0028fec5c2e" />
+<img width="659" height="371" alt="image" src="https://github.com/user-attachments/assets/ef6f02a8-a627-4ecd-a313-71c4743b9189" />
+<img width="668" height="539" alt="image" src="https://github.com/user-attachments/assets/8d51659f-ae3d-42ff-bd9b-2a8bbd5f6866" />
+<img width="981" height="456" alt="image" src="https://github.com/user-attachments/assets/e9332e29-d9db-4151-9214-094e47abc243" />
+<img width="568" height="226" alt="image" src="https://github.com/user-attachments/assets/cb2e6785-cfbb-45f8-848d-aa5ce7757ad3" />
+
+
+
+<img width="677" height="373" alt="image" src="https://github.com/user-attachments/assets/ff1eb6c0-3247-4aea-8758-cd1d311733af" />
+<img width="616" height="519" alt="image" src="https://github.com/user-attachments/assets/e142a6a4-0ee6-469c-a2f7-9a742b3e327d" />
+<img width="659" height="333" alt="image" src="https://github.com/user-attachments/assets/aae32e89-790e-4c42-b2d9-2fd10a8c5efd" />
+<img width="599" height="60" alt="image" src="https://github.com/user-attachments/assets/8cac0d8e-19b0-4642-8e89-b48ad4451696" />
+
+
+
+<img width="836" height="140" alt="image" src="https://github.com/user-attachments/assets/daf36095-18eb-45f9-a5db-8bea9170ff7c" />
+<img width="810" height="314" alt="image" src="https://github.com/user-attachments/assets/37f5b948-9397-454a-9aa5-6877e2b1059e" />
+<img width="829" height="355" alt="image" src="https://github.com/user-attachments/assets/77131c29-9453-4197-b3e6-d6eadf7074c3" />
+<img width="773" height="61" alt="image" src="https://github.com/user-attachments/assets/de0088ad-7e3a-4588-a17f-5505b0db9e04" />
+<img width="968" height="385" alt="image" src="https://github.com/user-attachments/assets/28071864-d655-4038-904e-791027ed2660" />
+<img width="647" height="232" alt="image" src="https://github.com/user-attachments/assets/512444ef-4ede-487a-9908-c6bfaaeb9c44" />
+<img width="637" height="235" alt="image" src="https://github.com/user-attachments/assets/009abb5e-5df9-433a-bedb-6d9513096681" />
+
+```
+root@tryhackme:/home/ubuntu# sudo ufw status verbose
+Status: active
+Logging: on (low)
+Default: deny (incoming), allow (outgoing), disabled (routed)
+New profiles: skip
+
+To                         Action      From
+--                         ------      ----
+22/tcp                     ALLOW IN    Anywhere                  
+22/tcp (v6)                ALLOW IN    Anywhere (v6)             
+
+root@tryhackme:/home/ubuntu# 
+
+```
+<img width="767" height="84" alt="image" src="https://github.com/user-attachments/assets/245717f6-d3bd-4ce0-afde-12277839eee6" />
+<img width="971" height="505" alt="image" src="https://github.com/user-attachments/assets/27a13eda-5020-43c7-be63-25f9716d41e0" />
+
+```
+GNU nano 4.8                              /etc/ssh/sshd_config                               Modified  
+#       $OpenBSD: sshd_config,v 1.103 2018/04/09 20:41:22 tj Exp $
+
+# This is the sshd server system-wide configuration file.  See
+# sshd_config(5) for more information.
+
+# This sshd was compiled with PATH=/usr/bin:/bin:/usr/sbin:/sbin
+
+# The strategy used for options in the default sshd_config shipped with
+# OpenSSH is to specify options with their default value where
+# possible, but leave them commented.  Uncommented options override the
+# default value.
+
+Include /etc/ssh/sshd_config.d/*.conf
+
+Port 22
+#AddressFamily any
+#ListenAddress 0.0.0.0
+#ListenAddress ::
+
+#HostKey /etc/ssh/ssh_host_rsa_key
+#HostKey /etc/ssh/ssh_host_ecdsa_key
+#HostKey /etc/ssh/ssh_host_ed25519_key
+
+# Ciphers and keying
+#RekeyLimit default none
+
+# Logging
+#SyslogFacility AUTH
+#LogLevel INFO
+
+# Authentication:
+
+#LoginGraceTime 2m
+PermitRootLogin no
+#StrictModes yes
+#MaxAuthTries 6
+#MaxSessions 10
+
+PubkeyAuthentication yes
+
+# Expect .ssh/authorized_keys2 to be disregarded by default in future.
+#AuthorizedKeysFile     .ssh/authorized_keys .ssh/authorized_keys2
+
+#AuthorizedPrincipalsFile none
+
+#AuthorizedKeysCommand none
+#AuthorizedKeysCommandUser nobody
+
+# For this to work you will also need host keys in /etc/ssh/ssh_known_hosts
+#HostbasedAuthentication no
+# Change to yes if you don't trust ~/.ssh/known_hosts for
+# HostbasedAuthentication
+#IgnoreUserKnownHosts no
+# Don't read the user's ~/.rhosts and ~/.shosts files
+#IgnoreRhosts yes
+
+# To disable tunneled clear text passwords, change to no here!
+PasswordAuthentication no
+#PermitEmptyPasswords no
+
+# Change to yes to enable challenge-response passwords (beware issues with
+# some PAM modules and threads)
+ChallengeResponseAuthentication no
+
+# Kerberos options
+#KerberosAuthentication no
+#KerberosOrLocalPasswd yes
+#KerberosTicketCleanup yes
+#KerberosGetAFSToken no
+
+# GSSAPI options
+#GSSAPIAuthentication no
+#GSSAPICleanupCredentials yes
+#GSSAPIStrictAcceptorCheck yes
+#GSSAPIKeyExchange no
+
+# Set this to 'yes' to enable PAM authentication, account processing,
+# and session processing. If this is enabled, PAM authentication will
+# be allowed through the ChallengeResponseAuthentication and
+# PasswordAuthentication.  Depending on your PAM configuration,
+# PAM authentication via ChallengeResponseAuthentication may bypass
+# the setting of "PermitRootLogin without-password".
+# If you just want the PAM account and session checks to run without
+# PAM authentication, then enable this but set PasswordAuthentication
+# and ChallengeResponseAuthentication to 'no'.
+UsePAM yes
+
+#AllowAgentForwarding yes
+#AllowTcpForwarding yes
+#GatewayPorts no
+X11Forwarding yes
+#X11DisplayOffset 10
+#X11UseLocalhost yes
+#PermitTTY yes
+PrintMotd no
+#PrintLastLog yes
+#TCPKeepAlive yes
+#PermitUserEnvironment no
+#Compression delayed
+#ClientAliveInterval 0
+#ClientAliveCountMax 3
+#UseDNS no
+#PidFile /var/run/sshd.pid
+#MaxStartups 10:30:100
+#PermitTunnel no
+#ChrootDirectory none
+#VersionAddendum none
+
+# no default banner path
+#Banner none
+
+# Allow client to pass locale environment variables
+AcceptEnv LANG LC_*
+
+# override default of no subsystems
+Subsystem       sftp    /usr/lib/openssh/sftp-server
+
+# Example of overriding settings on a per-user basis
+#Match User anoncvs
+#       X11Forwarding no
+#       AllowTcpForwarding no
+#       PermitTTY no
+#       ForceCommand cvs server
+
+```
+
+<img width="716" height="121" alt="image" src="https://github.com/user-attachments/assets/74bcf9f8-c675-400f-9631-d3ab1cc5e97d" />
+<img width="965" height="500" alt="image" src="https://github.com/user-attachments/assets/a1f4bb91-a828-489b-ac39-dc8d64939e3c" />
+<img width="597" height="40" alt="image" src="https://github.com/user-attachments/assets/1d848c86-c9a2-4592-b26f-0158d6408b94" />
+<img width="779" height="418" alt="image" src="https://github.com/user-attachments/assets/f1ea45a5-30b8-4af8-b620-1b872044743b" />
+<img width="956" height="209" alt="image" src="https://github.com/user-attachments/assets/a2a0963a-bf16-48ad-ab77-964cf163b021" />
+
+
+
+
 
