@@ -640,12 +640,26 @@ Subsystem       sftp    /usr/lib/openssh/sftp-server
 #       PermitTTY no
 #       ForceCommand cvs server
 ```
+
+#### Comandos `sudo sshd -t` `sudo systemctl restart sshd` `sudo systemctl status sshd`
+
+Aqui o objetivo destes comandos é testar a sintaxe do /etc/ssh/sshd_config antes de reiniciar o serviço, depois é executar o reinicio do serviço para guardar as modificações realizadas e por fim verificar o estado deste serviço.
+
 <img width="998" height="474" alt="image" src="https://github.com/user-attachments/assets/e179aded-c32a-4b57-8253-d0d20bdd8edf" />
+
+#### Comandos `sudo chmod 700 ~/.ssh` `sudo chmod 600 ~/.ssh/authorized_keys`
+
+Aqui fazemos o ajuste correto das permissões estritas de ficheiros de chave SSH para que apenas o dono leia/escreva.
+
 <img width="925" height="77" alt="image" src="https://github.com/user-attachments/assets/1d6ff326-a9a3-4aaa-81fb-a213f4a7b315" />
+
+#### Comando `ssh-keygen -t ed25519`
+
 <img width="900" height="405" alt="image" src="https://github.com/user-attachments/assets/cb6b0281-22f0-4189-be96-aa45c97e75c7" />
+
+#### Comandos `cat ~/.ssh/id_ed25519.pub >> ~/.ssh/authorized_keys` `cat ~/.ssh/authorized_keys`
+
 <img width="987" height="365" alt="image" src="https://github.com/user-attachments/assets/b3bb83ac-fde3-4147-96d4-a80ae21ffbf4" />
-
-
 
 #### 2. Aplicar patches de segurança relevantes identificados durante a triagem
 
