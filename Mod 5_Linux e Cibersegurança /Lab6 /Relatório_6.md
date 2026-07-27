@@ -510,7 +510,7 @@ Através deste comando é aberto o editor de texto nano com privilégios de admi
 
 <img width="497" height="56" alt="image" src="https://github.com/user-attachments/assets/ca5ca62e-152c-4ffa-ba69-200cd4f8442c" />
 
-Neste editor de texto o objetivo é ... modificando os seguintes parâmetros:
+Neste editor de texto o objetivo é aumentar a segurança do servidor, modificando os seguintes parâmetros:
 
 **PermitRootLogin no:** Impede login direto como superutilizador root.
 
