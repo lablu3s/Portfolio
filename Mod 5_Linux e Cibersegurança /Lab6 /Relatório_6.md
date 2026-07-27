@@ -392,6 +392,206 @@ Subsystem       sftp    /usr/lib/openssh/sftp-server
 <img width="956" height="209" alt="image" src="https://github.com/user-attachments/assets/a2a0963a-bf16-48ad-ab77-964cf163b021" />
 
 
+## 🖥️**Sessão 6_Linux e Cibersegurança**
+### **Desafio Prático Integrador — Mini-CTF Defensivo Linux**
+
+### Objetivo: 
+Tendo em conta o seguinte cenário: O servidor Ubuntu da empresa fictícia "Linux Agency" apresenta indícios de atividade suspeita e configurações severamente inseguras. Durante esta atividade o objetivo principal consiste em **Auditar, conter os danos, aplicar as correções e documentar toda a intervenção** — como se fosse chamado a responder a um incidente real. Utilizando o Ambiente Virtual TryHackMe — Linux Incident Surface (gratuito): https://tryhackme.com/room/linuxincidentsurface.
+
+### Metodologia de Resposta (Roteiro de Ações Exigidas):
+
+### Fase 1 — Identificação e Triagem
+
+#### 1. Análise de Rede e Portas 
+
+Identificar quais os portas e serviços ativos que estão expostos desnecessariamente.
+
+#### Comando `ip a` ; `ss -tuln` e `nmap -sV localhost`
+
+<img width="908" height="310" alt="image" src="https://github.com/user-attachments/assets/c7a0784a-3321-4df9-bb2a-8298ddae196f" />
+<img width="978" height="338" alt="image" src="https://github.com/user-attachments/assets/daa04ea8-8bd0-402b-89f7-c2c4f1030477" />
+<img width="997" height="536" alt="image" src="https://github.com/user-attachments/assets/1765edf2-a4d3-4fa4-a197-5fd727372e7f" />
+<img width="952" height="57" alt="image" src="https://github.com/user-attachments/assets/1b27de05-40b1-4af8-9464-9f6cdb9255be" />
+<img width="995" height="524" alt="image" src="https://github.com/user-attachments/assets/d02bdb72-2225-4ce9-bbf5-7c3280eb9ddc" />
+
+
+#### 2. Auditoria de Contas
+
+Procurar por utilizadores com permissões excessivas, contas sem palavra-passe associada ou chaves públicas suspeitas em authorized_keys.
+
+#### Comando `sudo cat /etc/shadow | awk -F: '($2==""){print $1}'` e `cat ~/.ssh/authorized_keys`
+
+<img width="740" height="62" alt="image" src="https://github.com/user-attachments/assets/8da863b0-f9a9-40da-b714-31d0a3122c84" />
+<img width="989" height="358" alt="image" src="https://github.com/user-attachments/assets/cf74410c-2315-4a0e-9c3f-0ef936c060e4" />
+
+### Fase 2 — Contenção
+
+#### 1. Ativar a firewall UFW
+
+Bloqueando todas as portas que não sejam estritamente necessárias para o negócio.
+
+#### Comando `sudo ufw default deny incoming` ; `sudo ufw allow 22/tcp` e `sudo ufw enable`
+
+<img width="787" height="211" alt="image" src="https://github.com/user-attachments/assets/6a5ea8dd-eb3a-45c1-bf32-ed687fd691f7" />
+<img width="829" height="227" alt="image" src="https://github.com/user-attachments/assets/ab3e64ed-11cc-4395-b3ff-291572196c52" />
+
+```
+ubuntu@tryhackme:~$ sudo ufw status verbose
+Status: active
+Logging: on (low)
+Default: deny (incoming), allow (outgoing), disabled (routed)
+New profiles: skip
+
+To                         Action      From
+--                         ------      ----
+22/tcp                     ALLOW IN    Anywhere                  
+22/tcp (v6)                ALLOW IN    Anywhere (v6)             
+
+ubuntu@tryhackme:~$ 
+```
+
+### Fase 3 — Enrijecimento / Remediação
+
+#### 1. Corrigir a configuração do SSH de acordo com as boas práticas (desativar login root, bloquear passwords, migrar para chaves criptográficas)
+
+<img width="497" height="56" alt="image" src="https://github.com/user-attachments/assets/ca5ca62e-152c-4ffa-ba69-200cd4f8442c" />
+
+```
+#       $OpenBSD: sshd_config,v 1.103 2018/04/09 20:41:22 tj Exp $
+
+# This is the sshd server system-wide configuration file.  See
+# sshd_config(5) for more information.
+
+# This sshd was compiled with PATH=/usr/bin:/bin:/usr/sbin:/sbin
+
+# The strategy used for options in the default sshd_config shipped with
+# OpenSSH is to specify options with their default value where
+# possible, but leave them commented.  Uncommented options override the
+# default value.
+
+Include /etc/ssh/sshd_config.d/*.conf
+
+Port 22
+#AddressFamily any
+#ListenAddress 0.0.0.0
+#ListenAddress ::
+
+#HostKey /etc/ssh/ssh_host_rsa_key
+#HostKey /etc/ssh/ssh_host_ecdsa_key
+#HostKey /etc/ssh/ssh_host_ed25519_key
+
+# Ciphers and keying
+#RekeyLimit default none
+
+# Logging
+#SyslogFacility AUTH
+#LogLevel INFO
+
+# Authentication:
+
+#LoginGraceTime 2m
+PermitRootLogin no
+#StrictModes yes
+#MaxAuthTries 6
+#MaxSessions 10
+
+PubkeyAuthentication yes
+
+# Expect .ssh/authorized_keys2 to be disregarded by default in future.
+#AuthorizedKeysFile     .ssh/authorized_keys .ssh/authorized_keys2
+
+#AuthorizedPrincipalsFile none
+#AuthorizedKeysCommand none
+#AuthorizedKeysCommandUser nobody
+
+# For this to work you will also need host keys in /etc/ssh/ssh_known_hosts
+#HostbasedAuthentication no
+# Change to yes if you don't trust ~/.ssh/known_hosts for
+# HostbasedAuthentication
+#IgnoreUserKnownHosts no
+# Don't read the user's ~/.rhosts and ~/.shosts files
+#IgnoreRhosts yes
+
+# To disable tunneled clear text passwords, change to no here!
+PasswordAuthentication no
+#PermitEmptyPasswords no
+
+# Change to yes to enable challenge-response passwords (beware issues with
+# some PAM modules and threads)
+ChallengeResponseAuthentication no
+
+# Kerberos options
+#KerberosAuthentication no
+#KerberosOrLocalPasswd yes
+#KerberosTicketCleanup yes
+#KerberosGetAFSToken no
+
+# GSSAPI options
+#GSSAPIAuthentication no
+#GSSAPICleanupCredentials yes
+#GSSAPIStrictAcceptorCheck yes
+#GSSAPIKeyExchange no
+
+# Set this to 'yes' to enable PAM authentication, account processing,
+# and session processing. If this is enabled, PAM authentication will
+# be allowed through the ChallengeResponseAuthentication and
+# PasswordAuthentication.  Depending on your PAM configuration,
+# PAM authentication via ChallengeResponseAuthentication may bypass
+# the setting of "PermitRootLogin without-password".
+# If you just want the PAM account and session checks to run without
+# PAM authentication, then enable this but set PasswordAuthentication
+# and ChallengeResponseAuthentication to 'no'.
+UsePAM yes
+
+#AllowAgentForwarding yes
+#AllowTcpForwarding yes
+#GatewayPorts no
+X11Forwarding yes
+#X11DisplayOffset 10
+#X11UseLocalhost yes
+#PermitTTY yes
+PrintMotd no
+#PrintLastLog yes
+#TCPKeepAlive yes
+#PermitUserEnvironment no
+#Compression delayed
+#ClientAliveInterval 0
+#ClientAliveCountMax 3
+#UseDNS no
+#PidFile /var/run/sshd.pid
+#MaxStartups 10:30:100
+#PermitTunnel no
+#ChrootDirectory none
+#VersionAddendum none
+
+# no default banner path
+#Banner none
+
+# Allow client to pass locale environment variables
+AcceptEnv LANG LC_*
+
+# override default of no subsystems
+Subsystem       sftp    /usr/lib/openssh/sftp-server
+
+# Example of overriding settings on a per-user basis
+#Match User anoncvs
+#       X11Forwarding no
+#       AllowTcpForwarding no
+#       PermitTTY no
+#       ForceCommand cvs server
+```
+<img width="998" height="474" alt="image" src="https://github.com/user-attachments/assets/e179aded-c32a-4b57-8253-d0d20bdd8edf" />
+<img width="925" height="77" alt="image" src="https://github.com/user-attachments/assets/1d6ff326-a9a3-4aaa-81fb-a213f4a7b315" />
+<img width="900" height="405" alt="image" src="https://github.com/user-attachments/assets/cb6b0281-22f0-4189-be96-aa45c97e75c7" />
+<img width="987" height="365" alt="image" src="https://github.com/user-attachments/assets/b3bb83ac-fde3-4147-96d4-a80ae21ffbf4" />
+
+
+
+#### 2. Aplicar patches de segurança relevantes identificados durante a triagem
+
+<img width="789" height="73" alt="image" src="https://github.com/user-attachments/assets/5f05eed5-008e-4956-90c2-a6e867e7eb7b" />
+<img width="997" height="185" alt="image" src="https://github.com/user-attachments/assets/1baa32b1-4bd5-4b03-8c8d-70c39bd19bc1" />
+
 
 
 
