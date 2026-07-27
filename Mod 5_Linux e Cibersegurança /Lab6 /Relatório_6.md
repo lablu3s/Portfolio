@@ -464,8 +464,11 @@ Bloqueando todas as portas que não sejam estritamente necessárias para o negó
 #### Comando `sudo ufw default deny incoming` ; `sudo ufw allow 22/tcp` e `sudo ufw enable`
 
 Estes comandos tem as seguintes funcionalidades:
+
 O `sudo ufw default deny incoming` Bloqueia por padrão todo o tráfego de entrada.
+
 O `sudo ufw allow 22/tcp` Permite explicitamente o tráfego de entrada na porta 22 para não perder a conexão remota SSH.
+
 O `sudo ufw enable` Ativa a firewall e garante que ela seja iniciada com o sistema.
 
 <img width="787" height="211" alt="image" src="https://github.com/user-attachments/assets/6a5ea8dd-eb3a-45c1-bf32-ed687fd691f7" />
@@ -476,7 +479,7 @@ Este comando apresenta a lista das regras ativas no sistema.
 
 <img width="829" height="227" alt="image" src="https://github.com/user-attachments/assets/ab3e64ed-11cc-4395-b3ff-291572196c52" />
 
-Bash:
+#### Bash:
 
 ```
 ubuntu@tryhackme:~$ sudo ufw status verbose
@@ -501,10 +504,17 @@ Consiste em endurecer a segurança do sistema (hardening), desativando recursos 
 
 #### Comando `sudo nano /etc/ssh/sshd_config`
 
+Através deste comando é aberto o editor de texto nano com privilégios de administrador (sudo) para alterar o arquivo principal de configurações do servidor SSH (sshd_config).
 
 <img width="497" height="56" alt="image" src="https://github.com/user-attachments/assets/ca5ca62e-152c-4ffa-ba69-200cd4f8442c" />
 
-Bash: 
+Neste editor de texto o objetivo é ... modificando os seguintes parâmetros:
+
+**PermitRootLogin no:** Impede login direto como superutilizador root.
+
+**PasswordAuthentication no:** Desativa o login por senha, forçando o uso exclusivo de chaves criptográficas (**PubkeyAuthentication yes**).
+
+#### Bash: 
 
 ```
 #       $OpenBSD: sshd_config,v 1.103 2018/04/09 20:41:22 tj Exp $
