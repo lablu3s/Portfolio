@@ -698,6 +698,16 @@ Após efetuar a limpeza, rodamos o comando `cat ~/.ssh/authorized_keys` para ver
 
 <img width="987" height="229" alt="image" src="https://github.com/user-attachments/assets/837525c3-8b75-49d8-8cec-7a4015b0afe5" />
 
+#### Comando `sudo apt update && sudo apt upgrade -y`
+
+Durante esta aplicação de patches de segurança é também importante realizar uma **Atualização do sistema** para corrigir vulnerabilidades conhecidas. Assim sendo usamos este comando que vai atualizar o repositório e instalar as versões mais recentes e corrigidas de todos os pacotes instalados no sistema.
+
+<img width="966" height="496" alt="image" src="https://github.com/user-attachments/assets/17e5edae-2a60-49bf-b719-2c8e7506f2d6" />
+<img width="959" height="66" alt="image" src="https://github.com/user-attachments/assets/78d4f60e-c107-44e1-b150-5d95150e87f8" />
+
+
+**OBS:** Como o sistema não conseguiu contactar os servidores remotos para descarregar a lista de pacotes atualizada, ele encerra dizendo 0 upgraded, 0 newly installed, 0 to remove..., ou seja, nenhum pacote foi atualizado. Isto porque a máquina virtual do TryHackMe está intencionalmente isolada da internet pública. Ela bloqueia o acesso externo aos repositórios do Ubuntu e Launchpad.
+
 ### Validação
 
 Para validar o estado de segurança do host e confirmar as melhorias aplicadas nas fases anteriores, corre-se uma auditoria de segurança automatizada com o Lynis.
