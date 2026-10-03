@@ -1,0 +1,83 @@
+/* Reset básico e renderização pixelizada sem suavização */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: unset;
+  font-smooth: never;
+}
+
+body {
+  background-color: #3b3960;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Card Principal / Hero */
+.hero {
+  background-color: #7D82B8;
+  border: 4px solid #FF7E6B;
+  box-shadow: 6px 6px 0px #000000;
+  padding: 40px;
+  max-width: 500px;
+  text-align: center;
+}
+
+/* Tag de destaque */
+.badge {
+  font-family: 'Silkscreen', monospace;
+  font-size: 0.75rem;
+  color: #FF7E6B;
+  letter-spacing: 2px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+/* Título estilo Arcade 8-bit */
+h1 {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 1.8rem;
+  color: #5e64a4;
+  text-shadow: 3px 3px 0px #000000;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+/* Texto de corpo */
+p {
+  font-family: 'Silkscreen', monospace;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+  margin-bottom: 30px;
+}
+
+/* Estilização do Botão (tag <a>) */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.8rem;
+  color: #f9fafb;
+  background-color: #FF7E6B;
+  border: none;
+  padding: 15px 25px;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px #000000;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.1s ease;
+}
+
+/* Interações do botão */
+.btn:hover {
+  background-color: #e29587;
+}
+
+.btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #000000;
+}
