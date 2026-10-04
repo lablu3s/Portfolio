@@ -4,6 +4,8 @@
 
 O futuro da web é inteligente e interativo. Aqui partilho a minha jornada de aprendizagem focada em Código Front-end (HTML, CSS, JavaScript e frameworks) e na integração de Inteligência Artificial para otimizar processos de desenvolvimento, automatizar fluxos de trabalho e criar experiências digitais mais dinâmicas.
 
+### 🛠️ Tópicos Abordados:
+
 ### **Front-end & Web Development**
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
