@@ -12,6 +12,8 @@ O foco central deste trabalho é a aplicação real dos conceitos teóricos por 
 
 Neste portfólio, você encontrará linhas do tempo de ataques simulados, relatórios de varreduras de portas e a engenharia por trás das políticas de defesa que implemento nos laboratórios.
 
+### 🛠️ Tópicos Abordados:
+
 ### **Sistema & Administração**
 
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
