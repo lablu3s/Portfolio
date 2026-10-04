@@ -4,11 +4,22 @@
 
 Este repositório documenta a minha jornada de aprendizagem em **Growth & Analytics**. Contém documentação técnica, relatórios de dados, implementação de tags de acompanhamento e modelos de análise de performance digital.
 
-### 🛠️ Tópicos Abordados
+### 🛠️ Tópicos Abordados:
+### **Analytics:** Google Analytics 4 (GA4), UTMs, Análise de Funil
 
 ![Google Analytics 4](https://img.shields.io/badge/Google%20Analytics%204-E37400?style=for-the-badge&logo=googleanalytics&logoColor=white)
-![Looker Studio](https://img.shields.io/badge/Looker%20Studio-4285F4?style=for-the-badge&logo=google&logoColor=white)
+![Funnel Analysis](https://img.shields.io/badge/Funnel-Analysis-FF4500?style=for-the-badge&logo=chartdotjs&logoColor=white)
+
+### **Otimização:** CRO (Conversion Rate Optimization), Testes A/B
+
 ![CRO](https://img.shields.io/badge/CRO-Conversion%20Rate-00C7B7?style=for-the-badge&logo=googlechrome&logoColor=white)
 ![A/B Testing](https://img.shields.io/badge/A%2FB%20Testing-Experimentation-8A2BE2?style=for-the-badge&logo=flask&logoColor=white)
-![Funnel Analysis](https://img.shields.io/badge/Funnel-Analysis-FF4500?style=for-the-badge&logo=chartdotjs&logoColor=white)
+
+### **Métricas de Growth:** CAC, LTV, Churn, Retention Rate
+
 ![Growth Metrics](https://img.shields.io/badge/Growth-CAC%20%7C%20LTV%20%7C%20Churn-2E8B57?style=for-the-badge&logo=metrics&logoColor=white)
+
+### **Visualização de Dados:** Looker Studio / Dashboards
+
+![Looker Studio](https://img.shields.io/badge/Looker%20Studio-4285F4?style=for-the-badge&logo=google&logoColor=white)
+
