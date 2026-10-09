@@ -1,4 +1,4 @@
-# 📊Módulo 7_Growth & Analytics
+# 📈Módulo 7_Growth & Analytics
 
 ### Seja bem-vindo ao meu repositório de Growth & Analytics. Este é um módulo que faz parte do percurso educativo no âmbito do Programa SKODJI DIGITAL. 
 
