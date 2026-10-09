@@ -1,4 +1,4 @@
-# 💼Módulo 3_Kit de Ferramentas para Trabalho Remoto e Freelance | Tech Checkpoint
+# 🌐Módulo 3_Kit de Ferramentas para Trabalho Remoto e Freelance | Tech Checkpoint
 
 ### Seja bem-vindo ao meu repositório de Kit de Ferramentas para Trabalho Remoto e Freelance. Este é um módulo que faz parte do percurso educativo no âmbito do Programa SKODJI DIGITAL. 
 
