@@ -1,6 +1,6 @@
-# 🖥️Módulo 7_Growth & Analytics
+# 📊Módulo 7_Growth & Analytics
 
-### Seja bem-vindo ao meu portfólio de Growth & Analytics. Este é um módulo que faz parte do percurso educativo no âmbito do Programa SKODJI DIGITAL. 
+### Seja bem-vindo ao meu repositório de Growth & Analytics. Este é um módulo que faz parte do percurso educativo no âmbito do Programa SKODJI DIGITAL. 
 
 Este repositório documenta a minha jornada de aprendizagem em **Growth & Analytics**. Contém documentação técnica, relatórios de dados, estudos de caso com implementação de tags de acompanhamento e modelos de análise de performance digital.
 
