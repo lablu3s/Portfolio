@@ -1,10 +1,10 @@
-## 🌐 Kit de Ferramentas para Trabalho Remoto e Freelance | Tech Checkpoint
+# 🖥️Módulo 3_Kit de Ferramentas para Trabalho Remoto e Freelance | Tech Checkpoint
 
-Repositório dedicado aos projetos, propostas e fluxos de trabalho desenvolvidos durante o módulo **Kit de Ferramentas para Trabalho Remoto e Freelance** (Programa *Skodji Digital / Learn2Earn*)[cite: 8]. 
+### Seja bem-vindo ao meu repositório de Kit de Ferramentas para Trabalho Remoto e Freelance. Este é um módulo que faz parte do percurso educativo no âmbito do Programa SKODJI DIGITAL. 
 
-O foco deste espaço é documentar a implementação prática de:
+Repositório dedicado aos projetos, propostas e fluxos de trabalho desenvolvidos durante o módulo **Kit de Ferramentas para Trabalho Remoto e Freelance**. 
 
-### 🛠️ Stack & Tópicos
+### 🛠️ Stack & Tópicos:
 ### **Produtividade com IA:** Engenharia de *prompts* e automação operacional.
 
 ![AI Literacy](https://img.shields.io/badge/AI_Literacy-Prompt_Engineering-0F2C3F?style=for-the-badge&logo=openai&logoColor=white)
