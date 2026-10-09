@@ -1,4 +1,4 @@
-# 🖥️Módulo 8_Código Front-end & Inteligência Artificial
+# 🤖Módulo 8_Código Front-end & Inteligência Artificial
 
 ### Seja bem-vindo ao meu repositório de Código Front-end e Inteligência Artificial. Este é um módulo que faz parte do percurso educativo no âmbito do Programa SKODJI DIGITAL. 
 
