@@ -1,6 +1,6 @@
 # 🖥️Módulo 5_Linux e Cibersegurança
 
-### Seja bem-vindo ao meu portfólio de engenharia de sistemas e segurança cibernética. Este é um módulo que faz parte do percurso educativo no âmbito do Programa SKODJI DIGITAL. 
+### Seja bem-vindo ao meu repositório de engenharia de sistemas e segurança cibernética. Este é um módulo que faz parte do percurso educativo no âmbito do Programa SKODJI DIGITAL. 
 
 Neste módulo, o foco está em dominar os fundamentos do sistema operativo **Linux**, a administração via linha de comandos (CLI) e os princípios essenciais de **Cibersegurança**. Este espaço funciona como um registro técnico da minha trajetória de transição e especialização digital. Aqui, documento de forma prática o meu processo de aprendizado na arquitetura do sistema operacional Linux e em fundamentos de Cibersegurança. Exploro desde a arquitetura do sistema e segurança de redes até à análise de vulnerabilidades, *hardening* de servidores e automação de tarefas de resposta a incidentes.
 
