@@ -2,7 +2,7 @@
 
 ### Seja bem-vindo ao meu repositório de Kit de Ferramentas para Trabalho Remoto e Freelance. Este é um módulo que faz parte do percurso educativo no âmbito do Programa SKODJI DIGITAL. 
 
-Repositório dedicado aos projetos, propostas e fluxos de trabalho desenvolvidos durante o módulo **Kit de Ferramentas para Trabalho Remoto e Freelance**. 
+Este repositório reúne os *outputs* práticos e simulações do módulo **Tech Checkpoint**, orientado à capacitação para o mercado de trabalho remoto global. Contém artefactos de posicionamento profissional, gestão de clientes, fluxos operacionais e integração de Inteligência Artificial para produtividade em ambientes distribuídos.
 
 ### 🛠️ Stack & Tópicos:
 ### **Produtividade com IA:** Engenharia de *prompts* e automação operacional.
