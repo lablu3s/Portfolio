@@ -9,20 +9,27 @@
 }
 
 body {
-  background-color: #3b3960;
+   background-image: url(sea.gif); 
+    background-size: cover;       /* Cobre todo o ecrã */
+    background-position: center;  /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita repetição */
+    height: 100vh; 
+    margin: 0;
+
   color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   padding: 20px;
+
 }
 
 /* Card Principal / Hero */
 .hero {
   background-color: #7D82B8;
   border: 4px solid #FF7E6B;
-  box-shadow: 6px 6px 0px #000000;
+  box-shadow: 6px 6px 0px #42478f;
   padding: 40px;
   max-width: 500px;
   text-align: center;
@@ -68,16 +75,50 @@ p {
   border: none;
   padding: 15px 25px;
   cursor: pointer;
-  box-shadow: 4px 4px 0px #000000;
+  box-shadow: 4px 4px 0px #42478f;
   transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.1s ease;
 }
 
 /* Interações do botão */
 .btn:hover {
   background-color: #e29587;
+  transform: scale(1.0) translateY(-10px);
+  filter: drop-shadow(0 5px 0px rgba(0, 0, 0, 0.3));
 }
 
 .btn:active {
   transform: translate(2px, 2px);
   box-shadow: 2px 2px 0px #000000;
+}
+
+.interactive-cat {
+    position: fixed;
+    bottom: 380px;
+    right: 360px;
+    z-index: 100;
+    cursor: pointer;
+    animation: floatCat 3s ease-in-out infinite; /* Efeito de flutuação suave */
+}
+
+.interactive-cat img {
+    width: 170px; /* Ajusta o tamanho do gato ao teu gosto */
+    height: auto;
+    image-rendering: pixelated; /* Mantém o aspeto pixel art perfeito */
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+/* Reação interativa ao passar o rato (Hover) */
+.interactive-cat:hover img {
+    transform: scale(1.3) translateY(-10px); /* O gato cresce e dá um salto */
+    filter: drop-shadow(0 5px 0px rgba(0, 0, 0, 0.3));
+}
+
+/* Animação subtil de movimento constante */
+@keyframes floatCat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
 }
