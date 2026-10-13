@@ -1,8 +1,8 @@
-# Skodji Digital
+# Skodji Digital_M8_Sessao4
 
 ### Tarefa 1:
 
-No Visual Studio Code, instalar a extensão:
+No **Visual Studio Code**, instalar a extensão:
  1. *Markdown All in One*;
  2. Criar um ficheiro **README.md**;
  3. Previsualizar o conteúdo do ficheiro 
@@ -10,7 +10,7 @@ No Visual Studio Code, instalar a extensão:
  5. Fazer o **push** para o Github.
 
 ### Tarefa 2:
-No VS Code, o objetivo é criar uma página simples em Html de apresentação com os seguintes requisitos:
+No VS Code, o objetivo foi criar uma página simples em Html com a nossa apresentação com os seguintes requisitos:
 1. Título;
 2. Texto introdutório;
 3. Imagem de perfil;
