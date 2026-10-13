@@ -1,6 +1,6 @@
-#Skodji Digital
+# Skodji Digital
 
-##Tarefa 1:
+### Tarefa 1:
 
 No Visual Studio Code, instalar a extensão:
  1. *Markdown All in One*;
@@ -9,7 +9,7 @@ No Visual Studio Code, instalar a extensão:
  4. Fazer o **commit**;
  5. Fazer o **push** para o Github.
 
-##Tarefa 2:
+### Tarefa 2:
 No VS Code, o objetivo é criar uma página simples em Html de apresentação com os seguintes requisitos:
 1. Título;
 2. Texto introdutório;
