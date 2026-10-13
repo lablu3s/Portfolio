@@ -16,3 +16,11 @@ No VS Code, o objetivo foi criar uma página simples em Html com a nossa apresen
 3. Imagem de perfil;
 4. Texto de apresentação;
 5. Personalização da página (opcional).
+
+### Tarefa 3:
+1. Explorar criação de páginas com links para outras páginas
+2. Explorar criação do CSS (interno, externo e on-line)
+
+### Tarefa 4:
+1. Explorar criação da galeria de imagens usando a tag `<table>` das tabelas
+2. Linkar todas as imagens, de forma que ao clicar nelas retorne a imagem em tamanho real

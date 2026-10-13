@@ -9,7 +9,7 @@
 }
 
 body {
-   background-image: url(sea.gif); 
+   background-image: url(images/sea.gif); 
     background-size: cover;       /* Cobre todo o ecrã */
     background-position: center;  /* Centraliza a imagem */
     background-repeat: no-repeat; /* Evita repetição */
