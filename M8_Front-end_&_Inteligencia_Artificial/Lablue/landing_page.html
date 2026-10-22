@@ -1,51 +1,36 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="pt">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LABLUE'S SPACE | Welcome</title>
-  <meta name="description" content="Bem-vindo ao espaço de LaBlue - Web Designer & Front-End Developer.">
-  
-  <!-- Fonte Pixel Art (Press Start 2P) -->
+  <title>LABLUE'S | Pixel Space</title>
+
+  <!-- Importação das Fontes Pixel do Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="style_portfolio.css">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Ficheiro de Estilos CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="page-landing">
+<body>
 
-  <!-- Fundo com gradiente e céu estrelado -->
-  <div class="sky-background"></div>
-
-  <!-- Cartão Central de Boas-Vindas -->
-  <main class="welcome-container">
-    <div class="pixel-card">
-      
-      <!-- Mascote Animado -->
-      <div class="mascot-container">
-        <img src="https://api.iconify.design/pixelarticons:rabbit.svg" alt="Mascote Pixel Art" class="mascot-img">
-      </div>
-
-      <span class="sub-header">PRESS JOIN</span>
-      <h1 class="main-title">LABLUE'S SPACE</h1>
-      
-      <p class="tagline">WELCOME NEWCOMERS, THIS IS LABLUE.</p>
-      
-      <p class="description">
-        CARE TO JOIN ME IN THIS NEW ADVENTURE?<br>
-        PRESS THE BUTTON BELOW AND LET'S GO MAKE<br>
-        SOME MEMORIES TOGETHER!
-      </p>
-
-      <!-- Botão para o Portfólio Principal -->
-      <a href="portfolio.html" class="join-btn">JOIN ME</a>
-
+  <main class="hero">
+    <div class="interactive-cat">
+      <img src="images/coelhinho.gif" alt="Bunny Pixel Art">
     </div>
+    <span class="badge">PRESS JOIN</span>
+    <h1>LABLUE'S SPACE</h1>
+    <p>Welcome newcomers, this is Lablue.</p>
+    <p>Care to join me in this new adventure? Press the button below and let's go make some memories together!</p>
+
+    <!-- Link configurado para abrir a imagem num novo separador (target="_blank") -->
+    <a href="portfolio.html" target="_blank" class="btn">JOIN ME</a>
   </main>
 
-  <!-- Silhueta de cidade pixelada ao fundo -->
-  <div class="city-skyline"></div>
+<footer class="hud-footer">
+    <p>© 2026 LABLUE · GAME OVER? NEVER.</p>
+  </footer>
 
 </body>
 </html>

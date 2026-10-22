@@ -1,185 +1,271 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="pt">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LABLUE'S SPACE | Portfólio & Quest Log</title>
-  <meta name="description" content="Portfólio de Web Design, UI/UX, Front-End e Pixel Art de LaBlue.">
+  <title>LABLUE'S SPACE</title>
+  <meta name="description" content="Portfólio de LaBlue - Engenheira de Energias Renováveis e Exploradora Digital.">
   
-  <!-- Fonte Pixel Art (Press Start 2P) -->
+  <!-- Fonte Pixel Art Retro -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="style_portfolio.css">
 </head>
-<body class="page-portfolio">
+<body>
 
-  <!-- HUD / Barra de Navegação Superior -->
+  <!-- Fundo estático/estrelado com cidade pixelizada -->
+  <div class="sky-background"></div>
+  <div class="city-skyline"></div>
+
+  <!-- HUD BAR (Navegação Superior Fixa) -->
   <header class="hud-header">
     <div class="hud-container">
-      <a href="landing_page.html" class="hud-logo">👾 LABLUE'S SPACE</a>
-      <nav class="hud-nav">
-        <a href="#sobre" class="hud-link active">[ 01. SOBRE ]</a>
-        <a href="#projetos" class="hud-link">[ 02. PROJETOS ]</a>
-        <a href="#skills" class="hud-link">[ 03. SKILLS ]</a>
-        <a href="#contato" class="hud-link">[ 04. CONTATO ]</a>
+      <a href="#" class="hud-logo">✦ LABLUE'S SPACE</a>
+      <button class="hud-menu-backdrop" type="button" aria-label="Fechar menu de navegação" hidden></button>
+      <nav class="hud-nav" id="hud-nav" aria-label="Navegação principal" aria-hidden="false">
+        <button class="hud-nav-close hud-btn" type="button" aria-label="Fechar menu">X</button>
+        <a href="#sobre" class="hud-btn active">[ 01. ABOUT ]</a>
+        <a href="#projetos" class="hud-btn">[ 02. PROJECTS ]</a>
+        <a href="#skills" class="hud-btn">[ 03. SKILLS ]</a>
+        <a href="#contato" class="hud-btn">[ 04. CONTACTS ]</a>
+        <button id="sound-toggle" class="hud-btn sound-btn" aria-label="Som ativo" aria-pressed="true">[ 🔊 ]</button>
       </nav>
+      <nav class="hud-socials" aria-label="Redes sociais">
+        <a href="https://cv.linkedin.com/in/lorette-ara%C3%BAjo-70708317b" class="hud-social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.26 2.37 4.26 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.02H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/la.blu3s/" class="hud-social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/></svg>
+        </a>
+        <a href="https://github.com/lablu3s" class="hud-social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.53v-2.07c-3.1.67-3.75-1.32-3.75-1.32-.5-1.28-1.24-1.62-1.24-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.7 1.15 1.7 1.15.99 1.69 2.6 1.2 3.23.92.1-.72.39-1.2.7-1.48-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.21 1.15-2.99-.12-.28-.5-1.42.11-2.95 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.11-1.44 3.05-1.14 3.05-1.14.61 1.53.23 2.67.11 2.95.72.78 1.15 1.77 1.15 2.99 0 4.29-2.61 5.24-5.1 5.51.4.35.75 1.03.75 2.08V22c0 .29.2.63.76.52A11.1 11.1 0 0 0 12 .9Z"/></svg>
+        </a>
+      </nav>
+      <button class="hud-menu-toggle hud-btn" type="button" aria-controls="hud-nav" aria-expanded="false" aria-label="Abrir menu de navegação">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <main class="portfolio-content">
-    
-    <!-- SEÇÃO 01: SOBRE MIM / CHARACTER PROFILE -->
-    <section id="sobre" class="portfolio-section">
-      <h2 class="section-title"><span>01.</span> CHARACTER PROFILE</h2>
+  <main class="main-content">
+
+    <!-- SEÇÃO 01: CHARACTER PROFILE -->
+    <section id="sobre" class="section-container">
+      <h2 class="section-title">01. CHARACTER PROFILE</h2>
       
-      <div class="profile-grid">
-        <!-- Card do Personagem e Stats -->
-        <div class="character-card">
-          <div class="avatar-frame">
-            <img src="https://api.iconify.design/pixelarticons:human-female.svg" alt="Avatar LaBlue" class="avatar-img">
-          </div>
-          <h3 class="char-name">LABLUE</h3>
-          <p class="char-class">LV. 99 WEB DESIGNER</p>
-          
-          <div class="stats-container">
-            <div class="stat-row">
-              <span class="stat-label">UI/UX</span>
-              <div class="stat-bar"><div class="stat-fill" style="width: 90%;"></div></div>
+      <div class="profile-layout">
+        <!-- Card Lateral Esquerdo (Avatar + Stats) -->
+        <div class="left-profile-col">
+          <div class="avatar-card">
+            <div class="avatar-frame">
+              <img src="images/avatar.jfif" alt="LaBlue Avatar Pixel" class="avatar-img">
             </div>
-            <div class="stat-row">
-              <span class="stat-label">HTML/CSS</span>
-              <div class="stat-bar"><div class="stat-fill" style="width: 95%;"></div></div>
-            </div>
-            <div class="stat-row">
-              <span class="stat-label">SEO/SEO</span>
-              <div class="stat-bar"><div class="stat-fill" style="width: 80%;"></div></div>
+            <h3 class="char-name">LABLUE</h3>
+            <p class="char-title">LV. 99 RENEWABLE ENERGY ENGINEER & DIGITAL FREELANCER</p>
+
+            <div class="stats-list">
+              <div class="stat-item">
+                <div class="stat-info">
+                  <span>Energy Engineering & Tech</span>
+                  <span class="stat-pct">95%</span>
+                </div>
+                <div class="stat-bar"><div class="stat-fill" style="width: 95%;"></div></div>
+              </div>
+
+              <div class="stat-item">
+                <div class="stat-info">
+                  <span>AI Workflows & Front-End (HTML/CSS)</span>
+                  <span class="stat-pct">80%</span>
+                </div>
+                <div class="stat-bar"><div class="stat-fill" style="width: 80%;"></div></div>
+              </div>
+
+              <div class="stat-item">
+                <div class="stat-info">
+                  <span>Growth Analytics</span>
+                  <span class="stat-pct">65%</span>
+                </div>
+                <div class="stat-bar"><div class="stat-fill" style="width: 65%;"></div></div>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Diálogo / Bio de Apresentação -->
-        <div class="dialogue-box">
-          <p class="dialogue-header">💬 DIÁLOGOS COM LABLUE:</p>
-          <p class="dialogue-text">
-            "Olá, explorador! Criar interfaces intuitivas, atraentes e acessíveis é a minha grande paixão. Uno o design centrado no utilizador (UI/UX) à precisão do código limpo em HTML5, CSS3 e boas práticas de SEO para construir aventuras digitais inesquecíveis."
+        <!-- Card Direito (Caixa de Diálogo) -->
+        <div class="dialogue-card">
+          <span class="dialogue-tag">LABLUE:</span>
+          <p class="dialogue-body">
+            Hello, adventurer! I am Lablue. <br> <br> Energy Engineer turned digital explorer. After years of designing and implementing solar energy projects in Cape Verde, I'm diving deep into AI literacy, remote work, and continuous skill-building. I'm using this profile to document my progress, celebrate milestones, and share what I learn along the way. <br> Great to have you here. <br> <br> Welcome to my journey!✨
           </p>
         </div>
       </div>
     </section>
 
-    <!-- SEÇÃO 02: PROJETOS / LEVEL SELECT -->
-    <section id="projetos" class="portfolio-section">
-      <h2 class="section-title"><span>02.</span> LEVEL SELECT (PROJETOS)</h2>
-      
+    <!-- SEÇÃO 02: LEVEL SELECT / PROJETOS -->
+    <section id="projetos" class="section-container">
+      <h2 class="section-title">02. LEVEL SELECT</h2>
+      <!-- Filtros de Categoria -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">[ ALL ]</button>
+        <button class="filter-btn" data-filter="digital">[ DIGITAL & AI ]</button>
+        <button class="filter-btn" data-filter="analytics">[ ANALYTICS & GROWTH ]</button>
+        <button class="filter-btn" data-filter="engineering">[ ENGINEERING ]</button>
+      </div>
+
       <div class="projects-grid">
-        <!-- Card Projeto 1 -->
-        <article class="project-card">
-          <div class="project-badge">STAGE 01</div>
-          <div class="project-preview">
-            <img src="https://api.iconify.design/pixelarticons:device-laptop.svg" alt="Projeto Web Design" class="preview-icon">
+        <!-- Projeto 1 -->
+        <article class="project-card" data-category="digital">
+          <div class="card-preview">
+            <img src="images/kriolu.png" alt="KrioluGames Lab Preview" class="preview-img">
           </div>
+          <span class="project-category">DIGITAL & AI</span>
           <h3 class="project-title">KrioluGames Lab</h3>
-          <p class="project-desc">EdTech & Gaming Platform - Landing Page responsiva com foco em acessibilidade e gamificação.</p>
-          <div class="tech-tags">
+          <p class="project-desc">EdTech & gaming platform business proposal and growth roadmap.</p>
+          
+          <div class="tag-row">
+            <span class="tag">CMS</span>
+            <span class="tag">Growth</span>
             <span class="tag">UI/UX</span>
-            <span class="tag">HTML5</span>
-            <span class="tag">CSS Grid</span>
           </div>
-          <a href="#" class="select-btn">SELECT STAGE</a>
+
+          <button class="select-stage-btn">SELECT STAGE ➔</button>
         </article>
 
-        <!-- Card Projeto 2 -->
-        <article class="project-card">
-          <div class="project-badge">STAGE 02</div>
-          <div class="project-preview">
-            <img src="https://api.iconify.design/pixelarticons:chart-bar.svg" alt="Dashboard Analytics" class="preview-icon">
+        <!-- Projeto 2 -->
+        <article class="project-card" data-category="analytics">
+          <div class="card-preview">
+            <img src="images/analytics.png" alt="GA4 E-Commerce Analytics Preview" class="preview-img">
           </div>
-          <h3 class="project-title">GA4 E-Commerce Audit</h3>
-          <p class="project-desc">Otimização de funil de conversão, tracking de eventos e estratégia de SEO técnico.</p>
-          <div class="tech-tags">
+          <span class="project-category">ANALYTICS & GROWTH</span>
+          <h3 class="project-title">GA4 E-Commerce Analytics Audit</h3>
+          <p class="project-desc">Checkout funnel study, hypothesis testing and conversion tracking.</p>
+          
+          <div class="tag-row">
             <span class="tag">GA4</span>
-            <span class="tag">SEO</span>
             <span class="tag">Analytics</span>
+            <span class="tag">Growth</span>
           </div>
-          <a href="#" class="select-btn">SELECT STAGE</a>
+
+          <button class="select-stage-btn">SELECT STAGE ➔</button>
         </article>
 
-        <!-- Card Projeto 3 -->
-        <article class="project-card">
-          <div class="project-badge">STAGE 03</div>
-          <div class="project-preview">
-            <img src="https://api.iconify.design/pixelarticons:image.svg" alt="Pixel Art Interface" class="preview-icon">
+        <!-- Projeto 3 -->
+        <article class="project-card" data-category="engineering">
+          <div class="card-preview">
+            <img src="images/water.png" alt="Atmospheric Water Generator Preview" class="preview-img">
           </div>
-          <h3 class="project-title">Pixel Arcade UI</h3>
-          <p class="project-desc">Design System retro em Pixel Art, paletas responsivas e componentes para jogos web.</p>
-          <div class="tech-tags">
-            <span class="tag">Figma</span>
-            <span class="tag">Pixel Art</span>
-            <span class="tag">CSS3</span>
+          <span class="project-category">ENGINEERING</span>
+          <h3 class="project-title">Atmospheric Water Generator Prototype</h3>
+          <p class="project-desc">Renewable energy graduation prototype and systems documentation.</p>
+          
+          <div class="tag-row">
+            <span class="tag">Clean Energy</span>
+            <span class="tag">System Design</span>
           </div>
-          <a href="#" class="select-btn">SELECT STAGE</a>
+
+          <button class="select-stage-btn">SELECT STAGE ➔</button>
         </article>
       </div>
     </section>
 
-    <!-- SEÇÃO 03: SKILLS / INVENTORY -->
-    <section id="skills" class="portfolio-section">
-      <h2 class="section-title"><span>03.</span> INVENTORY (SKILLS & TECH)</h2>
-      
-      <div class="inventory-grid">
-        <div class="slot-card">
-          <span class="slot-icon">🎨</span>
-          <h4>UI/UX Design</h4>
-          <p>Figma, Wireframing, Protótipos & Proporção de Cores</p>
+    <!-- SEÇÃO 03: INVENTORY -->
+    <section id="skills" class="section-container">
+      <h2 class="section-title">03. INVENTORY</h2>
+
+      <div class="inventory-layout">
+        <!-- Grid de Ícones (Esquerda) -->
+        <div class="slots-grid">
+          <div class="inventory-slot active" data-item="ai">
+            <span class="item-icon"><img src="images/icone_ai.png" alt="AI"></span>
+          </div>
+          <div class="inventory-slot" data-item="frontend">
+            <span class="item-icon"><img src="images/icone_web.png" alt="Frontend"></span>
+          </div>
+          <div class="inventory-slot" data-item="growth">
+            <span class="item-icon"><img src="images/icone_growth.png" alt="Growth"></span>
+          </div>
+          <div class="inventory-slot" data-item="security">
+            <span class="item-icon"><img src="images/icone_security.png" alt="Security"></span>
+          </div>
+          <div class="inventory-slot" data-item="energy">
+            <span class="item-icon"><img src="images/icone_renewables.png" alt="Energy"></span>
+          </div>
         </div>
-        <div class="slot-card">
-          <span class="slot-icon">💻</span>
-          <h4>Front-End</h4>
-          <p>HTML5 Semântico, CSS3 (Flex/Grid), JavaScript, Git</p>
-        </div>
-        <div class="slot-card">
-          <span class="slot-icon">🔍</span>
-          <h4>SEO & Performance</h4>
-          <p>Otimização de Motores de Busca, GA4, Meta Tags</p>
-        </div>
-        <div class="slot-card">
-          <span class="slot-icon">♿</span>
-          <h4>Acessibilidade</h4>
-          <p>Diretrizes WCAG, Navegação por Teclado e Contraste</p>
+
+        <!-- Painel de Detalhes do Item (Direita) -->
+        <div class="item-details-card">
+          <span class="details-tag">ITEM DETAILS</span>
+          <h3 id="item-title" class="item-title">👾 AI Literacy & Workflows</h3>
+          <ul id="item-list" class="item-bullets">
+            <li>Prompt Engineering</li>
+            <li>Gemini</li>
+            <li>NotebookLM</li>
+            <li>Gamma AI</li>
+            <li>AI Productivity Tools</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- SEÇÃO 04: CONTATO / QUEST BOARD -->
-    <section id="contato" class="portfolio-section">
-      <h2 class="section-title"><span>04.</span> QUEST BOARD (CONTATO)</h2>
-      
-      <div class="quest-container">
-        <form class="quest-form" action="#" method="POST" onsubmit="event.preventDefault();">
+    <!-- SEÇÃO 04: QUEST BOARD -->
+    <section id="contato" class="section-container">
+      <h2 class="section-title">04. QUEST BOARD</h2>
+
+      <div class="quest-layout">
+        <!-- Form de Contato (Esquerda) -->
+        <form class="quest-form" id="contact-form">
           <div class="form-group">
-            <label for="name">NOME DO JOGADOR / EMPRESA:</label>
-            <input type="text" id="name" required placeholder="Ex: Player One">
+            <label for="name">PLAYER / COMPANY NAME</label>
+            <input type="text" id="name" name="name" required placeholder="Ex: Player One">
           </div>
+
           <div class="form-group">
-            <label for="email">ENDEREÇO DE E-MAIL:</label>
-            <input type="email" id="email" required placeholder="player@email.com">
+            <label for="email">EMAIL ADDRESS</label>
+            <input type="email" id="email" name="email" required placeholder="player@email.com">
           </div>
+
           <div class="form-group">
-            <label for="message">DESCRIÇÃO DA MISSÃO / PROJETO:</label>
-            <textarea id="message" rows="4" required placeholder="Detalhes do projeto..."></textarea>
+            <label for="message">QUEST / PROJECT DESCRIPTION</label>
+            <textarea id="message" name="message" rows="4" required placeholder="Describe your quest or project..."></textarea>
           </div>
-          <button type="submit" class="join-btn">ENVIAR MISSAO</button>
+
+          <button type="submit" class="submit-quest-btn">SEND QUEST ➔</button>
         </form>
+
+        <!-- Painel de Links Sociais (Direita) -->
+        <div class="social-dispatch-card">
+          <p class="dispatch-text">Got a quest in clean energy, analytics or digital? Dispatch it, or find me here:</p>
+          
+          <div class="social-buttons">
+            <a href="https://cv.linkedin.com/in/lorette-ara%C3%BAjo-70708317b" target="_blank" rel="noopener noreferrer" class="social-link-btn">
+              <svg class="social-link-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.26 2.37 4.26 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.02H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z"/></svg>
+              LinkedIn
+            </a>
+            <a href="https://www.instagram.com/la.blu3s/" target="_blank" rel="noopener noreferrer" class="social-link-btn">
+              <svg class="social-link-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/></svg>
+              Instagram
+            </a>
+            <a href="https://www.github.com/lablu3s" target="_blank" rel="noopener noreferrer" class="social-link-btn">
+              <svg class="social-link-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.53v-2.07c-3.1.67-3.75-1.32-3.75-1.32-.5-1.28-1.24-1.62-1.24-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.7 1.15 1.7 1.15.99 1.69 2.6 1.2 3.23.92.1-.72.39-1.2.7-1.48-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.21 1.15-2.99-.12-.28-.5-1.42.11-2.95 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.11-1.44 3.05-1.14 3.05-1.14.61 1.53.23 2.67.11 2.95.72.78 1.15 1.77 1.15 2.99 0 4.29-2.61 5.24-5.1 5.51.4.35.75 1.03.75 2.08V22c0 .29.2.63.76.52A11.1 11.1 0 0 0 12 .9Z"/></svg>
+              GitHub
+            </a>
+            <a href="mailto:labluees@gmail.com" class="social-link-btn">
+              <svg class="social-link-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4h20a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm10 9L2 6v12h20V6l-10 7Zm0-2L21 6H3l9 5Z"/></svg>
+              Email
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
   </main>
 
   <footer class="hud-footer">
-    <p>© 2026 LABLUE'S SPACE - CRAFTED WITH PIXELS & CODE</p>
+    <p>© 2026 LABLUE · GAME OVER? NEVER.</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
