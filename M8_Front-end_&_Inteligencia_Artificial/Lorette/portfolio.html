@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lorette Araújo | Portfolio</title>
+  <link rel="icon" type="image/png" href="images/hibiscus_logo.png">
+
+  <!-- Google Fonts & FontAwesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" aria-label="Main navigation">
+    <a class="logo" href="index.html" aria-label="Lorette Araújo home">
+      <img src="images/hibiscus_logo.png" alt="" aria-hidden="true">
+      <span>Lorette Araújo</span>
+    </a>
+    <button class="navbar-menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="navLinks" aria-expanded="false">
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button>
+    <button class="nav-backdrop" type="button" aria-label="Close navigation menu"></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#sobre">About Me</a></li>
+      <li><a href="#habilidades">Skills</a></li>
+      <li><a href="#projetos">Projects</a></li>
+      <li><a href="#experiencia">Experience</a></li>
+      <li><a href="#contacto" class="nav-btn"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <section id="sobre" class="hero-section">
+      <div class="hero-content">
+        <div class="badge-status">
+          <span class="status-dot"></span> Available for new projects
+        </div>
+        <h1>Welcome to my Portfolio</h1>
+        <p class="hero-subtitle" aria-label="Hello, my name is Lorette Araújo. I'm a Renewable Energy Engineer turned Digital Explorer. After years of designing and implementing solar energy projects in Cape Verde, I'm diving deep into AI literacy, remote work, and continuous skill-building. I'm using this profile to document my progress, celebrate milestones, and share what I learn along the way. Great to have you here.">
+          <span class="typing-prompt" aria-hidden="true">&gt;</span>
+          <span class="typing-text" aria-hidden="true">Hello, my name is Lorette Araújo. I'm a Renewable Energy Engineer turned Digital Explorer. After years of designing and implementing solar energy projects in Cape Verde, I'm diving deep into AI literacy, remote work, and continuous skill-building. I'm using this profile to document my progress, celebrate milestones, and share what I learn along the way. Great to have you here.</span>
+        </p>
+        <div class="hero-actions">
+          <a href="#contacto" class="btn primary-btn"><i class="fa-solid fa-paper-plane"></i> Get in Touch</a>
+          <a href="#projetos" class="btn secondary-btn"><i class="fa-solid fa-folder-open"></i> View Projects</a>
+        </div>
+      </div>
+      <div class="hero-profile-column">
+        <div class="hero-profile">
+          <img src="images/avatars.png" alt="Profile photo of Lorette Araújo">
+        </div>
+        <div class="hero-profile-details">
+          <h2>Lorette Araújo</h2>
+          <p>Renewable Energy Engineer</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills & Expertise -->
+    <section id="habilidades" class="section-card">
+      <h2 class="section-title"><i class="fa-solid fa-wand-magic-sparkles"></i> Skills & Technologies</h2>
+            
+      <div class="skills-filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="tech">Technical</button>
+        <button class="filter-btn" data-filter="soft">Interpersonal</button>
+        <button class="filter-btn" data-filter="extra">Additional</button>
+      </div>
+
+      <div class="skills-carousel">
+        <button class="skills-arrow skills-arrow-prev" type="button" aria-label="Previous skills" disabled>
+          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <div class="skills-grid" aria-live="polite">
+        <!-- Technical Skills -->
+        <article class="skill-card" data-category="tech">
+          <div class="skill-icon"><i class="fa-brands fa-html5"></i></div>
+          <h3>HTML / CSS & Responsive Design</h3>
+          <p>Semantic structure, web accessibility, and flexible responsive layouts for all screen sizes.</p>
+        </article>
+
+        <article class="skill-card" data-category="tech">
+          <div class="skill-icon"><i class="fa-brands fa-js"></i></div>
+          <h3>JavaScript & Frameworks</h3>
+          <p>Client-side logic, dynamic DOM manipulation, RESTful API integration, and interactive components.</p>
+        </article>
+
+        <article class="skill-card" data-category="tech">
+          <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
+          <h3>Database Management</h3>
+          <p>Data organization, conceptual modeling, and integration with server-side storage services.</p>
+        </article>
+
+        <article class="skill-card" data-category="tech">
+          <div class="skill-icon"><i class="fa-brands fa-git-alt"></i></div>
+          <h3>Version Control (Git & GitHub)</h3>
+          <p>Structured workflows, change tracking, and collaborative source code management.</p>
+        </article>
+
+        <article class="skill-card" data-category="tech">
+          <div class="skill-icon"><i class="fa-solid fa-bug-slash"></i></div>
+          <h3>Testing & Debugging</h3>
+          <p>Proactive issue detection, functional testing, and continuous application performance optimization.</p>
+        </article>
+
+        <!-- Soft Skills -->
+        <article class="skill-card" data-category="soft">
+          <div class="skill-icon"><i class="fa-solid fa-comments"></i></div>
+          <h3>Proactive Communication</h3>
+          <p>Clearly presenting technical solutions and aligning requirements with users and teams.</p>
+        </article>
+
+        <article class="skill-card" data-category="soft">
+          <div class="skill-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
+          <h3>Problem-Solving</h3>
+          <p>An analytical, structured approach to breaking complex challenges into simple, effective solutions.</p>
+        </article>
+
+        <article class="skill-card" data-category="soft">
+          <div class="skill-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+          <h3>Attention to Detail</h3>
+          <p>Careful visual refinement and consistency in spacing, typography, and design implementation.</p>
+        </article>
+
+        <article class="skill-card" data-category="soft">
+          <div class="skill-icon"><i class="fa-solid fa-list-check"></i></div>
+          <h3>Organization & Management</h3>
+          <p>Planning development stages, managing deadlines, and maintaining documented workflows.</p>
+        </article>
+
+        <article class="skill-card" data-category="soft">
+          <div class="skill-icon"><i class="fa-solid fa-lightbulb"></i></div>
+          <h3>Creativity & Innovation</h3>
+          <p>Developing original, engaging approaches to improve the overall user experience.</p>
+        </article>
+
+        <!-- Additional Skills -->
+        <article class="skill-card" data-category="extra">
+          <div class="skill-icon"><i class="fa-solid fa-cloud"></i></div>
+          <h3>Cloud Deployment</h3>
+          <p>Knowledge of web hosting, automation, and continuous application deployment on cloud platforms.</p>
+        </article>
+
+        <article class="skill-card" data-category="extra">
+          <div class="skill-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <h3>SEO Principles</h3>
+          <p>Search engine optimization, data structuring, and page load time improvements.</p>
+        </article>
+
+        <article class="skill-card" data-category="extra">
+          <div class="skill-icon"><i class="fa-solid fa-palette"></i></div>
+          <h3>UI / UX Design</h3>
+          <p>Creating intuitive prototypes, harmonious color palettes, and user-centered information architecture.</p>
+        </article>
+        </div>
+        <button class="skills-arrow skills-arrow-next" type="button" aria-label="Next skills">
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </button>
+      </div>
+      <p class="skills-page-status" aria-live="polite"></p>
+    </section>
+
+    <!-- Projects -->
+    <section id="projetos" class="section-card">
+      <h2 class="section-title"><i class="fa-solid fa-laptop-code"></i> Featured Projects</h2>
+      <div class="projects-carousel">
+        <button class="projects-arrow projects-arrow-prev" type="button" aria-label="Previous projects" disabled>
+          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <div class="projects-grid" aria-live="polite">
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-tag">Front-End</span>
+            <h3>Responsive Web Portal</h3>
+          </div>
+          <p>An interactive web application featuring smooth navigation, a customizable theme, and integration with external APIs.</p>
+          <div class="project-techs">
+            <span>HTML5</span>
+            <span>CSS3 / Grid</span>
+            <span>JavaScript</span>
+          </div>
+          <div class="project-actions">
+            <a class="btn primary-btn sm" href="https://lablu3s.github.io/responsive-web-portal/" target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-eye" aria-hidden="true"></i> View Demo
+            </a>
+            <a class="btn secondary-btn sm" href="https://github.com/lablu3s/responsive-web-portal" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub Repo
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-tag">Full-Stack / UI</span>
+            <h3>Management Platform</h3>
+          </div>
+          <p>A dashboard with validated forms, dynamic data tables, and optimized rendering.</p>
+          <div class="project-techs">
+            <span>JavaScript</span>
+            <span>REST API</span>
+            <span>Git</span>
+          </div>
+          <div class="project-actions">
+            <a class="btn primary-btn sm" href="https://lablu3s.github.io/management-platform/" target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-eye" aria-hidden="true"></i> View Demo
+            </a>
+            <a class="btn secondary-btn sm" href="https://github.com/lablu3s/management-platform" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub Repo
+            </a>
+          </div>
+        </article>
+        </div>
+        <button class="projects-arrow projects-arrow-next" type="button" aria-label="Next projects" disabled>
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </button>
+      </div>
+      <p class="projects-page-status" aria-live="polite"></p>
+    </section>
+
+    <!-- Experience -->
+    <section id="experiencia" class="section-card">
+      <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Experience & Education</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="timeline-date">2026</span>
+          <h3>Web Development & Digital Technologies</h3>
+          <p>Hands-on specialization in building web interfaces, Git version control, and SEO optimization.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-date">2022</span>
+          <h3>Engineering & Technology Solutions</h3>
+          <p>Higher education with a strong focus on analytical thinking, process modeling, and systematic problem-solving.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contacto" class="section-card">
+      <h2 class="section-title"><i class="fa-solid fa-paper-plane"></i> Let's Talk</h2>
+      <p class="section-desc">Have a project idea or opportunity? Send me a message!</p>
+
+      <div class="contact-grid">
+        <div class="contact-form-column">
+          <h3>Send a Message</h3>
+          <form id="contactForm" class="contact-form">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" required placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" required placeholder="you@example.com">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" rows="4" required placeholder="Write your message here..."></textarea>
+            </div>
+            <button type="submit" class="btn primary-btn"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+          </form>
+        </div>
+
+        <aside class="contact-socials">
+          <h3>Find Me Online</h3>
+          <p>Get in touch or follow my work and projects.</p>
+          <a class="social-link" href="https://cv.linkedin.com/in/lorette-ara%C3%BAjo-70708317b" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+            <span>LinkedIn</span>
+            <i class="fa-solid fa-arrow-up-right-from-square social-link-arrow" aria-hidden="true"></i>
+          </a>
+          <a class="social-link" href="https://github.com/lablu3s" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+            <span>GitHub</span>
+            <i class="fa-solid fa-arrow-up-right-from-square social-link-arrow" aria-hidden="true"></i>
+          </a>
+          <a class="social-link" href="mailto:ellenlory16@gmail.com">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            <span>Email</span>
+          </a>
+          <div class="social-link social-link-unavailable" aria-label="Instagram: link not available yet">
+            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+            <span>Instagram</span>
+            <span class="social-link-note">Link coming soon</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Lorette Araújo · Built with <i class="fa-solid fa-heart"></i>.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
