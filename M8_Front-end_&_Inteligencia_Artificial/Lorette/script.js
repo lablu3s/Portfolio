@@ -160,22 +160,24 @@ document.addEventListener('DOMContentLoaded', () => {
       return 3;
     };
 
-    const renderSkills = direction => {
+    const renderSkills = () => {
       const skillsPerPage = getSkillsPerPage();
       const maxStartIndex = Math.max(0, visibleSkills.length - skillsPerPage);
       currentSkillIndex = Math.min(currentSkillIndex, maxStartIndex);
       const firstVisibleIndex = currentSkillIndex;
       const lastVisibleIndex = Math.min(firstVisibleIndex + skillsPerPage, visibleSkills.length);
+      const pageSkills = visibleSkills.slice(firstVisibleIndex, lastVisibleIndex);
 
       skillCards.forEach(card => {
-        card.hidden = !visibleSkills.slice(firstVisibleIndex, lastVisibleIndex).includes(card);
+        card.hidden = !visibleSkills.includes(card);
+        card.setAttribute('aria-hidden', String(card.hidden || !pageSkills.includes(card)));
       });
 
-      skillsGrid.classList.remove('skills-slide-next', 'skills-slide-previous');
-      if (direction) {
-        void skillsGrid.offsetWidth;
-        skillsGrid.classList.add(`skills-slide-${direction}`);
-      }
+      const firstCard = pageSkills[0];
+      const offset = firstCard
+        ? firstCard.getBoundingClientRect().left - skillsGrid.getBoundingClientRect().left
+        : 0;
+      skillsGrid.style.transform = `translateX(-${offset}px)`;
 
       previousSkillsButton.disabled = currentSkillIndex === 0;
       nextSkillsButton.disabled = currentSkillIndex >= maxStartIndex;
@@ -201,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
     previousSkillsButton.addEventListener('click', () => {
       if (currentSkillIndex > 0) {
         currentSkillIndex--;
-        renderSkills('previous');
+        renderSkills();
       }
     });
 
@@ -209,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const maxStartIndex = Math.max(0, visibleSkills.length - getSkillsPerPage());
       if (currentSkillIndex < maxStartIndex) {
         currentSkillIndex++;
-        renderSkills('next');
+        renderSkills();
       }
     });
 
@@ -229,21 +231,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const getProjectsPerView = () => window.innerWidth <= 768 ? 1 : 2;
 
-    const renderProjects = direction => {
+    const renderProjects = () => {
       const projectsPerView = getProjectsPerView();
       const maxStartIndex = Math.max(0, projectCards.length - projectsPerView);
       currentProjectIndex = Math.min(currentProjectIndex, maxStartIndex);
       const lastVisibleIndex = Math.min(currentProjectIndex + projectsPerView, projectCards.length);
 
       projectCards.forEach((card, index) => {
-        card.hidden = index < currentProjectIndex || index >= lastVisibleIndex;
+        const outsideView = index < currentProjectIndex || index >= lastVisibleIndex;
+        card.setAttribute('aria-hidden', String(outsideView));
+        card.inert = outsideView;
       });
 
-      projectsGrid.classList.remove('projects-slide-next', 'projects-slide-previous');
-      if (direction) {
-        void projectsGrid.offsetWidth;
-        projectsGrid.classList.add(`projects-slide-${direction}`);
-      }
+      const firstCard = projectCards[currentProjectIndex];
+      const offset = firstCard
+        ? firstCard.getBoundingClientRect().left - projectsGrid.getBoundingClientRect().left
+        : 0;
+      projectsGrid.style.transform = `translateX(-${offset}px)`;
 
       previousProjectsButton.disabled = currentProjectIndex === 0;
       nextProjectsButton.disabled = currentProjectIndex >= maxStartIndex;
@@ -255,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
     previousProjectsButton.addEventListener('click', () => {
       if (currentProjectIndex > 0) {
         currentProjectIndex--;
-        renderProjects('previous');
+        renderProjects();
       }
     });
 
@@ -263,7 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const maxStartIndex = Math.max(0, projectCards.length - getProjectsPerView());
       if (currentProjectIndex < maxStartIndex) {
         currentProjectIndex++;
-        renderProjects('next');
+        renderProjects();
       }
     });
 

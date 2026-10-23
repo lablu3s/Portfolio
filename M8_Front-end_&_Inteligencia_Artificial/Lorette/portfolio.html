@@ -78,36 +78,43 @@
         <button class="skills-arrow skills-arrow-prev" type="button" aria-label="Previous skills" disabled>
           <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
         </button>
-        <div class="skills-grid" aria-live="polite">
+        <div class="skills-viewport">
+          <div class="skills-grid" aria-live="polite">
         <!-- Technical Skills -->
         <article class="skill-card" data-category="tech">
-          <div class="skill-icon"><i class="fa-brands fa-html5"></i></div>
-          <h3>HTML / CSS & Responsive Design</h3>
-          <p>Semantic structure, web accessibility, and flexible responsive layouts for all screen sizes.</p>
+            <div class="skill-icon"><i class="fa-solid fa-lightbulb"></i></div>
+            <h3>Digital Growth & Business Models</h3>
+            <p>Developing digital growth strategies and business models for EdTech and social gaming initiatives.</p>
         </article>
 
         <article class="skill-card" data-category="tech">
-          <div class="skill-icon"><i class="fa-brands fa-js"></i></div>
-          <h3>JavaScript & Frameworks</h3>
-          <p>Client-side logic, dynamic DOM manipulation, RESTful API integration, and interactive components.</p>
+            <div class="skill-icon"><i class="fa-solid fa-bullhorn"></i></div>
+            <h3>Digital Marketing</h3>
+            <p>Applying Marketing 3.0 and 4.0 concepts to digital campaigns, including the Spotify Wrapped case study.</p>
         </article>
 
         <article class="skill-card" data-category="tech">
-          <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
-          <h3>Database Management</h3>
-          <p>Data organization, conceptual modeling, and integration with server-side storage services.</p>
+          <div class="skill-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <h3>Digital Analytics & Reporting</h3>
+          <p>Analyzing e-commerce user behavior with Google Analytics 4 and building dashboards in Looker Studio.</p>
         </article>
 
         <article class="skill-card" data-category="tech">
-          <div class="skill-icon"><i class="fa-brands fa-git-alt"></i></div>
-          <h3>Version Control (Git & GitHub)</h3>
-          <p>Structured workflows, change tracking, and collaborative source code management.</p>
+            <div class="skill-icon"><i class="fa-brands fa-html5"></i></div>
+            <h3>HTML / CSS & Responsive Design</h3>
+            <p>Semantic structure, web accessibility, and flexible responsive layouts for all screen sizes.</p>
         </article>
 
         <article class="skill-card" data-category="tech">
-          <div class="skill-icon"><i class="fa-solid fa-bug-slash"></i></div>
-          <h3>Testing & Debugging</h3>
-          <p>Proactive issue detection, functional testing, and continuous application performance optimization.</p>
+            <div class="skill-icon"><i class="fa-brands fa-js"></i></div>
+            <h3>JavaScript & API Integration</h3>
+            <p>Building interactive web experiences with JavaScript and integrating external APIs.</p>
+        </article>
+
+        <article class="skill-card" data-category="tech">
+            <div class="skill-icon"><i class="fa-brands fa-git-alt"></i></div>
+            <h3>Version Control (Git & GitHub)</h3>
+            <p>Structured workflows, change tracking, and collaborative source code management.</p>
         </article>
 
         <!-- Soft Skills -->
@@ -159,6 +166,7 @@
           <h3>UI / UX Design</h3>
           <p>Creating intuitive prototypes, harmonious color palettes, and user-centered information architecture.</p>
         </article>
+          </div>
         </div>
         <button class="skills-arrow skills-arrow-next" type="button" aria-label="Next skills">
           <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
@@ -174,48 +182,88 @@
         <button class="projects-arrow projects-arrow-prev" type="button" aria-label="Previous projects" disabled>
           <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
         </button>
-        <div class="projects-grid" aria-live="polite">
+        <div class="projects-viewport">
+          <div class="projects-grid" aria-live="polite">
         <article class="project-card">
           <div class="project-header">
-            <span class="project-tag">Front-End</span>
-            <h3>Responsive Web Portal</h3>
+            <span class="project-tag">Digital Growth Strategy</span>
+            <h3>Plano de Crescimento Digital</h3>
           </div>
-          <p>An interactive web application featuring smooth navigation, a customizable theme, and integration with external APIs.</p>
+          <p>Proposed business model for KrioluGames Lab, an edtech and social gaming ecosystem designed for the youth of the archipelago.</p>
+          <div class="project-techs">
+            <span>EdTech</span>
+            <span>Social Gaming</span>
+            <span>Business Model</span>
+          </div>
+          <div class="project-actions">
+            <a class="btn primary-btn sm" href="docs/Plano%20de%20Crescimento%20Digital_Lorette%20Ara%C3%BAjo.pdf" target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-eye" aria-hidden="true"></i> View Demo
+            </a>
+            <button class="btn secondary-btn sm" type="button" disabled>
+              <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub Repo
+            </button>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-tag">Digital Marketing</span>
+            <h3>Evolução do Marketing Digital</h3>
+          </div>
+          <p>Explores the evolution from human-centric Marketing 3.0 to Marketing 4.0, which connects physical and digital experiences, through the Spotify Wrapped campaign case study.</p>
+          <div class="project-techs">
+            <span>Marketing 3.0</span>
+            <span>Marketing 4.0</span>
+            <span>Spotify Wrapped</span>
+          </div>
+          <div class="project-actions">
+            <a class="btn primary-btn sm" href="docs/Evolu%C3%A7%C3%A3o%20do%20Marketing%20Digital_Lorette%20Ara%C3%BAjo.pdf" target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-eye" aria-hidden="true"></i> View Demo
+            </a>
+            <button class="btn secondary-btn sm" type="button" disabled>
+              <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub Repo
+            </button>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-tag">Data Analytics</span>
+            <h3>Live Data Dashboard</h3>
+          </div>
+          <p>An interactive dashboard built in Google Data Studio (now Looker Studio) using GA4 data to analyze user behavior on the Google Merch Shop e-commerce store.</p>
+          <div class="project-techs">
+            <span>Google Analytics 4</span>
+            <span>Looker Studio</span>
+          </div>
+          <div class="project-actions">
+            <a class="btn primary-btn sm" href="https://datastudio.google.com/reporting/cd7ec0a6-06ed-4018-837d-088318e049c7" target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-eye" aria-hidden="true"></i> View Demo
+            </a>
+            <button class="btn secondary-btn sm" type="button" disabled>
+              <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub Repo
+            </button>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-tag">Web Design</span>
+            <h3>LABLUE'S | Pixel Space</h3>
+          </div>
+          <p>A responsive landing page and portfolio showcasing a pixel-art aesthetic, custom typography, and animated visual elements.</p>
           <div class="project-techs">
             <span>HTML5</span>
-            <span>CSS3 / Grid</span>
+            <span>CSS3</span>
             <span>JavaScript</span>
           </div>
           <div class="project-actions">
-            <a class="btn primary-btn sm" href="https://lablu3s.github.io/responsive-web-portal/" target="_blank" rel="noopener noreferrer">
+            <a class="btn primary-btn sm" href="../Lablue/landing_page.html" target="_blank" rel="noopener noreferrer">
               <i class="fa-solid fa-eye" aria-hidden="true"></i> View Demo
             </a>
-            <a class="btn secondary-btn sm" href="https://github.com/lablu3s/responsive-web-portal" target="_blank" rel="noopener noreferrer">
+            <button class="btn secondary-btn sm" type="button" disabled>
               <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub Repo
-            </a>
+            </button>
           </div>
         </article>
-
-        <article class="project-card">
-          <div class="project-header">
-            <span class="project-tag">Full-Stack / UI</span>
-            <h3>Management Platform</h3>
-          </div>
-          <p>A dashboard with validated forms, dynamic data tables, and optimized rendering.</p>
-          <div class="project-techs">
-            <span>JavaScript</span>
-            <span>REST API</span>
-            <span>Git</span>
-          </div>
-          <div class="project-actions">
-            <a class="btn primary-btn sm" href="https://lablu3s.github.io/management-platform/" target="_blank" rel="noopener noreferrer">
-              <i class="fa-solid fa-eye" aria-hidden="true"></i> View Demo
-            </a>
-            <a class="btn secondary-btn sm" href="https://github.com/lablu3s/management-platform" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub Repo
-            </a>
-          </div>
-        </article>
+        </div>
         </div>
         <button class="projects-arrow projects-arrow-next" type="button" aria-label="Next projects" disabled>
           <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
@@ -230,12 +278,22 @@
       <div class="timeline">
         <div class="timeline-item">
           <span class="timeline-date">2026</span>
-          <h3>Web Development & Digital Technologies</h3>
-          <p>Hands-on specialization in building web interfaces, Git version control, and SEO optimization.</p>
+          <h3>Freelancer Digital - Skodji Digital Program</h3>
+          <p>Building practical skills in digital services, online communication, and project delivery through the Skodji Digital Program.</p>
         </div>
         <div class="timeline-item">
-          <span class="timeline-date">2022</span>
-          <h3>Engineering & Technology Solutions</h3>
+          <span class="timeline-date">2023 - 2026</span>
+          <h3>Fotovoltaic Solar Projects Consultant</h3>
+          <p>Provided consulting support for photovoltaic solar projects, contributing to technical analysis and project planning.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-date">2023 - 2024</span>
+          <h3>Renewable Energy Engineer</h3>
+          <p>Contributed to renewable energy projects through technical assessments, system planning, and coordination of project requirements.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-date">2018 - 2022</span>
+          <h3>Renewable Energy Engineering</h3>
           <p>Higher education with a strong focus on analytical thinking, process modeling, and systematic problem-solving.</p>
         </div>
       </div>
