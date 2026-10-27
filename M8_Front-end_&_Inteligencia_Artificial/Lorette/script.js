@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 1. Interactive skills filter
-  const filterButtons = document.querySelectorAll('.filter-btn');
+  const skillsFilterSelect = document.querySelector('.skills-filter-select');
   const skillCards = document.querySelectorAll('.skill-card');
   const skillsGrid = document.querySelector('.skills-grid');
   const previousSkillsButton = document.querySelector('.skills-arrow-prev');
@@ -186,19 +186,16 @@ document.addEventListener('DOMContentLoaded', () => {
         : 'No skills found';
     };
 
-    filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        filterButtons.forEach(filterButton => filterButton.classList.remove('active'));
-        button.classList.add('active');
-
-        activeFilter = button.getAttribute('data-filter') || 'all';
+    if (skillsFilterSelect) {
+      skillsFilterSelect.addEventListener('change', () => {
+        activeFilter = skillsFilterSelect.value;
         visibleSkills = [...skillCards].filter(card =>
           activeFilter === 'all' || card.getAttribute('data-category') === activeFilter
         );
         currentSkillIndex = 0;
         renderSkills();
       });
-    });
+    }
 
     previousSkillsButton.addEventListener('click', () => {
       if (currentSkillIndex > 0) {
