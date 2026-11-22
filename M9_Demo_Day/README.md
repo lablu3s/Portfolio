@@ -29,7 +29,7 @@ A **App de Inventário Resk** utiliza o motor offline nativo do **Google AppShee
 ## ✨ Principais Funcionalidades
 
 * **📡 Sincronização Offline Automática:** Funcionamento contínuo sem rede e sincronização em segundo plano assim que detetado sinal.
-* **📦 Gestão de 50+ Artigos de Teste:** Base de dados pronta e otimizada para navegação fluida por dezenas de itens.
+* **📦 Gestão de 50 Artigos de Teste:** Base de dados pronta e otimizada para navegação fluida por dezenas de itens.
 * **⚡ Ações Rápidas de Incremento (`+1` / `-1`):** Botões diretos na vista de lista para atualizar quantidades sem abrir formulários extensos.
 * **🚨 Alertas Visuais de Stock Crítico:** *Format Rules* personalizadas que destacam automaticamente a vermelho os produtos com quantidade abaixo do limite mínimo.
 * **📋 Seleção Dinâmica de Categorias:** Campos do tipo `Enum` para padronização de categorias via listas *drop-down*.
@@ -41,8 +41,9 @@ A **App de Inventário Resk** utiliza o motor offline nativo do **Google AppShee
 
 | Componente | Tecnologia | Descrição |
 | --- | --- | --- |
-| **Base de Dados Central** | **Google Sheets** | Alojamento relacional dos dados (`Estoque`, `Produtos`, `Movimentos`). |
-| **Plataforma App / UI / Logic** | **Google AppSheet** | Motor no-code responsável pela interface, regras de negócio, scanner de código de barras e motor offline. |
+| **Base de Dados Central** | **Google Sheets** | Alojamento relacional dos dados (`Estante`, `Produtos`, `Contabilidade`). |
+| **Base de Dados Auxiliar** | **One Drive** |Alojamento dos dados utilizados no Appsheet  |
+| **Plataforma App / UI / Logic** | **Google AppSheet** | Motor no-code responsável pela interface, regras de negócio e motor offline. |
 | **Design & Identidade** | **Branding Personalizado** | Tema visual adaptado com paleta em tons escuros / `#6B3B27` e logótipo personalizado. |
 
 ---
@@ -51,20 +52,22 @@ A **App de Inventário Resk** utiliza o motor offline nativo do **Google AppShee
 
 A base de dados no Google Sheets é estruturada nas seguintes tabelas principais:
 
-### Tabela: `Estoque`
-* `ID_Produto` (Key / Auto-generated)
-* `Nome_Produto` (Text)
-* `Categoria` (Enum)
-* `Quantidade` (Number)
-* `Preco_Unitario` (Price)
-* `Ultima_Registo` (ChangeTimestamp)
-
 ### Tabela: `Produto`
 * `ID_Produto` (Key)
 * `Nome_Produto` (Text)
-* `Categoria` (Enum)
+* `Categoria` (Ref)
+* `Preco` (Price)
 * `Foto` (Image / URL)
-* `Descricao` (LongText)		
+* `Descricao` (LongText)
+
+### Tabela: `Estante`
+* `ID_Estante` (Key)
+* `Nome_Produto` (Text)
+* `Categoria` (Ref)
+* `Stock_Inicial` (Number)
+* `Quantidade_Stock` (Number)
+* `Preco_Unitario` (Ref)
+* `Ultimo_Registo` (DateTime)
 ---
 Os 50 artigos iniciais de teste utilizados foram baseados num Estoque comum de uma pequena loja de venda de produtos essenciais em Cabo Verde.
 
