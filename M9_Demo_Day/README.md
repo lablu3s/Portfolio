@@ -8,7 +8,7 @@
 * **Aida Rodrigues** — *Documentação técnica e Identidade de Projeto*
 
 
-Este repositório documenta a elaboração do Projeto Final para a demonstração e avaliação no **Demo Day**. Contém a documentação técnica, relatório de dados, apresentação (pitch) e um video demonstrativo.
+Este repositório documenta a elaboração do Projeto Final para a Demonstração e Avaliação no **DemoDay**. Contém a documentação técnica, relatório de dados, apresentação (pitch) e um video demonstrativo.
 
 # 📦🛒Stok Prontu 
 > App de Gestão diária de inventário e vendas para o comércio local
