@@ -41,6 +41,8 @@ O **Stok Prontu** resolve estes problemas ao oferecer uma aplicação móvel e d
 * **📡 Sincronização Offline Automática:** Funcionamento contínuo sem rede e sincronização em segundo plano assim que detetado sinal.
 * **📦 Gestão de Dinâmica de Stock:** Base de dados pronta e otimizada para navegação fluida por dezenas de itens. Colunas virtuais que calculam o stock atualizado automaticamente com base nas entradas e saídas de mercadoria.
 * **⚡ Ações Rápidas:** Botões diretos nas vistas para atualizar quantidades, adicionar ou excluir produtos,  sem abrir formulários extensos.
+* **📦 Gestão de 50 Artigos de Teste:** Base de dados pronta e otimizada para navegação fluida por dezenas de itens.
+* **⚡ Ações Rápidas de Incremento (`+1` / `-1`):** Botões diretos na vista de lista para atualizar quantidades sem abrir formulários extensos.
 * **🚨 Alertas Visuais de Stock Crítico:** *Format Rules* personalizadas que destacam automaticamente a vermelho os produtos com quantidade abaixo do limite mínimo.
 * **📋 Seleção Dinâmica de Categorias:** Padronização de categorias via listas *drop-down*.
 * **🛡️ Proteção contra Vendas Sem Stock:** Alertas e bloqueios automáticos caso a quantidade inserida supere o inventário disponível.
@@ -57,6 +59,9 @@ O **Stok Prontu** resolve estes problemas ao oferecer uma aplicação móvel e d
 | **Base de Dados (Backend/Data Layer)** | **Google Sheets** | Alojamento relacional dos dados (`Estoque`, `Produtos`, `Movimentos`). |
 | **Plataforma de Desenvolvimento (Frontend/App)** | **Google AppSheet** | Motor no-code responsável pela interface, regras de negócio, scanner de código de barras e motor offline. |
 | **Motor de Documentos** |**Google Docs** | Elaboração de documentaçãoo técnica
+| **Base de Dados Central** | **Google Sheets** | Alojamento relacional dos dados (`Estante`, `Produtos`, `Contabilidade`). |
+| **Base de Dados Auxiliar** | **One Drive** |Alojamento dos dados utilizados no Appsheet  |
+| **Plataforma App / UI / Logic** | **Google AppSheet** | Motor no-code responsável pela interface, regras de negócio e motor offline. |
 | **Design & Identidade** | **Branding Personalizado** | Tema visual adaptado com paleta em tons escuros / `#6B3B27` e logótipo personalizado. |
 
 ---
@@ -65,20 +70,22 @@ O **Stok Prontu** resolve estes problemas ao oferecer uma aplicação móvel e d
 
 A base de dados no Google Sheets é estruturada nas seguintes tabelas principais:
 
-### Tabela: `Estoque`
-* `ID_Produto` (Key / Auto-generated)
-* `Nome_Produto` (Text)
-* `Categoria` (Enum)
-* `Quantidade` (Number)
-* `Preco_Unitario` (Price)
-* `Ultima_Registo` (ChangeTimestamp)
-
 ### Tabela: `Produto`
 * `ID_Produto` (Key)
 * `Nome_Produto` (Text)
-* `Categoria` (Enum)
+* `Categoria` (Ref)
+* `Preco` (Price)
 * `Foto` (Image / URL)
-* `Descricao` (LongText)		
+* `Descricao` (LongText)
+
+### Tabela: `Estante`
+* `ID_Estante` (Key)
+* `Nome_Produto` (Text)
+* `Categoria` (Ref)
+* `Stock_Inicial` (Number)
+* `Quantidade_Stock` (Number)
+* `Preco_Unitario` (Ref)
+* `Ultimo_Registo` (DateTime)
 ---
 Os 50 artigos iniciais de teste utilizados foram baseados num Estoque comum de uma pequena loja de venda de produtos essenciais em Cabo Verde.
 
