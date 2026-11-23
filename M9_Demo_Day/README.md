@@ -4,17 +4,18 @@
 
 ## 👥 Equipa de Trabalho
 
-* **Lorette Araújo** — *Desenvolvimento, Configuração AppSheet e Gestão de Projeto*
-* **Aida Rodrigues** — *Configuração, Gestão do Inventário e Identidade de Projeto*
+* **Lorette Araújo** — *Desenvolvimento banco de dados, Configuração AppSheet e Gestão de Projeto*
+* **Aida Rodrigues** — *Documentação técnica e Identidade de Projeto*
 
 
 Este repositório documenta a elaboração do Projeto Final para a demonstração e avaliação no **Demo Day**. Contém a documentação técnica, relatório de dados, apresentação (pitch) e um video demonstrativo.
 
-# 📦Stok Prontu - App de Gestão diária de inventário e vendas para o comércio local
+# 📦🛒Stok Prontu 
+> App de Gestão diária de inventário e vendas para o comércio local
 
-O **Stok Prontu** é uma solução *no-code* desenvolvida para simplificar a gestão operacional de pequenos e médios estabelecimentos comerciais. A aplicação centraliza o controlo de stock em tempo real com **sincronização offline nativa**, o registo ágil de vendas no balcão, o cálculo automático de troco e a emissão instantânea de recibos em PDF.
+O **Stok Prontu** é uma solução desenvolvida para simplificar a gestão operacional de pequenos e médios estabelecimentos comerciais. A aplicação centraliza o controlo de stock em tempo real com **sincronização offline nativa**, o registo ágil de vendas no balcão, o cálculo automático de valores e a emissão instantânea de recibos em PDF.
 
- Desenvolvida na plataforma no-code **Google AppSheet** utilizando o **Google Sheets** como base de dados, a solução foi concebida para garantir a continuidade operacional de lojas sem dependência de ligação contínua à internet.
+Desenvolvida na plataforma no-code **Google AppSheet** utilizando o **Google Sheets** como base de dados, a solução foi concebida para garantir a continuidade operacional de lojas sem dependência de ligação contínua à internet.
 
 ---
 
@@ -29,8 +30,8 @@ Muitos pequenos comerciantes em Cabo Verde enfrentam desafios diários no contro
 
 ### 💡 A Solução Proposta
 O **Stok Prontu** resolve estes problemas ao oferecer uma aplicação móvel e desktop intuitiva, de baixo custo e com suporte a funcionamento *offline*, permitindo:
-1. **Validação Ativa de Inventário:** Impedir vendas acima da quantidade real em stock através de regras automáticas no formulário (`Valid If`).
-2. **Cálculo Automático de Vendas e Troco:** Atualização instantânea dos subtotais, total da compra e valor a devolver ao cliente.
+1. **Validação Ativa de Inventário:** Impedir vendas acima da quantidade real em stock.
+2. **Cálculo Automático de Vendas:** Atualização instantânea dos subtotais, total da compra e valor a devolver ao cliente.
 3. **Emissão de Recibos em PDF:** Geração automática e envio de recibos com design profissional e harmonizado com a identidade visual da marca.
 4. **Organização na Nuvem:** Gravação direta de todos os documentos gerados numa estrutura organizada no Google Drive.
 
@@ -40,10 +41,9 @@ O **Stok Prontu** resolve estes problemas ao oferecer uma aplicação móvel e d
 
 * **📡 Sincronização Offline Automática:** Funcionamento contínuo sem rede e sincronização em segundo plano assim que detetado sinal.
 * **📦 Gestão de Dinâmica de Stock:** Base de dados pronta e otimizada para navegação fluida por dezenas de itens. Colunas virtuais que calculam o stock atualizado automaticamente com base nas entradas e saídas de mercadoria.
-* **⚡ Ações Rápidas:** Botões diretos nas vistas para atualizar quantidades, adicionar ou excluir produtos,  sem abrir formulários extensos.
-* **📦 Gestão de 50 Artigos de Teste:** Base de dados pronta e otimizada para navegação fluida por dezenas de itens.
-* **⚡ Ações Rápidas de Incremento (`+1` / `-1`):** Botões diretos na vista de lista para atualizar quantidades sem abrir formulários extensos.
-* **🚨 Alertas Visuais de Stock Crítico:** *Format Rules* personalizadas que destacam automaticamente a vermelho os produtos com quantidade abaixo do limite mínimo.
+* **⚡ Ações Rápidas:** Botões diretos nas diferentes vistas para atualizar quantidades de produtos na estante, adicionar ou excluir produtos, finalizar vendas e fazer o fecho da contabilidade diária sem abrir formulários extensos.
+* **🚨 Alertas Visuais de Stock Crítico:** *Format Rules* personalizadas que destacam automaticamente a amarelo os produtos com quantidade abaixo do limite mínimo.
+* **🚨 Automação de Stock Crítico:** Disparo de *Bot* de automação quando os produtos atingem uma quantidade abaixo do limite mínimo, enviando uma notificação por email.
 * **📋 Seleção Dinâmica de Categorias:** Padronização de categorias via listas *drop-down*.
 * **🛡️ Proteção contra Vendas Sem Stock:** Alertas e bloqueios automáticos caso a quantidade inserida supere o inventário disponível.
 * **💳 Registo Rápido de Vendas:** Seleção de produtos com cálculo automático de subtotal por item.
@@ -56,13 +56,11 @@ O **Stok Prontu** resolve estes problemas ao oferecer uma aplicação móvel e d
 
 | Componente | Tecnologia | Descrição |
 | --- | --- | --- |
-| **Base de Dados (Backend/Data Layer)** | **Google Sheets** | Alojamento relacional dos dados (`Estoque`, `Produtos`, `Movimentos`). |
-| **Plataforma de Desenvolvimento (Frontend/App)** | **Google AppSheet** | Motor no-code responsável pela interface, regras de negócio, scanner de código de barras e motor offline. |
-| **Motor de Documentos** |**Google Docs** | Elaboração de documentaçãoo técnica
-| **Base de Dados Central** | **Google Sheets** | Alojamento relacional dos dados (`Estante`, `Produtos`, `Contabilidade`). |
-| **Base de Dados Auxiliar** | **One Drive** |Alojamento dos dados utilizados no Appsheet  |
-| **Plataforma App / UI / Logic** | **Google AppSheet** | Motor no-code responsável pela interface, regras de negócio e motor offline. |
-| **Design & Identidade** | **Branding Personalizado** | Tema visual adaptado com paleta em tons escuros / `#6B3B27` e logótipo personalizado. |
+| **Base de Dados (Backend/Data Layer)** | **Google Sheets** | Alojamento relacional dos dados (`Produtos`,`Estante`,`Vendas` `Contabilidade`). |
+| **Plataforma de Desenvolvimento (Frontend/App)** | **Google AppSheet** | Motor no-code responsável pela interface, regras de negócio e motor offline. |
+| **Motor de Documentos** |**Google Docs** | Elaboração de documentação técnica |
+| **Armazenamento de Ficheiros** | **Google Drive** |Alojamento dos dados, imagens e templates utilizados no Appsheet  |
+| **Design & Identidade** | **Canva/Gemini** | Criação de logótipo personalizado, paleta de cores (#66331E) e prototipagem visual |
 
 ---
 
@@ -87,22 +85,52 @@ A base de dados no Google Sheets é estruturada nas seguintes tabelas principais
 * `Preco_Unitario` (Ref)
 * `Ultimo_Registo` (DateTime)
 ---
-Os 50 artigos iniciais de teste utilizados foram baseados num Estoque comum de uma pequena loja de venda de produtos essenciais em Cabo Verde.
+Os 50 artigos iniciais de teste utilizados foram baseados em um Stock comum de uma pequena loja de comércio de produtos essenciais em Cabo Verde.
 
 ## 📱 Estrutura da Interface (UI/UX)
 
 A aplicação foi organizada em 3 vistas centrais no menu inferior para maximizar a produtividade:
 
-1. **📦 Estoque (Deck / Table View):** Vista principal com pesquisa, agrupamento por categoria, indicadores visuais de stock baixo e botões de ação rápida.
-2. **📦 Produtos (Gallery View):** Vista de galeria para consultar visualmente os produtos do inventário.
-3. **📅 Registos (Calendar View):** Calendário com os registos das entradas e saídas do estoque.
+1. **📦 Estante (Deck View):** Vista principal com pesquisa, agrupamento por categoria, indicadores visuais de stock baixo e botões de ação rápida.
+2. **💳Nova Venda (Form View):** Formulário para registar uma nova venda, com seleção produtos e quantidades.
+3. **🛒Detalhes das Vendas (Table View):** Vista organizada em foormato de tabela com toddaas as informações referentes as vendas.
+
+No menu lateral foram organizadas as vistas secundárias:
+
+1. **📦 Produtos (Gallery View):** Vista de galeria para consultar visualmente os produtos do inventário.
+2. **💵Contabilidade (Table View):** Vista organizada por data, referente do fecho de contabilidade diária.
+---
+
+## 👥 Equipa de Desenvolvimento
+
+O projeto foi concebido e executado por uma equipa dedicada de 2 elementos:
+
+| Membro | Função | Foco Técnico |
+| :--- | :--- | :--- |
+|Lorette Araújo | **Desenvolvedor App & Dados** | • Modelação da base de dados no Google Sheets.<br>• Configuração de tabelas, relações e colunas virtuais no AppSheet.<br>• Implementação de fórmulas de validação, somatórios e cálculos.<br>• Configuração dos *Bots* de automação para geração de PDF.<br>• Produção do vídeo demonstrativo da aplicação. |
+| Aida  Rodrigues | **Designer & Documentador Técnico** | • Criação da identidade visual completa e logótipo da marca **Stok Prontu**.<br>• Concepção e estilização do modelo de recibo no Google Docs.<br>• Elaboração de especificações técnicas, manuais e documentação do projeto. |
+
+
+## 📁 Estrutura do Repositório
+
+```text
+├── docs/
+│   ├── manual_utilizador.pdf       # Guia prático de utilização da app
+│   └── especificacao_tecnica.md    # Documentação de fórmulas e colunas virtuais
+├── templates/
+│   └── template_recibo.docx        # Modelo base do Google Docs para a automação
+├── media/
+│   ├── logo_stok_prontu.png        # Recurso gráfico oficial
+│   └── demonstracao_app.mp4        # Vídeo demonstrativo da app em execução
+└── README.md                       # Documentação principal do repositório
+```
 
 ---
 
 ## ⚙️ Como Configurar e Implementar o Projeto
 
 ### 1. Preparar o Google Sheets
-1. Crie uma nova folha de cálculo no Google Drive com as abas `Estoque` e `Produto`.
+1. Crie uma nova folha de cálculo no Google Drive com as abas `Produto`, `Estante`, `Categorias`, `Itens_Venda`, `Vendas` e `Contabilidade_Diaria`.
 2. Preencha os cabeçalhos das colunas conforme descrito na secção **Arquitetura de Dados**.
 3. Adicione os 50 artigos iniciais de teste.
 
@@ -110,7 +138,15 @@ A aplicação foi organizada em 3 vistas centrais no menu inferior para maximiza
 1. No menu do Google Sheets, aceda a **Extensões > AppSheet > Criar uma app**.
 2. Aguarde a importação automática das tabelas.
 
-### 3. Activar a Sincronização Offline
+### 3. Configurar e personalizar a App
+1. Configuração dos dados das tabelas e as suas propriedades.
+2. Organização das vistas e dos menus, e como os dados serão apresentados.
+3. Formatação de elementos visuais, como o logótipo, as cores, os tamanhos e a tipografia.
+4. Configuração dos botões de ação para determinadas operações.
+5. Automação de Bots, para realizar atividades na App.
+6. Configuração da segurança no sign-in.
+
+### 4. Activar a Sincronização Offline
 1. No painel do AppSheet, vá a **Security / App Properties > Offline Sync**.
 2. Ative as opções:
    * `Store offline content for offline use`
@@ -118,7 +154,7 @@ A aplicação foi organizada em 3 vistas centrais no menu inferior para maximiza
    * `Automatic sync`
 3. Guarde as alterações (**Save**).
 
-### 4. Testar o Modo Offline no Telemóvel
+### 5. Testar o Modo Offline no Telemóvel
 1. Instale a app **AppSheet** na Play Store / App Store.
 2. Inicie sessão com a sua conta Google e abra a app do inventário.
 3. Ative o **Modo de Avião** no dispositivo.
@@ -126,4 +162,5 @@ A aplicação foi organizada em 3 vistas centrais no menu inferior para maximiza
 5. Desative o Modo de Avião e confirme a atualização automática dos dados na folha do Google Sheets.
 
 ---
-
+### 📝 Licença & Uso
+Este projeto foi desenvolvido para fins demonstrativos e académicos de gestão comercial. Sentir-se livre para adaptar e reutilizar a estrutura para o seu próprio negócio.
