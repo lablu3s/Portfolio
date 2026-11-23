@@ -10,39 +10,53 @@
 
 Este repositório documenta a elaboração do Projeto Final para a demonstração e avaliação no **Demo Day**. Contém a documentação técnica, relatório de dados, apresentação (pitch) e um video demonstrativo.
 
-# 📦Resk - App de Inventário & Gestão de Stock (AppSheet + Google Sheets)
+# 📦Stok Prontu - App de Gestão diária de inventário e vendas para o comércio local
 
-Uma aplicação móvel e web para registo de inventário e controlo de stock em tempo real com **sincronização offline nativa**. Desenvolvida na plataforma no-code **Google AppSheet** utilizando o **Google Sheets** como base de dados, a solução foi concebida para garantir a continuidade operacional em armazéns, lojas ou no terreno sem dependência de ligação contínua à internet.
+O **Stok Prontu** é uma solução *no-code* desenvolvida para simplificar a gestão operacional de pequenos e médios estabelecimentos comerciais. A aplicação centraliza o controlo de stock em tempo real com **sincronização offline nativa**, o registo ágil de vendas no balcão, o cálculo automático de troco e a emissão instantânea de recibos em PDF.
+
+ Desenvolvida na plataforma no-code **Google AppSheet** utilizando o **Google Sheets** como base de dados, a solução foi concebida para garantir a continuidade operacional de lojas sem dependência de ligação contínua à internet.
 
 ---
 
 ## 🚀 O Problema e a Solução
 
 ### ⚠️ O Problema
-Equipas de logística, armazém e vendas no terreno necessitam de registar entradas e saídas de stock em locais com cobertura de rede deficiente (ex.: caves, zonas rurais ou instalações industriais). A falta de ligação em tempo real frequentemente resulta na perda de registos, falhas de contagem e erros na gestão de inventário.
+Muitos pequenos comerciantes em Cabo Verde enfrentam desafios diários no controlo do seu negócio, tais como:
+- **Rotura de stock inesperada:** Dificuldade em acompanhar as saídas e saber exatamente quais artigos precisam de reposição.
+- **Erros no cálculo de trocos e totais:** Falhas manuais durante o atendimento em momentos de maior afluência.
+- **Falta de comprovativos profissionais:** Ausência de um sistema simples e rápido para emitir recibos claros e personalizados aos clientes.
+- **Custos elevados de software tradicional:** Soluções de POS/ERP complexas que exigem infraestrutura dispendiosa e ligação constante à internet.
 
 ### 💡 A Solução Proposta
-A **App de Inventário Resk** utiliza o motor offline nativo do **Google AppSheet**. Os utilizadores podem efetuar leituras, atualizações de quantidades e registos de novos produtos mesmo sem internet. As alterações são guardadas localmente no dispositivo e sincronizadas de forma automática e transparente com a folha de cálculo central no **Google Sheets** assim que a ligação à rede for restabelecida.
+O **Stok Prontu** resolve estes problemas ao oferecer uma aplicação móvel e desktop intuitiva, de baixo custo e com suporte a funcionamento *offline*, permitindo:
+1. **Validação Ativa de Inventário:** Impedir vendas acima da quantidade real em stock através de regras automáticas no formulário (`Valid If`).
+2. **Cálculo Automático de Vendas e Troco:** Atualização instantânea dos subtotais, total da compra e valor a devolver ao cliente.
+3. **Emissão de Recibos em PDF:** Geração automática e envio de recibos com design profissional e harmonizado com a identidade visual da marca.
+4. **Organização na Nuvem:** Gravação direta de todos os documentos gerados numa estrutura organizada no Google Drive.
 
 ---
 
 ## ✨ Principais Funcionalidades
 
 * **📡 Sincronização Offline Automática:** Funcionamento contínuo sem rede e sincronização em segundo plano assim que detetado sinal.
-* **📦 Gestão de 50+ Artigos de Teste:** Base de dados pronta e otimizada para navegação fluida por dezenas de itens.
-* **⚡ Ações Rápidas de Incremento (`+1` / `-1`):** Botões diretos na vista de lista para atualizar quantidades sem abrir formulários extensos.
+* **📦 Gestão de Dinâmica de Stock:** Base de dados pronta e otimizada para navegação fluida por dezenas de itens. Colunas virtuais que calculam o stock atualizado automaticamente com base nas entradas e saídas de mercadoria.
+* **⚡ Ações Rápidas:** Botões diretos nas vistas para atualizar quantidades, adicionar ou excluir produtos,  sem abrir formulários extensos.
 * **🚨 Alertas Visuais de Stock Crítico:** *Format Rules* personalizadas que destacam automaticamente a vermelho os produtos com quantidade abaixo do limite mínimo.
-* **📋 Seleção Dinâmica de Categorias:** Campos do tipo `Enum` para padronização de categorias via listas *drop-down*.
+* **📋 Seleção Dinâmica de Categorias:** Padronização de categorias via listas *drop-down*.
+* **🛡️ Proteção contra Vendas Sem Stock:** Alertas e bloqueios automáticos caso a quantidade inserida supere o inventário disponível.
+* **💳 Registo Rápido de Vendas:** Seleção de produtos com cálculo automático de subtotal por item.
+* **💵 Gestão de Pagamentos:** Registo do valor entregue pelo cliente com cálculo automático de troco (garantindo valores não negativos).
+* **📄 Automação de Recibos em PDF:** Disparo de *Bot* de automação ao finalizar cada venda, gerando um documento estilizado com a marca **Stok Prontu**.
 * **📱 Multiplataforma (Android, iOS e Web):** Aplicação nativa instalável via AppSheet em smartphones, tablets e browsers.
-
 ---
 
 ## 🛠️ Stack Tecnológica & Ferramentas
 
 | Componente | Tecnologia | Descrição |
 | --- | --- | --- |
-| **Base de Dados Central** | **Google Sheets** | Alojamento relacional dos dados (`Estoque`, `Produtos`, `Movimentos`). |
-| **Plataforma App / UI / Logic** | **Google AppSheet** | Motor no-code responsável pela interface, regras de negócio, scanner de código de barras e motor offline. |
+| **Base de Dados (Backend/Data Layer)** | **Google Sheets** | Alojamento relacional dos dados (`Estoque`, `Produtos`, `Movimentos`). |
+| **Plataforma de Desenvolvimento (Frontend/App)** | **Google AppSheet** | Motor no-code responsável pela interface, regras de negócio, scanner de código de barras e motor offline. |
+| **Motor de Documentos** |**Google Docs** | Elaboração de documentaçãoo técnica
 | **Design & Identidade** | **Branding Personalizado** | Tema visual adaptado com paleta em tons escuros / `#6B3B27` e logótipo personalizado. |
 
 ---
