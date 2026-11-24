@@ -2,10 +2,10 @@
 
 ### Seja bem-vindo ao meu repositório de Demo Day. Este é o módulo final que faz parte do percurso educativo no âmbito do Programa SKODJI DIGITAL. 
 
-## 👥 Equipa de Trabalho
+## 👥 Equipa Aida e Lorette
 
-* **Lorette Araújo** — *Desenvolvimento banco de dados, Configuração AppSheet e Gestão de Projeto*
-* **Aida Rodrigues** — *Documentação técnica e Identidade de Projeto*
+* **Lorette Araújo** (Coordenadora)— *Desenvolvimento banco de dados, Configuração AppSheet e Gestão de Projeto*
+* **Aida Rodrigues** (Membro) — *Documentação técnica e Identidade de Projeto*
 
 
 Este repositório documenta a elaboração do Projeto Final para a Demonstração e Avaliação no **DemoDay**. Contém a documentação técnica, relatório de dados, apresentação (pitch) e um video demonstrativo.
