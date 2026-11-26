@@ -160,8 +160,8 @@ O projeto foi concebido e executado por uma equipa dedicada de 2 elementos:
 
 | Membro | Função | Foco Técnico |
 | :--- | :--- | :--- |
-| Lorette Araújo | **Desenvolvedora de App e Dados** | • Modelação da base de dados no Google Sheets.<br>• Configuração de tabelas, relações e colunas virtuais no AppSheet.<br>• Implementação de fórmulas de validação, somatórios e cálculos.<br>• Configuração dos *Bots* de automação para geração de PDF.<br>• Produção do vídeo demonstrativo da aplicação. |
-| Aida Rodrigues | **Designer e Documentadora Técnica** | • Criação da identidade visual completa e logótipo da marca **Stok Prontu**.<br>• Concepção e estilização do modelo de recibo no Google Docs.<br>• Elaboração de especificações técnicas, manuais e documentação do projeto. |
+| **Lorette Araújo** | **Desenvolvedora de App e Dados** | • Modelação da base de dados no Google Sheets.<br>• Configuração de tabelas, relações e colunas virtuais no AppSheet.<br>• Implementação de fórmulas de validação, somatórios e cálculos.<br>• Configuração dos *Bots* de automação para geração de PDF.<br>• Produção do vídeo demonstrativo da aplicação. |
+| **Aida Rodrigues** | **Designer e Documentadora Técnica** | • Criação da identidade visual completa e logótipo da marca **Stok Prontu**.<br>• Concepção e estilização do modelo de recibo no Google Docs.<br>• Elaboração de especificações técnicas, manuais e documentação do projeto. |
 
 ## 🛠️ Estágio de Implementação
 
