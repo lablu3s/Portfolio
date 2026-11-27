@@ -60,7 +60,8 @@ O **Stok Prontu** resolve estes problemas ao oferecer uma aplicação móvel e d
 | **Plataforma de Desenvolvimento (Frontend/App)** | **Google AppSheet** | Motor no-code responsável pela interface, regras de negócio e motor offline. |
 | **Motor de Documentos** | **Google Docs** | Elaboração de documentação técnica. |
 | **Armazenamento de Ficheiros** | **Google Drive** | Alojamento dos dados, imagens e templates utilizados no AppSheet. |
-| **Design & Identidade** | **Canva/Gemini** | Criação de logótipo personalizado, paleta de cores (#66331E) e prototipagem visual |
+| **Design & Identidade** | **Canva / Gemini** | Criação de logótipo personalizado, paleta de cores (#66331E) e prototipagem visual. |
+| **Produção Audiovisual** | **Canva / Capcut** | Criação de video demonstrativo do funcionamento da aplicação. |
 
 ---
 
@@ -198,8 +199,7 @@ O projeto foi concebido e executado por uma equipa dedicada de 2 elementos:
 
 ```text
 ├── docs/
-│   ├── manual_utilizador.pdf       # Guia prático de utilização da app
-│   └── especificacao_tecnica.md    # Documentação de fórmulas e colunas virtuais
+│   ├── especificacao_tecnica.md    # Documentação de fórmulas e colunas virtuais
 |   └── engenharia_requisitos.md # Documentação das funcionalidades
 |   └── desenho_sistema.pdf # Documentação do fluxo de ações
 |   └── relatorio_final.pdf # Relatório dos resultados esperados e metodologia
