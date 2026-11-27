@@ -1,12 +1,18 @@
 erDiagram
+  UTILIZADOR ||--o{ VENDAS : "Vendas.Caixa (Ref)"
   CATEGORIAS ||--o{ PRODUTO : classifica
   CATEGORIAS ||--o{ ESTANTE : classifica
-  PRODUTO ||--o{ ESTANTE : "associação descrita no README; validar cardinalidade"
-  VENDAS ||--|{ ITENS_VENDA : contem
-  PRODUTO ||--o{ ITENS_VENDA : "hipótese recomendada; README diz Produto"
-  ESTANTE o|..o{ ITENS_VENDA : "alternativa ambígua no texto do README"
+  PRODUTO ||--o{ ESTANTE : "associação descrita; cardinalidade a validar"
+  VENDAS ||--o{ ITENS_VENDA : contem
+  PRODUTO ||--o{ ITENS_VENDA : "campo Produto (Ref)"
+  ESTANTE o|..o{ ITENS_VENDA : "texto da relação sugere stock em Estante; confirmar"
   CONTABILIDADE_DIARIA }o..o{ VENDAS : agrega
 
+  UTILIZADOR {
+    string Email PK
+    string Nome
+    string Perfil "Admin | Caixa | Operador"
+  }
   CATEGORIAS {
     string Nome_Categoria "campo descrito; chave técnica não indicada"
   }
@@ -30,8 +36,8 @@ erDiagram
   VENDAS {
     string ID_Venda PK
     datetime Data_hora
-    string Caixa
-    string Estado
+    string Caixa FK
+    string Estado "Aberta | Finalizada"
     decimal Valor_Entregue
     decimal Valor_Total
   }

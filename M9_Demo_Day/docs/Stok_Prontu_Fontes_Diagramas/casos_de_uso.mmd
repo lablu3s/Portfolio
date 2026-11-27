@@ -1,9 +1,9 @@
 flowchart TB
-  subgraph ACT[Utilizadores]
+  subgraph ACT[Perfis documentados]
     direction LR
-    V[Caixa / vendedor]
-    I[Responsável de inventário]
-    G[Gestor da loja]
+    A[Admin]
+    C[Caixa]
+    O[Operador]
   end
 
   subgraph SYS[Stok Prontu]
@@ -14,6 +14,7 @@ flowchart TB
       UC2((Gerir produtos\ne categorias))
       UC3((Atualizar stock))
       UC4((Receber alerta\nde stock crítico))
+      UC12((Registar reposição))
     end
     subgraph SALE[Vendas]
       direction TB
@@ -22,29 +23,30 @@ flowchart TB
       UC7((Calcular total\ne troco))
       UC8((Finalizar venda))
       UC9((Gerar recibo PDF))
-    end
-    subgraph MGMT[Operação]
-      direction TB
       UC10((Consultar vendas\ne fecho diário))
-      UC11((Sincronizar após\nreconexão))
-      UC12((Registar reposição))
-      UC13((Autenticar utilizador))
+    end
+    subgraph ADMIN[Utilizadores e acesso]
+      direction TB
+      UC11((Gerir utilizadores\ne perfis))
+      UC13((Autenticar utilizador\n/login))
+      UC14((Sincronizar após\nreconexão))
     end
   end
 
-  V --- UC1
-  V --- UC5
-  V --- UC10
-  V --- UC11
-  I --- UC1
-  I --- UC2
-  I --- UC3
-  I --- UC4
-  I --- UC12
-  I --- UC11
-  G --- UC2
-  G --- UC10
-  G --- UC13
+  C --- UC1
+  C --- UC5
+  C --- UC10
+  C --- UC14
+  O --- UC1
+  O --- UC2
+  O --- UC3
+  O --- UC4
+  O --- UC12
+  O --- UC14
+  A --- UC2
+  A --- UC10
+  A --- UC11
+  A --- UC13
   UC5 -. include .-> UC6
   UC5 -. include .-> UC7
   UC5 -. include .-> UC8
@@ -53,6 +55,6 @@ flowchart TB
   classDef actor fill:#F4EEE9,stroke:#66331E,color:#282421;
   classDef implemented fill:#EAF0E8,stroke:#3D6B4A,color:#282421;
   classDef pending fill:#FFF4D6,stroke:#A36B00,color:#282421;
-  class V,I,G actor;
-  class UC1,UC2,UC3,UC4,UC5,UC6,UC7,UC8,UC9,UC10,UC11 implemented;
+  class A,C,O actor;
+  class UC1,UC2,UC3,UC4,UC5,UC6,UC7,UC8,UC9,UC10,UC11,UC14 implemented;
   class UC12,UC13 pending;

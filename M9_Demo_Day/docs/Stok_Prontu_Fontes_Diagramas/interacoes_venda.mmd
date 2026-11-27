@@ -1,6 +1,6 @@
 sequenceDiagram
   autonumber
-  actor Caixa
+  actor Caixa as Caixa
   participant App as AppSheet (cliente)
   participant Dados as Google Sheets
   participant Bot as AppSheet Bot
@@ -13,9 +13,10 @@ sequenceDiagram
   alt Quantidade inválida ou acima do stock
     App-->>Caixa: Mostra erro e impede finalização
   else Venda validada
+    App->>Dados: Cria Vendas com Estado = Aberta e Caixa (Ref)
+    App->>Dados: Grava Itens_Venda associados
     Caixa->>App: Confirma venda
-    App->>Dados: Grava Vendas e Itens_Venda
-    App->>Dados: Atualiza quantidade em stock
+    App->>Dados: Altera Estado para Finalizada e atualiza stock
     Dados-->>App: Confirma persistência/sincronização
     App-->>Caixa: Venda registada
     App->>Bot: Evento de venda finalizada
