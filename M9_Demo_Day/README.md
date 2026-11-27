@@ -236,8 +236,8 @@ O projeto foi concebido e executado por uma equipa dedicada de 2 elementos:
 ├── media/
 │   ├── Launch_image.jfif           # Imagem de abertura da aplicação
 │   ├── Logo.png                    # Recurso gráfico oficial da marca
-│   └── Produto_Images/             # Fotografias dos produtos do inventário
-│       └── ART-001..ART-051.*      # Imagens associadas aos artigos cadastrados
+│   └── Produto_Images/             # Imagens dos produtos do inventário
+│       └── ART-001..ART-050.      # Imagens associadas aos artigos cadastrados
 └── README.md                       # Documentação principal do repositório
 ```
 
