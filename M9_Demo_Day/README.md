@@ -246,7 +246,7 @@ O projeto foi concebido e executado por uma equipa dedicada de 2 elementos:
 ## ⚙️ Como Configurar e Implementar o Projeto
 
 ### 1. Preparar o Google Sheets
-1. Crie uma nova folha de cálculo no Google Drive com as abas `Produto`, `Estante`, `Categorias`, `Itens_Venda`, `Vendas` e `Contabilidade_Diaria`.
+1. Crie uma nova folha de cálculo no Google Drive com as abas `Utilizador`, `Produto`, `Estante`, `Categorias`, `Itens_Venda`, `Vendas` e `Contabilidade_Diaria`.
 2. Preencha os cabeçalhos das colunas conforme descrito na secção **Arquitetura de Dados**.
 3. Adicione os 50 artigos iniciais de teste.
 
