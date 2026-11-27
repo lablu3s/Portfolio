@@ -152,7 +152,7 @@ A aplicação foi organizada em 3 vistas centrais no menu inferior para maximiza
 
 No menu lateral foram organizadas as vistas secundárias:
 
-1. **📦 Produtos (Gallery View):** Vista de galeria para consultar visualmente os produtos do inventário.
+1. **📦 Catálogo (Gallery View):** Vista de galeria para consultar visualmente os produtos do inventário e suas descrições.
 2. **💵 Contabilidade (Table View):** Vista organizada por data, referente ao fecho da contabilidade diária.
 
 ## 👥 Equipa de Desenvolvimento
@@ -199,19 +199,28 @@ O projeto foi concebido e executado por uma equipa dedicada de 2 elementos:
 
 ```text
 ├── docs/
-│   ├── especificacao_tecnica.md    # Documentação de fórmulas e colunas virtuais
-|   └── engenharia_requisitos.md # Documentação das funcionalidades
-|   └── desenho_sistema.pdf # Documentação do fluxo de ações
-|   └── relatorio_final.pdf # Relatório dos resultados esperados e metodologia
-|   └── apresentação.pdf # Documentação visual do pitch
+|   ├── relatorio_final.pdf # Relatório dos resultados esperados e metodologia
+|   ├── apresentação.pdf # Documentação visual do pitch
+│   ├── Stok_Prontu_Especificacao_Tecnica.pdf
+│   │                             # Especificação técnica, fórmulas e colunas virtuais
+│   ├── Stok_Prontu_Engenharia_de_Requisitos.pdf
+│   │                             # Levantamento e definição das funcionalidades
+│   ├── Stok_Prontu_Desenho_do_Sistema.pdf
+│   │                             # Arquitetura, fluxos e documentação visual do sistema
+│   └── Stok_Prontu_Fontes_Diagramas/
+│       ├── README.txt            # Explicação das fontes dos diagramas
+│       ├── arquitetura.mmd       # Arquitetura e integrações do sistema
+│       ├── casos_de_uso.mmd      # Atores e casos de uso
+│       ├── modelo_dados.mmd      # Entidades e relações do modelo de dados
+│       ├── interacoes_venda.mmd  # Fluxo da venda e emissão do recibo
+│       └── interacoes_offline.mmd # Fluxo offline e sincronização dos dados
 ├── templates/
 │   └── Template_recibo.pdf         # Modelo de recibo utilizado pela aplicação
 ├── media/
 │   ├── Launch_image.jfif           # Imagem de abertura da aplicação
-│   ├── Logo.png                   # Recurso gráfico oficial da marca
-|   ├── Demonstracao_app.mp4 
-# Video demonstrativo da utilização da app com 100s de duração
-│   └── Produto_Images/             # Imagens dos produtos do inventário
+│   ├── Logo.png                    # Recurso gráfico oficial da marca
+│   └── Produto_Images/             # Fotografias dos produtos do inventário
+│       └── ART-001..ART-051.*      # Imagens associadas aos artigos cadastrados
 └── README.md                       # Documentação principal do repositório
 ```
 

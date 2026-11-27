@@ -1,0 +1,27 @@
+sequenceDiagram
+  autonumber
+  actor Caixa
+  participant App as AppSheet (cliente)
+  participant Dados as Google Sheets
+  participant Bot as AppSheet Bot
+  participant Docs as Google Docs / template
+  participant Drive as Google Drive
+
+  Caixa->>App: Inicia venda e seleciona produtos/quantidades
+  App->>App: Valida quantidades e calcula subtotais
+  App->>App: Calcula total e troco após valor entregue
+  alt Quantidade inválida ou acima do stock
+    App-->>Caixa: Mostra erro e impede finalização
+  else Venda validada
+    Caixa->>App: Confirma venda
+    App->>Dados: Grava Vendas e Itens_Venda
+    App->>Dados: Atualiza quantidade em stock
+    Dados-->>App: Confirma persistência/sincronização
+    App-->>Caixa: Venda registada
+    App->>Bot: Evento de venda finalizada
+    Bot->>Docs: Preenche template de recibo
+    Docs->>Drive: Guarda recibo PDF
+    Drive-->>Bot: URI/localização do ficheiro
+    Bot-->>App: Disponibiliza referência do recibo
+    App-->>Caixa: Mostra recibo para consulta/partilha
+  end

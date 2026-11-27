@@ -1,0 +1,53 @@
+erDiagram
+  CATEGORIAS ||--o{ PRODUTO : classifica
+  CATEGORIAS ||--o{ ESTANTE : classifica
+  PRODUTO ||--o{ ESTANTE : "associação descrita no README; validar cardinalidade"
+  VENDAS ||--|{ ITENS_VENDA : contem
+  PRODUTO ||--o{ ITENS_VENDA : "hipótese recomendada; README diz Produto"
+  ESTANTE o|..o{ ITENS_VENDA : "alternativa ambígua no texto do README"
+  CONTABILIDADE_DIARIA }o..o{ VENDAS : agrega
+
+  CATEGORIAS {
+    string Nome_Categoria "campo descrito; chave técnica não indicada"
+  }
+  PRODUTO {
+    string ID_Produto PK
+    string Nome_Produto
+    string Categoria FK
+    decimal Preco
+    string Foto
+    string Descricao
+  }
+  ESTANTE {
+    string ID_Estante PK
+    string Nome_Produto
+    string Categoria FK
+    int Stock_Inicial
+    int Quantidade_Stock
+    decimal Preco_Unitario
+    datetime Ultimo_Registo
+  }
+  VENDAS {
+    string ID_Venda PK
+    datetime Data_hora
+    string Caixa
+    string Estado
+    decimal Valor_Entregue
+    decimal Valor_Total
+  }
+  ITENS_VENDA {
+    string ID_Item PK
+    string Venda FK
+    string Produto FK
+    int Quantidade
+    decimal IVA
+    decimal Subtotal
+  }
+  CONTABILIDADE_DIARIA {
+    string ID_Fecho PK
+    datetime Data
+    decimal Total_Vendas_Dia
+    int Total_Itens_Vendidos
+    int Total_Transacoes
+    string Observacoes
+  }

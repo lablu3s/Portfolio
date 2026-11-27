@@ -1,0 +1,56 @@
+flowchart LR
+  subgraph U[Utilizadores]
+    V[Caixa / vendedor]
+    I[Responsável de inventário]
+    G[Gestor da loja]
+  end
+
+  subgraph C[Cliente da aplicação]
+    AS[Google AppSheet\nAndroid · iOS · Web]
+    CACHE[Conteúdo local / fila de alterações\npara utilização offline]
+    UI[Vistas: Estante · Nova Venda\nVendas · Produtos · Contabilidade]
+  end
+
+  subgraph DATA[Camada de dados — Google Sheets]
+    P[(Produto)]
+    CAT[(Categorias)]
+    E[(Estante)]
+    VEND[(Vendas)]
+    IV[(Itens_Venda)]
+    CD[(Contabilidade_Diaria)]
+  end
+
+  subgraph AUTO[Automação e ficheiros]
+    BOT1[Bot: venda finalizada]
+    BOT2[Bot: stock crítico]
+    DOC[Template / geração de recibo PDF]
+    DRIVE[(Google Drive\nrecibos · imagens · ficheiros)]
+    EMAIL[Email de alerta]
+  end
+
+  V --> UI
+  I --> UI
+  G --> UI
+  UI <--> AS
+  AS <--> CACHE
+  AS <-->|com rede / sincronização| P
+  AS <-->|com rede / sincronização| CAT
+  AS <-->|com rede / sincronização| E
+  AS <-->|com rede / sincronização| VEND
+  AS <-->|com rede / sincronização| IV
+  AS <-->|com rede / sincronização| CD
+  VEND --> BOT1
+  BOT1 --> DOC
+  DOC --> DRIVE
+  E --> BOT2
+  BOT2 --> EMAIL
+  P -. fotos dos produtos .-> DRIVE
+
+  classDef user fill:#F4EEE9,stroke:#66331E,color:#282421;
+  classDef app fill:#F2E5DC,stroke:#66331E,color:#282421;
+  classDef data fill:#EAF0E8,stroke:#3D6B4A,color:#282421;
+  classDef automation fill:#FFF4D6,stroke:#A36B00,color:#282421;
+  class V,I,G user;
+  class AS,CACHE,UI app;
+  class P,CAT,E,VEND,IV,CD data;
+  class BOT1,BOT2,DOC,DRIVE,EMAIL automation;

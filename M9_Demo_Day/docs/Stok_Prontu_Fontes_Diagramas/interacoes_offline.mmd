@@ -1,0 +1,22 @@
+sequenceDiagram
+  autonumber
+  actor Operador
+  participant App as AppSheet (dispositivo)
+  participant Local as Conteúdo / fila local
+  participant Sheets as Google Sheets
+
+  Operador->>App: Regista operação sem rede
+  App->>Local: Guarda alteração pendente localmente
+  Local-->>App: Confirma armazenamento local
+  App-->>Operador: Indica que a alteração está no dispositivo
+  Note over App,Sheets: A operação offline e o âmbito de edição precisam de validação em dispositivos reais
+  Operador->>App: A rede é restabelecida
+  App->>Sheets: Sincroniza alterações pendentes
+  alt Sincronização aceite
+    Sheets-->>App: Confirma sincronização
+    App-->>Operador: Dados atualizados
+  else Conflito ou erro de sincronização
+    Sheets-->>App: Devolve conflito/erro
+    App-->>Operador: Solicita revisão ou nova tentativa
+  end
+  Note over App,Sheets: Política concreta de conflitos, deduplicação e venda concorrente ainda não está especificada
