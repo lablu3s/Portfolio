@@ -56,7 +56,7 @@ O **Stok Prontu** resolve estes problemas ao oferecer uma aplicação móvel e d
 
 | Componente | Tecnologia | Descrição |
 | --- | --- | --- |
-| **Base de Dados (Backend/Data Layer)** | **Google Sheets** | Alojamento relacional dos dados (`Produto`, `Categorias`, `Estante`, `Itens_Venda`, `Vendas` e `Contabilidade_Diaria`). |
+| **Base de Dados (Backend/Data Layer)** | **Google Sheets** | Alojamento relacional dos dados (`Utilizador`, `Produto`, `Categorias`, `Estante`, `Itens_Venda`, `Vendas` e `Contabilidade_Diaria`). |
 | **Plataforma de Desenvolvimento (Frontend/App)** | **Google AppSheet** | Motor no-code responsável pela interface, regras de negócio e motor offline. |
 | **Motor de Documentos** | **Google Docs** | Elaboração de documentação técnica. |
 | **Armazenamento de Ficheiros** | **Google Drive** | Alojamento dos dados, imagens e templates utilizados no AppSheet. |
@@ -69,72 +69,87 @@ O **Stok Prontu** resolve estes problemas ao oferecer uma aplicação móvel e d
 
 A base de dados no Google Sheets é estruturada nas seguintes tabelas principais:
 
+### Tabela `Utilizador`
+
+Esta tabela contém os dados dos utilizadores da aplicação e define a respetiva função no sistema.
+
+* `Email` (Key): identifica o utilizador no sistema.
+* `Nome` (Name): indica o nome completo do utilizador.
+* `Perfil` (Enum - 'Admin', 'Caixa', 'Operador'): define o tipo de utilizador e as respetivas responsabilidades.
+
+Os perfis previstos são:
+
+* **Admin:** administração da aplicação, utilizadores e configurações gerais.
+* **Caixa:** realização e acompanhamento das operações de venda.
+* **Operador:** apoio à gestão de produtos e atualizações de stock.
+
 ### Tabela: `Produto`
 
 Esta tabela reúne o catálogo principal dos artigos vendidos, incluindo os seus dados comerciais e visuais.
 
-* `ID_Produto` (Key)
-* `Nome_Produto` (Text)
-* `Categoria` (Ref)
-* `Preco` (Price)
-* `Foto` (Image)
-* `Descricao` (LongText)
+* `ID_Produto` (Key): identifica de forma única cada produto do catálogo.
+* `Nome_Produto` (Text): apresenta o nome comercial do produto.
+* `Categoria` (Ref): associa o produto à categoria correspondente.
+* `Preco` (Price): indica o preço de venda unitário do produto.
+* `Foto` (Image): guarda a imagem utilizada para representar visualmente o produto.
+* `Descricao` (LongText): fornece informações adicionais sobre o produto.
 
 ### Tabela: `Categorias`
 
 Esta tabela contém a lista das categorias dos produtos.
 
-* `Nome_Categoria` (Text)
+* `Nome_Categoria` (Text): identifica o nome da categoria utilizada para organizar os produtos.
 
 
 ### Tabela: `Estante`
 
 Esta tabela controla o stock disponível de cada produto e mantém o registo das quantidades e atualizações.
 
-* `ID_Estante` (Key)
-* `Nome_Produto` (Text)
-* `Categoria` (Ref)
-* `Stock_Inicial` (Number)
-* `Quantidade_Stock` (Number)
-* `Preco_Unitario` (Price)
-* `Ultimo_Registo` (DateTime)
+* `ID_Estante` (Key): identifica de forma única cada registo de stock da estante.
+* `Nome_Produto` (Text): indica o produto associado ao registo de stock.
+* `Categoria` (Ref): associa o produto em stock à respetiva categoria.
+* `Stock_Inicial` (Number): representa a quantidade inicial registada para o produto.
+* `Quantidade_Stock` (Number): apresenta a quantidade atualmente disponível na estante.
+* `Preco_Unitario` (Price): indica o preço unitário utilizado no controlo de stock.
+* `Ultimo_Registo` (DateTime): guarda a data e hora da última atualização do stock.
 
 ### Tabela: `Itens_Venda`
 
 Esta tabela relaciona cada venda aos produtos comprados e guarda a quantidade e o valor de cada item.
 
-* `ID_Item` (Key)
-* `Venda` (Ref)
-* `Produto` (Ref)
-* `Quantidade` (Number)
-* `IVA` (Price)
-* `Subtotal` (Price)
+* `ID_Item` (Key): identifica de forma única cada linha de produto numa venda.
+* `Venda` (Ref): associa o item à venda à qual pertence.
+* `Produto` (Ref): identifica o produto incluído na venda.
+* `Quantidade` (Number): indica quantas unidades do produto foram vendidas.
+* `IVA` (Price): apresenta o valor do IVA aplicado ao item.
+* `Subtotal` (Price): calcula o valor total do item com base na quantidade e no preço.
 
 ### Tabela: `Vendas`
 
 Esta tabela regista as transações realizadas, incluindo a data, o estado do pagamento e os respetivos valores.
 
-* `ID_Venda` (Key)
-* `Data_hora` (DateTime)
-* `Caixa` (Text)
-* `Estado` (Enum)
-* `Valor_Entregue` (Price)
-* `Valor_Total` (Price)
+* `ID_Venda` (Key): identifica de forma única cada venda registada.
+* `Data_hora` (DateTime): guarda a data e hora em que a venda foi criada ou registada.
+* `Caixa` (Ref): associa a venda ao utilizador responsável pela operação.
+* `Estado` (Enum - 'Aberta', 'Finalizada'): indica se a venda está em curso ou já foi concluída.
+* `Valor_Entregue` (Price): registra o montante entregue pelo cliente no pagamento.
+* `Valor_Total` (Price): apresenta o valor total calculado para a venda.
 
 ### Tabela: `Contabilidade_Diaria`
 
 Esta tabela apresenta o resumo diário das vendas e permite acompanhar o desempenho e o volume de operações da loja.
 
-* `ID_Fecho` (Key)
-* `Data` (DateTime)
-* `Total_Vendas_Dia` (Price)
-* `Total_Itens_Vendidos` (Number)
-* `Total_Transacoes` (Number)
-* `Observacoes` (LongText)
+* `ID_Fecho` (Key): identifica de forma única cada fecho diário da contabilidade.
+* `Data` (DateTime): indica o dia correspondente ao resumo contabilístico.
+* `Total_Vendas_Dia` (Price): apresenta o montante total das vendas realizadas no dia.
+* `Total_Itens_Vendidos` (Number): indica o número total de itens vendidos no dia.
+* `Total_Transacoes` (Number): apresenta a quantidade de vendas realizadas no dia.
+* `Observacoes` (LongText): permite guardar notas adicionais sobre o fecho ou ocorrências do dia.
 
 ### Relações principais
 
 - `Categorias` (1) relaciona-se com vários registos de `Produto` e `Estante` através dos campos `Categoria`.
+- `Utilizador` (1) pode estar associado a várias vendas através do campo `Vendas.Caixa`, identificando o utilizador responsável pela operação.
 - `Produto` (1) pode estar associado a vários registos de `Estante`, permitindo a gestão individual do seu stock.
 - `Vendas` (1) contém vários registos de `Itens_Venda` através de `Itens_Venda.Venda`.
 - `Estante` (1) pode aparecer em vários registos de `Itens_Venda` através de `Itens_Venda.Produto`, associando cada linha vendida ao produto em stock.
@@ -152,8 +167,9 @@ A aplicação foi organizada em 3 vistas centrais no menu inferior para maximiza
 
 No menu lateral foram organizadas as vistas secundárias:
 
-1. **📦 Catálogo (Gallery View):** Vista de galeria para consultar visualmente os produtos do inventário e suas descrições.
-2. **💵 Contabilidade (Table View):** Vista organizada por data, referente ao fecho da contabilidade diária.
+1. **👤 Utilizadores (Table View):** Vista organizada por utilizador, com o email, nome e perfil de acesso (Admin, Caixa ou Operador).
+2. **📦 Catálogo (Gallery View):** Vista de galeria para consultar visualmente os produtos do inventário e suas descrições.
+3. **💵 Contabilidade (Table View):** Vista organizada por data, referente ao fecho da contabilidade diária.
 
 ## 👥 Equipa de Desenvolvimento
 
@@ -169,6 +185,7 @@ O projeto foi concebido e executado por uma equipa dedicada de 2 elementos:
 ### ✅ Já implementado
 
 - [x] Base de dados estruturada no Google Sheets.
+- [x] Estrutura de utilizadores com email, nome e perfis Admin, Caixa e Operador.
 - [x] Gestão de produtos, categorias e quantidade em stock.
 - [x] Atualização automática do stock com base nas entradas e vendas.
 - [x] Alertas visuais e automáticos para produtos com stock crítico.
